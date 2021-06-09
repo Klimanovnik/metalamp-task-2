@@ -41,7 +41,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "js/[name].js"
+        filename: "js/[name].[contenthash].js"
     },
     optimization: optimizationFunction(),
     devServer: {
@@ -51,23 +51,23 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: "css/[name].css"
+            filename: "css/[name].[contenthash].css"
         }),
         new HTMLWebpackPlugin({
             template: "./website-pages/main/index.pug",
-            filename: "index.html",
+            filename: "index.[contenthash].html",
             chunks: ["main"],
             minify: minifyFunction()
         }),
         new HTMLWebpackPlugin({
             template: "./ui-kit/colors-and-type/colorsAndType.pug",
-            filename: "html/colorsAndType.html",
+            filename: "html/colorsAndType.[contenthash].html",
             chunks: ["colorsAndType"],
             minify: minifyFunction()
         }),
         new HTMLWebpackPlugin({
             template: "./ui-kit/form-elements/formElements.pug",
-            filename: "html/formElements.html",
+            filename: "html/formElements.[contenthash].html",
             chunks: ["formElements"],
             minify: minifyFunction()
         })
@@ -79,7 +79,7 @@ module.exports = {
                 loader: "file-loader",
                 exclude: [/fonts/],
                 options: {
-                    name: "./img/[name].[ext]"
+                    name: "./img/[name].[contenthash].[ext]"
                 }
             },
             {
@@ -87,7 +87,7 @@ module.exports = {
                 loader: "file-loader",
                 exclude: [/img/, /favicon/],
                 options: {
-                    name: "./fonts/[name].[ext]"
+                    name: "./fonts/[name].[contenthash].[ext]"
                 }
             },
             {
