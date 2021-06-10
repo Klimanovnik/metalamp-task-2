@@ -31,11 +31,12 @@ const optimizationFunction = function () {
 };
 
 module.exports = {
+    context: path.resolve(__dirname, "src"),
     mode: "development",
     entry: {
-        "main": ["./src/website-pages/main/index.js"],
-        "colorsAndType": ["./src/ui-kit/colors-and-type/colorsAndType.js"],
-        "formElements": ["./src/ui-kit/form-elements/formElements.js"]
+        "main": ["./website-pages/main/main.js"],
+        "colors-and-type": ["./ui-kit/colors-and-type/colors-and-type.js"],
+        "form-elements": ["./ui-kit/form-elements/form-elements.js"]
     },
     output: {
         path: path.resolve(__dirname, "app"),
@@ -52,21 +53,21 @@ module.exports = {
             filename: "css/[name].css"
         }),
         new HTMLWebpackPlugin({
-            template: "./src/website-pages/main/index.pug",
+            template: "./website-pages/main/main.pug",
             filename: "index.html",
             chunks: ["main"],
             minify: minifyFunction()
         }),
         new HTMLWebpackPlugin({
-            template: "./src/ui-kit/colors-and-type/colorsAndType.pug",
-            filename: "html/colorsAndType.html",
-            chunks: ["colorsAndType"],
+            template: "./ui-kit/colors-and-type/colors-and-type.pug",
+            filename: "html/colors-and-type.html",
+            chunks: ["colors-and-type"],
             minify: minifyFunction()
         }),
         new HTMLWebpackPlugin({
-            template: "./src/ui-kit/form-elements/formElements.pug",
-            filename: "html/formElements.html",
-            chunks: ["formElements"],
+            template: "./ui-kit/form-elements/form-elements.pug",
+            filename: "html/form-elements.html",
+            chunks: ["form-elements"],
             minify: minifyFunction()
         })
     ],
@@ -77,7 +78,7 @@ module.exports = {
                 loader: "file-loader",
                 exclude: [/fonts/],
                 options: {
-                    name: "./img/[name].[ext]"
+                    name: "./img/[contenthash].[ext]"
                 }
             },
             {
@@ -99,12 +100,7 @@ module.exports = {
                             }
                         }
                     },
-                    {
-                        loader: "css-loader"
-                    },
-                    {
-                        loader: "sass-loader"
-                    }
+                    "css-loader", "sass-loader"
                 ]
             },
             {

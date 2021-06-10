@@ -1,0 +1,19 @@
+extends ./../../assets/page-template.pug
+block title
+    title Colors&amp;Type
+block content
+    // header
+    include ./../../components/header-with-pale-logo/header-with-pale-logo.pug
+    +header-with-pale-logo("container-1440")
+    // main-content
+    include ./../../components/square-with-text/square-with-text.pug
+    main(class="main-content")
+        div(class="main-content__inner container-1440")
+            section(class="main-content__square-section")
+                +square-with-text("Dark Shade 100%", "#1F2041", "square-with-text_margin-bottom_20")
+                +square-with-text("Dark Shade 75%", "#1F2041", "square-with-text_margin-bottom_20", "square-with-text__square_opacity_075")
+                +square-with-text("Dark Shade 50%", "#1F2041", "square-with-text_margin-bottom_20", "square-with-text__square_opacity_050")
+                +square-with-text("Dark Shade 25%", "#1F2041", "square-with-text_margin-bottom_20", "square-with-text__square_opacity_025")
+                +square-with-text("Dark Shade 5%", "#1F2041", "square-with-text_margin-bottom_20", "square-with-text__square_opacity_005")
+                +square-with-text("Purple", "#BC9CFF", "square-with-text_margin-bottom_20", "square-with-text__square_color_purple")
+                +square-with-text("Green", "#6FCF97", "square-with-text_margin-bottom_20", "square-with-text__square_color_green")
