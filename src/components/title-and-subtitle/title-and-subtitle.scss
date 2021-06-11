@@ -1,0 +1,67 @@
+/* .title-and-subtitle */
+
+.title-and-subtitle {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	font-size: 24px;
+	line-height: 1.25;
+}
+
+.title-and-subtitle_line-height_17 {
+	line-height: 1.7;
+}
+
+.title-and-subtitle_fsize_19 {
+	font-size: 19px;
+}
+
+.title-and-subtitle_fsize_14 {
+	font-size: 14px;
+}
+
+.title-and-subtitle_fsize_12 {
+	font-size: 12px;
+}
+
+/* .title-and-subtitle__title */
+
+.title-and-subtitle__title {
+	font-family: "Montserrat", sans-serif;
+	font-size: inherit;
+	line-height: inherit;
+	min-width: 40px;
+	font-weight: 300;
+	color: rgba(31, 32, 65, 0.25);
+	text-align: right;
+    margin-right: 30px;
+}
+
+/* .title-and-subtitle__subtitle */
+
+.title-and-subtitle__subtitle {
+	color: #1F2041;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	font-size: inherit;
+	line-height: inherit;
+	min-width: 369px;
+	letter-spacing: 0.3px;
+}
+
+.title-and-subtitle__subtitle_font-weight_300 {
+	font-weight: 300;
+}
+
+.title-and-subtitle__subtitle_opacity_075 {
+	opacity: 0.75;
+}
+
+.title-and-subtitle__subtitle_text-uppercase {
+	text-transform: uppercase;
+}
+
+.title-and-subtitle__subtitle_max-width_315 {
+	min-width: 0px;
+	max-width: 315px;
+}

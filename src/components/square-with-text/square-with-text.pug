@@ -1,7 +1,7 @@
 mixin square-with-text(name, code, classList1, classList2)
-    -if(classList1 === undefined) {classList1=""};
+    -if(classList1 === undefined) {classList1="";}
     div(class="square-with-text " + classList1)
-        -if(classList2 === undefined) {classList2=""};
+        -if(classList2 === undefined) {classList2="";}
         div(class="square-with-text__square " + classList2)
         div(class="square-with-text__text")
             h3(class="square-with-text__name")= name

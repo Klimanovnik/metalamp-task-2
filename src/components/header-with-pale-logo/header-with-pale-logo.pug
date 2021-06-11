@@ -1,5 +1,5 @@
 mixin header-with-pale-logo(classList)
-    -if(classList === undefined) {classList=""};
+    -if(classList === undefined) {classList="";}
     header(class="header-with-pale-logo")
         div(class="header-with-pale-logo__inner " + classList)
             include ./../pale-logo/pale-logo.pug

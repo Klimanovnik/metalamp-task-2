@@ -1,0 +1,17 @@
+/* main-content */
+
+.main-content__inner {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-top: 30px;
+}
+
+.flex-element {
+	width: 30%;
+}
+
+.form__block {
+	margin-bottom: 15px;
+}

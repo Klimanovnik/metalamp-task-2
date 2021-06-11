@@ -2,4 +2,14 @@ extends ./../../assets/page-template.pug
 block title
     title FormElements
 block content
-    div FormElements
+    // header
+    include ./../../components/header-with-pale-logo/header-with-pale-logo.pug
+    +header-with-pale-logo("container-1440")
+    // main-content
+    div(class="main-content")
+        div(class="main-content__inner container-1160")
+            div(class="flex-element")
+                form(class="form" action="#")
+                    include ./../../components/email-block/email-block.pug
+                    +email-block("Text Field", "form__block")
+                    +email-block("Text Field", "form__block")

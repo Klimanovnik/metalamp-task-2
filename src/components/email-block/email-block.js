@@ -1,0 +1,1 @@
+import "./email-block.scss";

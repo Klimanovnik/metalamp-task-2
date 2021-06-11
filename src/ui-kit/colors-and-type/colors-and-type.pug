@@ -6,10 +6,10 @@ block content
     include ./../../components/header-with-pale-logo/header-with-pale-logo.pug
     +header-with-pale-logo("container-1440")
     // main-content
-    include ./../../components/square-with-text/square-with-text.pug
     main(class="main-content")
         div(class="main-content__inner container-1440")
             section(class="main-content__square-section")
+                include ./../../components/square-with-text/square-with-text.pug
                 +square-with-text("Dark Shade 100%", "#1F2041", "square-with-text_margin-bottom_20")
                 +square-with-text("Dark Shade 75%", "#1F2041", "square-with-text_margin-bottom_20", "square-with-text__square_opacity_075")
                 +square-with-text("Dark Shade 50%", "#1F2041", "square-with-text_margin-bottom_20", "square-with-text__square_opacity_050")
@@ -17,3 +17,9 @@ block content
                 +square-with-text("Dark Shade 5%", "#1F2041", "square-with-text_margin-bottom_20", "square-with-text__square_opacity_005")
                 +square-with-text("Purple", "#BC9CFF", "square-with-text_margin-bottom_20", "square-with-text__square_color_purple")
                 +square-with-text("Green", "#6FCF97", "square-with-text_margin-bottom_20", "square-with-text__square_color_green")
+            section(class="main-content__title-and-subtitle-section")
+                include ./../../components/title-and-subtitle/title-and-subtitle.pug
+                +title-and-subtitle("H1", "This one is the sub-section or widget title", "title-and-subtitle_margin-bottom_51")
+                +title-and-subtitle("H2", "Next one is the item title inside widgets", "title-and-subtitle_margin-bottom_51 title-and-subtitle_fsize_19", "title-and-subtitle__subtitle_max-width_315")
+                +title-and-subtitle("H3", "This is a label or CTA text", "title-and-subtitle_margin-bottom_51 title-and-subtitle_fsize_12", "title-and-subtitle__subtitle_max-width_315 title-and-subtitle__subtitle_text-uppercase")
+                +title-and-subtitle("Body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.", "title-and-subtitle_margin-bottom_51 title-and-subtitle_line-height_17 title-and-subtitle_fsize_14", "title-and-subtitle__subtitle_font-weight_300 title-and-subtitle__subtitle_opacity_075 title-and-subtitle__subtitle_max-width_315")

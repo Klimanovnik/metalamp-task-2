@@ -1,0 +1,6 @@
+mixin title-and-subtitle(title, subTitle, classList1, classList2)
+    -if (classList1 === undefined) {classList1 = "";}
+    div(class="title-and-subtitle " + classList1)
+        h3(class="title-and-subtitle__title")= title
+        -if (classList2 === undefined) {classList2 = "";}
+        p(class="title-and-subtitle__subtitle " + classList2)= subTitle
