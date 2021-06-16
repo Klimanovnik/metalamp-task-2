@@ -2,7 +2,7 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === "development";
@@ -40,7 +40,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "app"),
-        filename: "js/[name].js"
+        filename: "js/[name].[contenthash].js"
     },
     optimization: optimizationFunction(),
     devServer: {
@@ -50,7 +50,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: "css/[name].css"
+            filename: "css/[name].[contenthash].css"
         }),
         new HTMLWebpackPlugin({
             template: "./website-pages/main/main.pug",
