@@ -1,0 +1,8 @@
+mixin dropdown__line(title)
+    div(class="dropdown__line")
+        - if(title === undefined) {title = "Default Title";}
+        span(class="dropdown__line-title")= title
+        div(class="dropdown__counter")
+            button(class="dropdown__decrement") -
+            span(class="dropdown__number") 0
+            button(class="dropdown__increment") +

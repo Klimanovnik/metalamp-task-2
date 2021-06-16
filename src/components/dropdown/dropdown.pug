@@ -1,0 +1,13 @@
+mixin dropdown(title, dropdownWrapClassList)
+    -if (dropdownWrapClassList === undefined) {dropdownWrapClassList = "";}
+    div(class="dropdown-wrap " + dropdownWrapClassList)
+        h3(class="dropdown-wrap__title")= title
+        div(class="dropdown")
+            button(class="dropdown__button") Сколько гостей
+            div(class="dropdown__list dropdown__list_invisible")
+                include ./dropdown__line/dropdown__line.pug
+                +dropdown__line("Взрослые")
+                +dropdown__line("Дети")
+                +dropdown__line("Младенцы")
+                include ./dropdown__apply-clear/dropdown__apply-clear.pug
+                +dropdown__apply-clear()

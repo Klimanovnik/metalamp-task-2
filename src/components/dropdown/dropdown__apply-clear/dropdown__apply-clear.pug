@@ -1,0 +1,5 @@
+mixin dropdown__apply-clear(classList)
+    -if (classList === undefined) {classList = "";}
+    div(class="dropdown__apply-clear " + classList)
+        button(class="dropdown__clear dropdown__clear_invisible") Очистить
+        button(class="dropdown__apply") Применить
