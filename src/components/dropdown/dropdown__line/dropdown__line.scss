@@ -34,6 +34,11 @@
 	background: #fff;
 }
 
+.dropdown__decrement_disabled {
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	color: rgba(31, 32, 65, 0.25);
+}
+
 .dropdown__number {
 	display: inline-block;
 	min-width: 25px;

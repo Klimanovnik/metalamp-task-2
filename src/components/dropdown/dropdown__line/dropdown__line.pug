@@ -3,6 +3,6 @@ mixin dropdown__line(title)
         - if(title === undefined) {title = "Default Title";}
         span(class="dropdown__line-title")= title
         div(class="dropdown__counter")
-            button(class="dropdown__decrement") -
+            button(class="dropdown__decrement dropdown__decrement_disabled") -
             span(class="dropdown__number") 0
             button(class="dropdown__increment") +

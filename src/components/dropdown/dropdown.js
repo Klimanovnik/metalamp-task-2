@@ -1,6 +1,6 @@
 import "./dropdown.scss";
-import "./dropdown__apply-clear/dropdown__apply-clear.js";
 import "./dropdown__line/dropdown__line.js";
+import "./dropdown__apply-clear/dropdown__apply-clear.js";
 import * as $ from "jquery";
 
 $(function () {
@@ -15,7 +15,7 @@ $(function () {
     });
 
     // Summation
-    let summation = function () {
+    $(".dropdown__number").on("changeNumberValue", function () {
         let closestDropdown = $(this).closest(".dropdown");
 
         let dropdownNumberArray = closestDropdown.find(".dropdown__number");
@@ -25,57 +25,44 @@ $(function () {
             sum = sum + Number($(dropdownNumber).text());
         }
 
+        let visitorString = "";
+        if (sum % 10 === 1 && sum != 11) {
+            visitorString = "гость";
+        } else if ((sum % 10 === 2 && sum != 12) || (sum % 10 === 3 && sum != 13) || (sum % 10 === 4 && sum != 14)) {
+            visitorString = "гостя";
+        } else {
+            visitorString = "гостей";
+        }
+
         let currentDropdownButton = closestDropdown.find(".dropdown__button").first();
-        let currentDropdownClear = closestDropdown.find(".dropdown__clear").first();
+        let isThereClear = Boolean(closestDropdown.find(".dropdown__clear").first().length);
 
         if (sum > 0) {
-            currentDropdownButton.text(`${sum} гостя`);
-            if (currentDropdownClear) {
-                currentDropdownClear.removeClass("dropdown__clear_invisible");
+            currentDropdownButton.text(`${sum + " " + visitorString}`);
+            if (isThereClear) {
+                closestDropdown.find(".dropdown__clear").first().removeClass("dropdown__clear_invisible");
             }
         } else if (sum === 0) {
             currentDropdownButton.text("Сколько гостей");
-            if (currentDropdownClear) {
-                currentDropdownClear.addClass("dropdown__clear_invisible");
+            if (isThereClear) {
+                closestDropdown.find(".dropdown__clear").first().addClass("dropdown__clear_invisible");
             }
         } else {
             currentDropdownButton.text("Отрицательное количество гостей !");
-            if (currentDropdownClear) {
-                currentDropdownClear.removeClass("dropdown__clear_invisible");
+            if (isThereClear) {
+                closestDropdown.find(".dropdown__clear").first().removeClass("dropdown__clear_invisible");
             }
         }
-    };
-
-    // Dropdown decrement & increment
-    // Decrement
-    $(".dropdown__decrement").on("click", function (event) {
-        event.preventDefault();
-        let dropdownNumber = $(this).closest(".dropdown__counter").find(".dropdown__number").first();
-
-        if (Number(dropdownNumber.text()) > 0) {
-            dropdownNumber.text(`${+dropdownNumber.text() - 1}`);
-        }
-
-        summation.call(this);
-    });
-
-    // Increment
-    $(".dropdown__increment").on("click", function (event) {
-        event.preventDefault();
-        let dropdownNumber = $(this).closest(".dropdown__counter").find(".dropdown__number").first();
-
-        if (Number(dropdownNumber.text()) < 999) {
-            dropdownNumber.text(`${+dropdownNumber.text() + 1}`);
-        }
-
-        summation.call(this);
     });
 
     // ApplyClearButtons
     $(".dropdown__clear").on("click", function (event) {
         event.preventDefault();
-        $(this).closest(".dropdown__list").find(".dropdown__number").text("0");
-        summation.call(this);
+        let dropdownNumberArray = $(this).closest(".dropdown__list").find(".dropdown__number");
+        dropdownNumberArray.text("0");
+
+        dropdownNumberArray[0].dispatchEvent(new Event("changeNumberValue"));
+        $(this).closest(".dropdown__list").find(".dropdown__decrement").addClass("dropdown__decrement_disabled");
     });
 
     $(".dropdown__apply").on("click", function (event) {
