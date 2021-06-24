@@ -1,0 +1,79 @@
+/* date-field */
+
+.date-field {
+	max-width: 320px;
+	min-width: 220px;
+	position: relative;
+}
+
+.date-field__title {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 1.25;
+	text-transform: uppercase;
+	color: #1F2041;
+	padding: 5px 0px;
+	letter-spacing: 0.3px;
+}
+
+.date-field__field {
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	border-radius: 4px;
+	padding: 13px 15px;
+	width: 100%;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.25;
+	color: rgba(31, 32, 65, 0.75);
+}
+
+.date-field__field::placeholder {
+	color: rgba(31, 32, 65, 0.25);
+	font-weight: 300;
+}
+
+.date-field__field:hover, .date-field__field:focus {
+	border: 1px solid rgba(31, 32, 65, 0.5);
+}
+
+.date-field__field_error, .date-field__field_error:hover, .date-field__field_error:focus {
+	border: 1px solid #f86868;
+}
+
+.date-field__error-message {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.25;
+	color: #1F2041;
+	letter-spacing: 0.3px;
+	background-color: #ffefef;
+	border: 1px solid #f86868;
+	padding: 10px;
+	position: relative;
+	top: 14px;
+	left: 0px;
+	z-index: 1;
+}
+
+.date-field__error-message::before {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #ffefef;
+	border: 1px solid #f86868;
+	border-left: none;
+	border-bottom: none;
+	position: absolute;
+	top: -10.8px;
+	left: 30px;
+	transform: rotate(-45deg);
+	z-index: -1;
+}
+
+.date-field__error-message_disabled {
+	display: none;
+}
