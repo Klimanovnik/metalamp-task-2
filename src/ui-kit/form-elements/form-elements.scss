@@ -6,12 +6,35 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding-top: 30px;
+	font-size: 0px;
 }
 
 .flex-element {
 	width: 30%;
+	@media(max-width: 1416px){
+		width: 50%;
+	}
+	@media(max-width: 960px){
+		width: 100%;
+	}
 }
 
 .form__block {
 	margin-bottom: 15px;
+}
+
+.form__inline-block {
+	display: inline-block;
+	margin-bottom: 15px;
+	margin-right: 20px;
+	@media (max-width: 365px) {
+		margin-right: 10px;
+	}
+	@media (max-width: 350px) {
+		margin-right: 0px;
+	}
+}
+
+.form__inline-block:last-child {
+	margin-right: 0px;
 }

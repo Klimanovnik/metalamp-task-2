@@ -6,4 +6,7 @@ import "./../../components/container-1160/container-1160.js";
 import "./../../components/email-block/email-block.js";
 import "./../../components/dropdown/dropdown.js";
 import "./../../components/date-field/date-field.js";
+import "./../../components/date-dropdown/date-dropdown.js";
+import "./../../components/filter-date-dropdown/filter-date-dropdown.js";
+import "./../../components/subscription-text-field/subscription-text-field.js";
 import "./form-elements.scss";

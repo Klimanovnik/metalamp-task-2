@@ -1,0 +1,6 @@
+mixin filter-date-dropdown(title, filterDateDropdownWrapClassList)
+    -if (filterDateDropdownWrapClassList === undefined) {filterDateDropdownWrapClassList = "";}
+    div(class="filter-date-dropdown-wrap " + filterDateDropdownWrapClassList)
+        h3(class="filter-date-dropdown-wrap__title")= title
+        div(class="filter-date-dropdown")
+            button(class="filter-date-dropdown__button") ДД.ММ - ДД.ММ
