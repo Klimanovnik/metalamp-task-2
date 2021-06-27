@@ -1,4 +1,4 @@
-import "./../../assets/fonts.js";
+import "./../../assets/fonts-src/fonts.js";
 import "./../../assets/reset-style/reset-style.js";
 import "./../../components/container-1440/container-1440.js";
 import "./../../components/header-with-pale-logo/header-with-pale-logo.js";

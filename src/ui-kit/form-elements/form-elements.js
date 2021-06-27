@@ -1,4 +1,4 @@
-import "./../../assets/fonts.js";
+import "./../../assets/fonts-src/fonts.js";
 import "./../../assets/reset-style/reset-style.js";
 import "./../../components/container-1440/container-1440.js";
 import "./../../components/header-with-pale-logo/header-with-pale-logo.js";
@@ -9,4 +9,5 @@ import "./../../components/date-field/date-field.js";
 import "./../../components/date-dropdown/date-dropdown.js";
 import "./../../components/filter-date-dropdown/filter-date-dropdown.js";
 import "./../../components/subscription-text-field/subscription-text-field.js";
+import "./../../components/checkbox-buttons/checkbox-buttons.js";
 import "./form-elements.scss";

@@ -34,7 +34,7 @@ module.exports = {
     context: path.resolve(__dirname, "src"),
     mode: "development",
     entry: {
-        "main": ["./website-pages/main/main.js"],
+        "index": ["./website-pages/index/index.js"],
         "colors-and-type": ["./ui-kit/colors-and-type/colors-and-type.js"],
         "form-elements": ["./ui-kit/form-elements/form-elements.js"]
     },
@@ -50,12 +50,12 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: "css/[name].[contenthash].css"
+            filename: "[name].[contenthash].css"
         }),
         new HTMLWebpackPlugin({
-            template: "./website-pages/main/main.pug",
+            template: "./website-pages/index/index.pug",
             filename: "index.html",
-            chunks: ["main"],
+            chunks: ["index"],
             minify: minifyFunction()
         }),
         new HTMLWebpackPlugin({
@@ -93,14 +93,20 @@ module.exports = {
                 test: /\.(s[ac]ss)$/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: (resourcePath, context) => {
-                                return path.relative(path.dirname(resourcePath), context) + '/';
-                            }
-                        }
+                        loader: MiniCssExtractPlugin.loader
                     },
-                    "css-loader", "sass-loader"
+                    {
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "resolve-url-loader"
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    }
                 ]
             },
             {
