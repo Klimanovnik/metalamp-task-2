@@ -1,0 +1,8 @@
+mixin toggle(toggleClassList, title, ...names)
+    -if(toggleClassList === undefined) {toggleClassList = "";}
+    div(class="toggle " + toggleClassList)
+        h3(class="toggle__title")= title
+        each name in names
+            label(class="toggle__label")
+                input(class="toggle__checkbox" type="checkbox" name=name value="Yes")
+                span(class="toggle__text")= name

@@ -1,0 +1,10 @@
+mixin radio-buttons(title, name, radio1, radio2, radioButtonsClassList)
+    -if(radioButtonsClassList === undefined) {radioButtonsClassList = "";}
+    div(class="radio-buttons " + radioButtonsClassList)
+        h3(class="radio-buttons__title")= title
+        label(class="radio-buttons__label")
+            input(class="radio-buttons__radio" type="radio" name=name value=radio1 checked)
+            span(class="radio-buttons__text")= radio1
+        label(class="radio-buttons__label")
+            input(class="radio-buttons__radio" type="radio" name=name value=radio2)
+            span(class="radio-buttons__text")= radio2

@@ -10,4 +10,7 @@ import "./../../components/date-dropdown/date-dropdown.js";
 import "./../../components/filter-date-dropdown/filter-date-dropdown.js";
 import "./../../components/subscription-text-field/subscription-text-field.js";
 import "./../../components/checkbox-buttons/checkbox-buttons.js";
+import "./../../components/radio-buttons/radio-buttons.js";
+import "./../../components/toggle/toggle.js";
+import "./../../components/like-button/like-button.js";
 import "./form-elements.scss";
