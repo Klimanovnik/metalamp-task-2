@@ -13,4 +13,5 @@ import "./../../components/checkbox-buttons/checkbox-buttons.js";
 import "./../../components/radio-buttons/radio-buttons.js";
 import "./../../components/toggle/toggle.js";
 import "./../../components/like-button/like-button.js";
+import "./../../components/rate-button/rate-button.js";
 import "./form-elements.scss";

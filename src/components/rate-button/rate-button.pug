@@ -1,0 +1,7 @@
+mixin rate-button(rateButtonClassList, title)
+    - if(rateButtonClassList === undefined) {rateButtonClassList = "";}
+    div(class="rate-button " + rateButtonClassList)
+        h3(class="rate-button__title")= title
+        include ./rate-button__rate/rate-button__rate.pug
+        +rate-button__rate(4)
+        +rate-button__rate(5)
