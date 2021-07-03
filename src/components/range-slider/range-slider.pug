@@ -1,0 +1,13 @@
+mixin range-slider(rangeSliderWrapClassList, title)
+    - if (rangeSliderWrapClassList === undefined) {rangeSliderWrapClassList = "";}
+    div(class="range-slider-wrap " + rangeSliderWrapClassList)
+        div(class="range-slider-wrap__text")
+            h3(class="range-slider-wrap__title")= title
+            div(class="range-slider-wrap__numbers")
+                span(class="range-slider-wrap__min-number") 5 000&#8381;
+                span(class="range-slider-wrap__hyphen") -
+                span(class="range-slider-wrap__max-number") 10 000&#8381;
+        div(class="range-slider")
+            div(class="range-slider__circle range-slider__circle_first")
+            div(class="range-slider__gradient")
+            div(class="range-slider__circle range-slider__circle_second")
