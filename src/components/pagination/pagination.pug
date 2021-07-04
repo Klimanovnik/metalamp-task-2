@@ -1,0 +1,12 @@
+mixin pagination(paginationClassList, title)
+    - if(paginationClassList === undefined) {paginationClassList = "";}
+    div(class="pagination " + paginationClassList)
+        h3(class="pagination__title")= title
+        div(class="pagination__numbers")
+            button(class="pagination__number" type="button") 1
+            button(class="pagination__number" type="button") 2
+            button(class="pagination__number" type="button") 3
+            div(class="pagination__dots") &hellip;
+            button(class="pagination__number" type="button") 15
+            button(class="pagination__arrow" type="button")
+        div(class="pagination__text") 1 – 12 из 100+ вариантов аренды

@@ -1,0 +1,45 @@
+.large-button {
+    width: 320px;
+    height: 44px;
+    background: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
+    border-radius: 22px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    position: relative;
+}
+
+.large-button:hover {
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+}
+
+.large-button::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translate3d(0px, -50%, 0px);
+    width: 15px;
+    height: 2px;
+    background-color: #fff;
+    z-index: 3;
+}
+
+.large-button::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translate3d(0px, -50%, 0px) rotate(-45deg);
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    z-index: 3;
+}

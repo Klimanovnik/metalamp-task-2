@@ -1,3 +1,4 @@
+import "./form-elements.scss";
 import "./../../assets/fonts-src/fonts.js";
 import "./../../assets/reset-style/reset-style.js";
 import "./../../components/container-1440/container-1440.js";
@@ -15,4 +16,5 @@ import "./../../components/toggle/toggle.js";
 import "./../../components/like-button/like-button.js";
 import "./../../components/rate-button/rate-button.js";
 import "./../../components/range-slider/range-slider.js";
-import "./form-elements.scss";
+import "./../../components/buttons/buttons.js";
+import "./../../components/pagination/pagination.js";

@@ -1,0 +1,1 @@
+import "./no-bg-button.scss";

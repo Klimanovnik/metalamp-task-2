@@ -1,41 +1,43 @@
 /* subscription-text-field */
 
 .subscription-text-field {
-	width: 266px;
+    width: 266px;
     position: relative;
 }
 
 .subscription-text-field__title {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 700;
-	font-size: 12px;
-	line-height: 1.25;
-	text-transform: uppercase;
-	color: #1F2041;
-	padding: 5px 0px;
-	letter-spacing: 0.3px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: #1f2041;
+    padding: 5px 0px;
+    letter-spacing: 0.3px;
 }
 
 .subscription-text-field__field {
-	border: 1px solid rgba(31, 32, 65, 0.25);
-	border-radius: 4px;
-	padding: 13px 15px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    padding: 13px 15px;
     padding-right: 50px;
-	width: 100%;
-	font-family: "Montserrat", sans-serif;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 1.25;
-	color: rgba(31, 32, 65, 0.75);
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.25;
+    color: rgba(31, 32, 65, 0.75);
 }
 
 .subscription-text-field__field::placeholder {
-	color: rgba(31, 32, 65, 0.25);
-	font-weight: 300;
+    color: rgba(31, 32, 65, 0.25);
+    font-weight: 300;
 }
 
-.subscription-text-field__button:hover + .subscription-text-field__field, .subscription-text-field__field:hover, .subscription-text-field__field:focus {
-	border: 1px solid rgba(31, 32, 65, 0.5);
+.subscription-text-field__button:hover + .subscription-text-field__field,
+.subscription-text-field__field:hover,
+.subscription-text-field__field:focus {
+    border: 1px solid rgba(31, 32, 65, 0.5);
 }
 
 .subscription-text-field__button {
@@ -57,7 +59,7 @@
     transform: translate3d(-50%, -50%, 0px);
     width: 15px;
     height: 2px;
-    background-color: #BC9CFF;
+    background-color: #bc9cff;
 }
 
 .subscription-text-field__button::after {
@@ -69,7 +71,7 @@
     transform: translate3d(-50%, -50%, 0px) rotate(-45deg);
     width: 12px;
     height: 12px;
-    border: 2px solid #BC9CFF;
+    border: 2px solid #bc9cff;
     border-top: none;
     border-left: none;
 }

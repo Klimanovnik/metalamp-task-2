@@ -1,0 +1,40 @@
+.no-bg-button {
+    width: 99px;
+    height: 44px;
+    background: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
+    border-radius: 22px;
+    position: relative;
+}
+
+.no-bg-button:hover {
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+}
+
+.no-bg-button::after {
+    content: "";
+    display: block;
+    width: 95px;
+    height: 40px;
+    background: #fff;
+    border-radius: 20px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+}
+
+.no-bg-button__text {
+    width: 85px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #bc9cff;
+    z-index: 3;
+}
+
+
