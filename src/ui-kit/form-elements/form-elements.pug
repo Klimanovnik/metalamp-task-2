@@ -7,14 +7,14 @@ block content
     +header-with-pale-logo("container-1440")
     // main-content
     div(class="main-content")
-        div(class="main-content__inner container-1160")
-            div(class="flex-element")
-                form(class="form" action="#")
+        div(class="container-1160")
+            form(class="form" action="#")
+                div(class="form__flex-element")
                     include ./../../components/email-block/email-block.pug
                     +email-block("Text Field", "form__block")
                     +email-block("Text Field", "form__block")
                     include ./../../components/dropdown/dropdown.pug
-                    +dropdown("Dropdown", "form__block")
+                    +dropdown("form__block", "dropdown__list_invisible", "Dropdown", "Взрослые", "Дети", "Младенцы")
                     include ./../../components/date-field/date-field.pug
                     +date-field("Masked text field", "form__block")
                     include ./../../components/date-dropdown/date-dropdown.pug
@@ -24,8 +24,7 @@ block content
                     +filter-date-dropdown("Filter Date Dropdown", "form__block")
                     include ./../../components/subscription-text-field/subscription-text-field.pug
                     +subscription-text-field("Subscription text field", "form__block")
-            div(class="flex-element")
-                form(class="form" action="#")
+                div(class="form__flex-element")
                     include ./../../components/checkbox-buttons/checkbox-buttons.pug
                     +checkbox-buttons("Checkbox Buttons", "form__block")
                     include ./../../components/radio-buttons/radio-buttons.pug
@@ -36,11 +35,21 @@ block content
                     +like-button("form__block", "Like Button", "2", "12")
                     include ./../../components/rate-button/rate-button.pug
                     +rate-button("form__block", "Rate Button")
-            div(class="flex-element")
-                form(class="form" action="#")
+                div(class="form__flex-element")
                     include ./../../components/range-slider/range-slider.pug
                     +range-slider("form__block", "Range Slider")
                     include ./../../components/buttons/buttons.pug
                     +buttons("form__block", "Buttons")
                     include ./../../components/pagination/pagination.pug
                     +pagination("form__block", "Pagination")
+                div(class="form__flex-element")
+                    include ./../../components/small-dropdown/small-dropdown.pug
+                    +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
+                    +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
+                    include ./../../components/expandable-checkbox-list/expandable-checkbox-list.pug
+                    +expandable-checkbox-list("form__block", "expandable-checkbox-list__list_invisible", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
+                    +expandable-checkbox-list("form__block", "", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
+                div(class="form__flex-element")
+                    +dropdown("form__block", "", "Dropdown", "Взрослые", "Дети", "Младенцы")
+                div(class="form__flex-element")
+                    +dropdown("form__block", "", "Dropdown", "Взрослые", "Дети", "Младенцы")

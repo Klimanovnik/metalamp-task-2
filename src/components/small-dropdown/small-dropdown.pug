@@ -1,0 +1,11 @@
+mixin small-dropdown(smallDropdownWrapClassList, title, firstLine, secondLine, thirdLine)
+    -if (smallDropdownWrapClassList === undefined) {smallDropdownWrapClassList = "";}
+    div(class="small-dropdown-wrap " + smallDropdownWrapClassList)
+        h3(class="small-dropdown-wrap__title")= title
+        div(class="small-dropdown")
+            button(class="small-dropdown__button") Сколько спальных мест
+            div(class="small-dropdown__list small-dropdown__list_invisible")
+                include ./small-dropdown__line/small-dropdown__line.pug
+                +small-dropdown__line(firstLine, "2")
+                +small-dropdown__line(secondLine, "2")
+                +small-dropdown__line(thirdLine, "0")

@@ -12,6 +12,7 @@
     display: block;
     margin-bottom: 10px;
     position: relative;
+    cursor: pointer;
 }
 
 .toggle__label:last-child {
@@ -24,6 +25,7 @@
     top: 50%;
     transform: translateY(-50%);
     left: 10px;
+    cursor: pointer;
 }
 
 .toggle__checkbox::before {

@@ -1,0 +1,39 @@
+.expandable-checkbox-list {
+    width: 266px;
+}
+
+.expandable-checkbox-list__title {
+    height: 44px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #1f2041;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.expandable-checkbox-list__title::after {
+    content: "";
+	width: 10px;
+	height: 10px;
+	border: 2px solid rgba(31, 32, 65, 0.5);
+	border-right: none;
+	border-bottom: none;
+	position: absolute;
+	top: 50%;
+	right: 18px;
+	transform: translateY(-70%) rotate(-135deg);
+}
+
+.expandable-checkbox-list__list {
+    overflow: hidden;
+    height: 180px;
+    transition: height 0.3s;
+}
+
+.expandable-checkbox-list__list_invisible {
+    height: 0px;
+}
