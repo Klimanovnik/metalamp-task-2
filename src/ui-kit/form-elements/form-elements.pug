@@ -32,7 +32,16 @@ block content
                     include ./../../components/toggle/toggle.pug
                     +toggle("form__block", "Toggle", "Получать спецпредложения", "Получать спецпредложения")
                     include ./../../components/like-button/like-button.pug
-                    +like-button("form__block", "Like Button", "2", "12")
+                    +like-button({
+                        classList: "form__block",
+                        number: "2",
+                        active: false
+                    })
+                    +like-button({
+                        classList: "form__block",
+                        number: "12",
+                        active: true
+                    })
                     include ./../../components/rate-button/rate-button.pug
                     +rate-button("form__block", "Rate Button")
                 div(class="form__flex-element")
@@ -77,6 +86,23 @@ block content
                                 title: "Удобство",
                                 text: "Окно в каждой из спален",
                                 imgName: "home.svg"
+                            }
+                        ]
+                    })
+                div(class="form__flex-element form__flex-element_wide")
+                    include ./../../components/reviews/reviews.pug
+                    +reviews({
+                        classList: "form__block",
+                        items: [
+                            {
+                                imgName: "Мурад Сарафанов.jpg",
+                                user: "Мурад Сарафанов",
+                                dateString: "5 дней назад",
+                                text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                                likeOptions: {
+                                    number: "12",
+                                    active: true
+                                }
                             }
                         ]
                     })

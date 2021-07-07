@@ -22,3 +22,4 @@ import "./../../components/small-dropdown/small-dropdown.js";
 import "./../../components/expandable-checkbox-list/expandable-checkbox-list.js";
 import "./../../components/bullet-list/bullet-list.js";
 import "./../../components/icon-text-list/icon-text-list.js";
+import "./../../components/reviews/reviews.js";

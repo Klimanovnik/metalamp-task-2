@@ -12,7 +12,7 @@
 }
 
 .form__flex-element {
-    width: 30%;
+    width: 33%;
     @media (max-width: 1416px) {
         width: 50%;
     }
@@ -20,6 +20,13 @@
         width: 100%;
     }
     margin-bottom: 100px;
+}
+
+.form__flex-element_wide {
+    width: 66%;
+    @media (max-width: 1416px) {
+        width: 100%;
+    }
 }
 
 .form__block {

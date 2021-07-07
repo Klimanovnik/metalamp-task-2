@@ -1,0 +1,21 @@
+mixin reviews(parameters)
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    div(class="reviews " + parameters.classList)
+        mixin reviews__item(item)
+            div(class="reviews__item")
+                div(class="reviews__item-img-name")= item.imgName
+                img(class="reviews__item-img" src="#" alt="")
+                - if (item.user === undefined) {item.user = "Default User";}
+                h4(class="reviews__item-user")= item.user
+                - if (item.dateString === undefined) {item.dateString = "Default Date";}
+                h5(class="reviews__item-date")= item.dateString
+                - if (item.text === undefined) {item.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";}
+                p(class="reviews__item-text")= item.text
+                include ./../like-button/like-button.pug
+                - if (item.likeOptions === undefined) {item.likeOptions = {};}
+                - if (item.likeOptions.classList === undefined) {item.likeOptions.classList = "";}
+                - item.likeOptions.classList = item.likeOptions.classList + " reviews__item-like-button";
+                +like-button(item.likeOptions)
+        - if (parameters.items === undefined) {parameters.items = [{}];}
+        - for (let item of parameters.items)
+            +reviews__item(item)
