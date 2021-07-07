@@ -14,7 +14,7 @@ block content
                     +email-block("Text Field", "form__block")
                     +email-block("Text Field", "form__block")
                     include ./../../components/dropdown/dropdown.pug
-                    +dropdown("form__block", "dropdown__list_invisible", "Dropdown", "Взрослые", "Дети", "Младенцы")
+                    +dropdown("form__block", "", "Dropdown", "Взрослые", "Дети", "Младенцы")
                     include ./../../components/date-field/date-field.pug
                     +date-field("Masked text field", "form__block")
                     include ./../../components/date-dropdown/date-dropdown.pug
@@ -47,9 +47,36 @@ block content
                     +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
                     +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
                     include ./../../components/expandable-checkbox-list/expandable-checkbox-list.pug
-                    +expandable-checkbox-list("form__block", "expandable-checkbox-list__list_invisible", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
-                    +expandable-checkbox-list("form__block", "", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
+                    +expandable-checkbox-list("form__block", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
+                    +expandable-checkbox-list("form__block expandable-checkbox-list_active", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
                 div(class="form__flex-element")
-                    +dropdown("form__block", "", "Dropdown", "Взрослые", "Дети", "Младенцы")
+                    +dropdown("form__block", "dropdown_active", "Dropdown", "Взрослые", "Дети", "Младенцы")
                 div(class="form__flex-element")
-                    +dropdown("form__block", "", "Dropdown", "Взрослые", "Дети", "Младенцы")
+                    +dropdown("form__block", "dropdown_active", "Dropdown", "Взрослые", "Дети", "Младенцы")
+                    include ./../../components/bullet-list/bullet-list.pug
+                    +bullet-list({
+                        bulletListClassList: "form__block",
+                        title: "Bullet List",
+                        items: [
+                            "Нельзя с питомцами",
+                            "Без вечеринок и мероприятий",
+                            "Время прибытия — после 13:00, а выезд до 12:00"
+                        ]
+                    })
+                div(class="form__flex-element")
+                    include ./../../components/icon-text-list/icon-text-list.pug
+                    +icon-text-list({
+                        iconTextListClassList: "form__block",
+                        items: [
+                            {
+                                title: "Комфорт",
+                                text: "Шумопоглощающие стены",
+                                imgName: "smile.svg"
+                            },
+                            {
+                                title: "Удобство",
+                                text: "Окно в каждой из спален",
+                                imgName: "home.svg"
+                            }
+                        ]
+                    })

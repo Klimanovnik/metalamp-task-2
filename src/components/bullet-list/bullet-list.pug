@@ -1,0 +1,11 @@
+mixin bullet-list(options)
+    - if (options.bulletListClassList === undefined) {options.bulletListClassList = "";}
+    div(class="bullet-list " + options.bulletListClassList)
+        - if (options.title === undefined) {options.title = "";}
+        h3(class="bullet-list__title")= options.title
+        ul(class="bullet-list__list")
+            mixin bullet-list__item(text)
+                li(class="bullet-list__item")= text
+            - if (options.items === undefined) {options.items = ["Default item"];}
+            - for (let item of options.items)
+                +bullet-list__item(item)

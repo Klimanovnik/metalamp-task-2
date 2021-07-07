@@ -1,0 +1,12 @@
+mixin icon-text-list(parameters)
+    - if (parameters.iconTextListClassList === undefined) {parameters.iconTextListClassList = "";}
+    div(class="icon-text-list " + parameters.iconTextListClassList)
+        mixin icon-text-list__item(title, text, imgName)
+            div(class="icon-text-list__item")
+                - if (title === undefined) {title = "Default title";}
+                - if (text === undefined) {text = "Default text";}
+                h4(class="icon-text-list__item-title")= title
+                p(class="icon-text-list__item-text")= text
+                div(class="icon-text-list__item-img")= imgName
+        - for (let item of parameters.items)
+            +icon-text-list__item(item.title, item.text, item.imgName)

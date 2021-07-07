@@ -1,11 +1,11 @@
-mixin dropdown(dropdownWrapClassList, dropdownListClassList, title, firstLine, secondLine, thirdLine)
+mixin dropdown(dropdownWrapClassList, dropdownClassList, title, firstLine, secondLine, thirdLine)
     -if (dropdownWrapClassList === undefined) {dropdownWrapClassList = "";}
     div(class="dropdown-wrap " + dropdownWrapClassList)
         h3(class="dropdown-wrap__title")= title
-        div(class="dropdown")
-            button(class="dropdown__button") Сколько гостей
-            -if (dropdownListClassList === undefined) {dropdownListClassList = "";}
-            div(class="dropdown__list " + dropdownListClassList)
+        -if (dropdownClassList === undefined) {dropdownClassList = "";}
+        div(class="dropdown " + dropdownClassList)
+            button(class="dropdown__button" type="button") Сколько гостей
+            div(class="dropdown__list")
                 include ./dropdown__line/dropdown__line.pug
                 +dropdown__line(firstLine)
                 +dropdown__line(secondLine)

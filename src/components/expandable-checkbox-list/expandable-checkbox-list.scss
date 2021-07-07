@@ -17,23 +17,27 @@
 
 .expandable-checkbox-list__title::after {
     content: "";
-	width: 10px;
-	height: 10px;
-	border: 2px solid rgba(31, 32, 65, 0.5);
-	border-right: none;
-	border-bottom: none;
-	position: absolute;
-	top: 50%;
-	right: 18px;
-	transform: translateY(-70%) rotate(-135deg);
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(31, 32, 65, 0.5);
+    border-right: none;
+    border-bottom: none;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-70%) rotate(-135deg);
 }
 
 .expandable-checkbox-list__list {
     overflow: hidden;
-    height: 180px;
+    height: 0px;
     transition: height 0.3s;
 }
 
-.expandable-checkbox-list__list_invisible {
-    height: 0px;
+.expandable-checkbox-list_active .expandable-checkbox-list__list {
+    height: 180px;
+}
+
+.expandable-checkbox-list_active .expandable-checkbox-list__title::after {
+    transform: translateY(-20%) rotate(45deg);
 }

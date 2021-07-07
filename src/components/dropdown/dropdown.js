@@ -8,10 +8,7 @@ $(function () {
     // Dropdown Button
     $(".dropdown__button").on("click", function (event) {
         event.preventDefault();
-        $(this).toggleClass("dropdown__button_active");
-        let closestDropdown = $(this).closest(".dropdown");
-        closestDropdown.find(".dropdown__list").first().toggleClass("dropdown__list_invisible");
-        closestDropdown.toggleClass("dropdown_shadow");
+        $(this).closest(".dropdown").toggleClass("dropdown_active");
     });
 
     // Summation
@@ -67,9 +64,6 @@ $(function () {
 
     $(".dropdown__apply").on("click", function (event) {
         event.preventDefault();
-        let closestDropdown = $(this).closest(".dropdown");
-        closestDropdown.find(".dropdown__button").removeClass("dropdown__button_active");
-        closestDropdown.find(".dropdown__list").addClass("dropdown__list_invisible");
-        closestDropdown.removeClass("dropdown_shadow");
+        $(this).closest(".dropdown").removeClass("dropdown_active");
     });
 });

@@ -20,3 +20,5 @@ import "./../../components/buttons/buttons.js";
 import "./../../components/pagination/pagination.js";
 import "./../../components/small-dropdown/small-dropdown.js";
 import "./../../components/expandable-checkbox-list/expandable-checkbox-list.js";
+import "./../../components/bullet-list/bullet-list.js";
+import "./../../components/icon-text-list/icon-text-list.js";

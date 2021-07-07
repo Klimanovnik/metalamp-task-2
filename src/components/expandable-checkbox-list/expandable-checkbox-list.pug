@@ -1,9 +1,8 @@
-mixin expandable-checkbox-list(expandableCheckboxClassList1, expandableCheckboxClassList2, title, ...names)
-    - if (expandableCheckboxClassList1 === undefined) {expandableCheckboxClassList1 = "";}
-    div(class="expandable-checkbox-list " + expandableCheckboxClassList1)
+mixin expandable-checkbox-list(expandableCheckboxClassList, title, ...names)
+    - if (expandableCheckboxClassList === undefined) {expandableCheckboxClassList = "";}
+    div(class="expandable-checkbox-list " + expandableCheckboxClassList)
         h3(class="expandable-checkbox-list__title")= title
-        - if (expandableCheckboxClassList2 === undefined) {expandableCheckboxClassList2 = "";}
-        div(class="expandable-checkbox-list__list " + expandableCheckboxClassList2)
+        div(class="expandable-checkbox-list__list")
             include ./../checkbox/checkbox.pug
             each name in names
                 +checkbox(name)
