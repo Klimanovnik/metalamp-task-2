@@ -1,4 +1,3 @@
-import "./date-field.scss";
 import * as $ from "jquery";
 
 $(function () {

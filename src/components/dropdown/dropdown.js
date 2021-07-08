@@ -1,6 +1,3 @@
-import "./dropdown.scss";
-import "./dropdown__line/dropdown__line.js";
-import "./dropdown__apply-clear/dropdown__apply-clear.js";
 import * as $ from "jquery";
 
 $(function () {

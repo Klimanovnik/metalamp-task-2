@@ -1,1 +1,0 @@
-import "./../../assets/fonts-src/fonts.js";

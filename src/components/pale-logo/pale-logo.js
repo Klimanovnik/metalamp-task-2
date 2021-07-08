@@ -1,1 +1,0 @@
-import "./pale-logo.scss";

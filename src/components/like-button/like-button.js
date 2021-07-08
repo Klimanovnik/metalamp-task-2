@@ -1,4 +1,3 @@
-import "./like-button.scss";
 import * as $ from "jquery";
 
 $(function () {

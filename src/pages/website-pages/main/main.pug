@@ -1,0 +1,20 @@
+extends ./../../../assets/page-template.pug
+block title
+    title Main Page
+block content
+    div(class="main-page")
+        // header
+        include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
+        +header-with-pale-logo({
+            classList: "container-1440",
+            logoClassList: "pale-logo_dark"
+        })
+        // content
+        div(class="main-page__content")
+            ul(class="main-page__link-list")
+                li(class="main-page__link-list-item")
+                    h3(class="main-page__link-list-title") Страницы
+                li(class="main-page__link-list-item")
+                    a(class="main-page__link" href="pages/colors-and-type.html") Colors&amp;Type
+                li(class="main-page__link-list-item")
+                    a(class="main-page__link" href="pages/form-elements.html") Form Elements

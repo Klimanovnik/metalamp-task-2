@@ -1,0 +1,49 @@
+@import "./../../../assets/scss-color-variables.scss";
+
+.main-page {
+    height: 100%;
+    background: url("./img/bg.jpg") no-repeat;
+    background-size: cover;
+    min-height: 600px;
+}
+
+.main-page__content {
+    display: flex;
+    justify-content: center;
+}
+
+.main-page__link-list {
+    display: inline-block;
+    background: #fff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 10px 20px;
+    min-height: 400px;
+}
+
+.main-page__link-list-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    color: $purple;
+    font-weight: 700;
+}
+
+.main-page__link-list-item {
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.main-page__link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: $ds75;
+}
+
+.main-page__link:hover {
+    color: $ds100;
+}
+
+.main-page__link:active {
+    color: $green;
+}

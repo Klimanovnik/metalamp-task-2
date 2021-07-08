@@ -1,4 +1,3 @@
-import "./small-dropdown__line.scss";
 import * as $ from "jquery";
 
 $(function () {

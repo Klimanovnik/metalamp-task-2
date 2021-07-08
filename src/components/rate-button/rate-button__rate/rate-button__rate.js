@@ -1,4 +1,3 @@
-import "./rate-button__rate.scss";
 import * as $ from "jquery";
 
 $(function () {

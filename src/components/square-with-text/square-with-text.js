@@ -1,1 +1,0 @@
-import "./square-with-text.scss";

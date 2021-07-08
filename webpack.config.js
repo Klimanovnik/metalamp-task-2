@@ -34,9 +34,7 @@ module.exports = {
     context: path.resolve(__dirname, "src"),
     mode: "development",
     entry: {
-        "index": ["./website-pages/index/index.js"],
-        "colors-and-type": ["./ui-kit/colors-and-type/colors-and-type.js"],
-        "form-elements": ["./ui-kit/form-elements/form-elements.js"]
+        "bundle": ["./index.js"]
     },
     output: {
         path: path.resolve(__dirname, "app"),
@@ -50,24 +48,21 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css"
+            filename: "style.css"
         }),
         new HTMLWebpackPlugin({
-            template: "./website-pages/index/index.pug",
+            template: "./pages/website-pages/main/main.pug",
             filename: "index.html",
-            chunks: ["index"],
             minify: minifyFunction()
         }),
         new HTMLWebpackPlugin({
-            template: "./ui-kit/colors-and-type/colors-and-type.pug",
-            filename: "html/colors-and-type.html",
-            chunks: ["colors-and-type"],
+            template: "./pages/ui-kit/colors-and-type/colors-and-type.pug",
+            filename: "pages/colors-and-type.html",
             minify: minifyFunction()
         }),
         new HTMLWebpackPlugin({
-            template: "./ui-kit/form-elements/form-elements.pug",
-            filename: "html/form-elements.html",
-            chunks: ["form-elements"],
+            template: "./pages/ui-kit/form-elements/form-elements.pug",
+            filename: "pages/form-elements.html",
             minify: minifyFunction()
         })
     ],

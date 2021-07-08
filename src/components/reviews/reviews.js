@@ -1,5 +1,3 @@
-import "./reviews.scss";
-import "./../like-button/like-button.js";
 import * as $ from "jquery";
 
 function importAll(r) {

@@ -1,4 +1,3 @@
-import "./icon-text-list.scss";
 import * as $ from "jquery";
 
 function importAll(r) {
