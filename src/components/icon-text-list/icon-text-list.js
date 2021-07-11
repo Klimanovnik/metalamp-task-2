@@ -1,4 +1,4 @@
-import * as $ from "jquery";
+import "./icon-text-list.scss";
 
 function importAll(r) {
     let images = {};

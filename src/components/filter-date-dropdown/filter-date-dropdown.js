@@ -1,4 +1,4 @@
-import * as $ from "jquery";
+import "./filter-date-dropdown.scss";
 
 $(function () {
 

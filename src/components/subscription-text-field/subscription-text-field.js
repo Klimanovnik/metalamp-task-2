@@ -1,4 +1,4 @@
-import * as $ from "jquery";
+import "./subscription-text-field.scss";
 
 $(function () {
 

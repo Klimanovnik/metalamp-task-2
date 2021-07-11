@@ -1,4 +1,4 @@
-import * as $ from "jquery";
+import "./link-button.scss";
 
 $(function () {
 

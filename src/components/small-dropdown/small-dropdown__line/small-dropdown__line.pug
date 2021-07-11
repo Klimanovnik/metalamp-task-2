@@ -1,8 +1,0 @@
-mixin small-dropdown__line(title, number)
-    div(class="small-dropdown__line")
-        - if(title === undefined) {title = "Default Title";}
-        span(class="small-dropdown__line-title")= title
-        div(class="small-dropdown__counter")
-            button(class="small-dropdown__decrement small-dropdown__decrement_disabled") -
-            span(class="small-dropdown__number")= number
-            button(class="small-dropdown__increment") +

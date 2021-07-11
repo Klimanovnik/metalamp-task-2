@@ -1,3 +1,5 @@
+import "./range-slider.scss";
+
 let rangeSliderCircleArray = document.querySelectorAll(".range-slider__circle");
 
 for (let rangeSliderCircle of rangeSliderCircleArray) {

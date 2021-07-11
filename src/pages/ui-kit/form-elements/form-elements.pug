@@ -2,110 +2,109 @@ extends ./../../../assets/page-template.pug
 block title
     title Form Elements
 block content
-    div(class="form-elements")
-        // header
-        include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
-        +header-with-pale-logo({
-            classList: "container-1440"
-        })
-        // main-content
-        div(class="main-content")
-            div(class="container-1160")
-                form(class="form" action="#")
-                    div(class="form__flex-element")
-                        include ./../../../components/email-block/email-block.pug
-                        +email-block("Text Field", "form__block")
-                        +email-block("Text Field", "form__block")
-                        include ./../../../components/dropdown/dropdown.pug
-                        +dropdown("form__block", "", "Dropdown", "Взрослые", "Дети", "Младенцы")
-                        include ./../../../components/date-field/date-field.pug
-                        +date-field("Masked text field", "form__block")
-                        include ./../../../components/date-dropdown/date-dropdown.pug
-                        +date-dropdown("Date Dropdown", "form__inline-block")
-                        +date-dropdown("Date Dropdown", "form__inline-block")
-                        include ./../../../components/filter-date-dropdown/filter-date-dropdown.pug
-                        +filter-date-dropdown("Filter Date Dropdown", "form__block")
-                        include ./../../../components/subscription-text-field/subscription-text-field.pug
-                        +subscription-text-field("Subscription text field", "form__block")
-                    div(class="form__flex-element")
-                        include ./../../../components/checkbox-buttons/checkbox-buttons.pug
-                        +checkbox-buttons("Checkbox Buttons", "form__block")
-                        include ./../../../components/radio-buttons/radio-buttons.pug
-                        +radio-buttons("Radio Buttons", "Ваш пол", "Мужчина", "Женщина", "form__block")
-                        include ./../../../components/toggle/toggle.pug
-                        +toggle("form__block", "Toggle", "Получать спецпредложения", "Получать спецпредложения")
-                        include ./../../../components/like-button/like-button.pug
-                        +like-button({
-                            classList: "form__block",
-                            number: "2",
-                            active: false
-                        })
-                        +like-button({
-                            classList: "form__block",
-                            number: "12",
-                            active: true
-                        })
-                        include ./../../../components/rate-button/rate-button.pug
-                        +rate-button("form__block", "Rate Button")
-                    div(class="form__flex-element")
-                        include ./../../../components/range-slider/range-slider.pug
-                        +range-slider("form__block", "Range Slider")
-                        include ./../../../components/buttons/buttons.pug
-                        +buttons("form__block", "Buttons")
-                        include ./../../../components/pagination/pagination.pug
-                        +pagination("form__block", "Pagination")
-                    div(class="form__flex-element")
-                        include ./../../../components/small-dropdown/small-dropdown.pug
-                        +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
-                        +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
-                        include ./../../../components/expandable-checkbox-list/expandable-checkbox-list.pug
-                        +expandable-checkbox-list("form__block", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
-                        +expandable-checkbox-list("form__block expandable-checkbox-list_active", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
-                    div(class="form__flex-element")
-                        +dropdown("form__block", "dropdown_active", "Dropdown", "Взрослые", "Дети", "Младенцы")
-                    div(class="form__flex-element")
-                        +dropdown("form__block", "dropdown_active", "Dropdown", "Взрослые", "Дети", "Младенцы")
-                        include ./../../../components/bullet-list/bullet-list.pug
-                        +bullet-list({
-                            bulletListClassList: "form__block",
-                            title: "Bullet List",
-                            items: [
-                                "Нельзя с питомцами",
-                                "Без вечеринок и мероприятий",
-                                "Время прибытия — после 13:00, а выезд до 12:00"
-                            ]
-                        })
-                    div(class="form__flex-element")
-                        include ./../../../components/icon-text-list/icon-text-list.pug
-                        +icon-text-list({
-                            iconTextListClassList: "form__block",
-                            items: [
-                                {
-                                    title: "Комфорт",
-                                    text: "Шумопоглощающие стены",
-                                    imgName: "smile.svg"
-                                },
-                                {
-                                    title: "Удобство",
-                                    text: "Окно в каждой из спален",
-                                    imgName: "home.svg"
+    // header
+    include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
+    +header-with-pale-logo({
+        classList: "container-1440"
+    })
+    // main-content
+    div(class="main-content")
+        div(class="container-1160")
+            form(class="form" action="#")
+                div(class="form__flex-element")
+                    include ./../../../components/email-block/email-block.pug
+                    +email-block("Text Field", "form__block")
+                    +email-block("Text Field", "form__block")
+                    include ./../../../components/dropdown/dropdown.pug
+                    +dropdown("form__block", "", "Dropdown", "Взрослые", "Дети", "Младенцы")
+                    include ./../../../components/date-field/date-field.pug
+                    +date-field("Masked text field", "form__block")
+                    include ./../../../components/date-dropdown/date-dropdown.pug
+                    +date-dropdown("Date Dropdown", "form__inline-block")
+                    +date-dropdown("Date Dropdown", "form__inline-block")
+                    include ./../../../components/filter-date-dropdown/filter-date-dropdown.pug
+                    +filter-date-dropdown("Filter Date Dropdown", "form__block")
+                    include ./../../../components/subscription-text-field/subscription-text-field.pug
+                    +subscription-text-field("Subscription text field", "form__block")
+                div(class="form__flex-element")
+                    include ./../../../components/checkbox-buttons/checkbox-buttons.pug
+                    +checkbox-buttons("Checkbox Buttons", "form__block")
+                    include ./../../../components/radio-buttons/radio-buttons.pug
+                    +radio-buttons("Radio Buttons", "Ваш пол", "Мужчина", "Женщина", "form__block")
+                    include ./../../../components/toggle/toggle.pug
+                    +toggle("form__block", "Toggle", "Получать спецпредложения", "Получать спецпредложения")
+                    include ./../../../components/like-button/like-button.pug
+                    +like-button({
+                        classList: "form__block",
+                        number: "2",
+                        active: false
+                    })
+                    +like-button({
+                        classList: "form__block",
+                        number: "12",
+                        active: true
+                    })
+                    include ./../../../components/rate-button/rate-button.pug
+                    +rate-button("form__block", "Rate Button")
+                div(class="form__flex-element")
+                    include ./../../../components/range-slider/range-slider.pug
+                    +range-slider("form__block", "Range Slider")
+                    include ./../../../components/buttons/buttons.pug
+                    +buttons("form__block", "Buttons")
+                    include ./../../../components/pagination/pagination.pug
+                    +pagination("form__block", "Pagination")
+                div(class="form__flex-element")
+                    include ./../../../components/small-dropdown/small-dropdown.pug
+                    +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
+                    +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
+                    include ./../../../components/expandable-checkbox-list/expandable-checkbox-list.pug
+                    +expandable-checkbox-list("form__block", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
+                    +expandable-checkbox-list("form__block expandable-checkbox-list_active", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
+                div(class="form__flex-element")
+                    +dropdown("form__block", "dropdown_active", "Dropdown", "Взрослые", "Дети", "Младенцы")
+                div(class="form__flex-element")
+                    +dropdown("form__block", "dropdown_active", "Dropdown", "Взрослые", "Дети", "Младенцы")
+                    include ./../../../components/bullet-list/bullet-list.pug
+                    +bullet-list({
+                        bulletListClassList: "form__block",
+                        title: "Bullet List",
+                        items: [
+                            "Нельзя с питомцами",
+                            "Без вечеринок и мероприятий",
+                            "Время прибытия — после 13:00, а выезд до 12:00"
+                        ]
+                    })
+                div(class="form__flex-element")
+                    include ./../../../components/icon-text-list/icon-text-list.pug
+                    +icon-text-list({
+                        iconTextListClassList: "form__block",
+                        items: [
+                            {
+                                title: "Комфорт",
+                                text: "Шумопоглощающие стены",
+                                imgName: "smile.svg"
+                            },
+                            {
+                                title: "Удобство",
+                                text: "Окно в каждой из спален",
+                                imgName: "home.svg"
+                            }
+                        ]
+                    })
+                div(class="form__flex-element form__flex-element_wide")
+                    include ./../../../components/reviews/reviews.pug
+                    +reviews({
+                        classList: "form__block",
+                        items: [
+                            {
+                                imgName: "Мурад Сарафанов.jpg",
+                                user: "Мурад Сарафанов",
+                                dateString: "5 дней назад",
+                                text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                                likeOptions: {
+                                    number: "12",
+                                    active: true
                                 }
-                            ]
-                        })
-                    div(class="form__flex-element form__flex-element_wide")
-                        include ./../../../components/reviews/reviews.pug
-                        +reviews({
-                            classList: "form__block",
-                            items: [
-                                {
-                                    imgName: "Мурад Сарафанов.jpg",
-                                    user: "Мурад Сарафанов",
-                                    dateString: "5 дней назад",
-                                    text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
-                                    likeOptions: {
-                                        number: "12",
-                                        active: true
-                                    }
-                                }
-                            ]
-                        })
+                            }
+                        ]
+                    })

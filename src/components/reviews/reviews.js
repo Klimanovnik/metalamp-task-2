@@ -1,4 +1,4 @@
-import * as $ from "jquery";
+import "./reviews.scss";
 
 function importAll(r) {
     let images = {};

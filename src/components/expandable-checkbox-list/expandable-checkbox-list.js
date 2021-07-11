@@ -1,4 +1,5 @@
-import * as $ from "jquery";
+import "./expandable-checkbox-list.scss";
+import "./../checkbox/checkbox.js";
 
 $(function () {
 

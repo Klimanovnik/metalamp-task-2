@@ -6,9 +6,20 @@ mixin dropdown(dropdownWrapClassList, dropdownClassList, title, firstLine, secon
         div(class="dropdown " + dropdownClassList)
             button(class="dropdown__button" type="button") Сколько гостей
             div(class="dropdown__list")
-                include ./dropdown__line/dropdown__line.pug
+                mixin dropdown__line(title)
+                    div(class="dropdown__line")
+                        - if(title === undefined) {title = "Default Title";}
+                        span(class="dropdown__line-title")= title
+                        div(class="dropdown__counter")
+                            button(class="dropdown__decrement dropdown__decrement_disabled") -
+                            span(class="dropdown__number") 0
+                            button(class="dropdown__increment") +
                 +dropdown__line(firstLine)
                 +dropdown__line(secondLine)
                 +dropdown__line(thirdLine)
-                include ./dropdown__apply-clear/dropdown__apply-clear.pug
+                mixin dropdown__apply-clear(classList)
+                    -if (classList === undefined) {classList = "";}
+                    div(class="dropdown__apply-clear " + classList)
+                        button(class="dropdown__clear dropdown__clear_invisible") Очистить
+                        button(class="dropdown__apply") Применить
                 +dropdown__apply-clear()
