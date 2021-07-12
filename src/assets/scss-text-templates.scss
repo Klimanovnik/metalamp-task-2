@@ -1,0 +1,46 @@
+@import "./scss-color-variables.scss";
+
+$custom-font-family: "Montserrat", sans-serif;
+$custom-letter-spacing: 0.3px;
+$custom-line-height: 1.25;
+
+%h1 {
+    font-family: $custom-font-family;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: $custom-line-height;
+    color: $ds100;
+    letter-spacing: $custom-letter-spacing;
+}
+
+%h2 {
+    font-family: $custom-font-family;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: $custom-line-height;
+    color: $ds100;
+    letter-spacing: $custom-letter-spacing;
+}
+
+%h3 {
+    font-family: $custom-font-family;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: $custom-line-height;
+    text-transform: uppercase;
+    color: $ds100;
+    letter-spacing: $custom-letter-spacing;
+}
+
+%body {
+    font-family: $custom-font-family;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.7;
+    color: $ds75;
+    letter-spacing: 0.1px;
+}

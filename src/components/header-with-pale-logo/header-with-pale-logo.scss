@@ -9,13 +9,12 @@
     width: 48px;
     height: 48px;
     font-size: 0px;
-    fill: $ds100;
-    fill-opacity: 0.25;
+    fill: $ds25;
     position: absolute;
     top: 30px;
     left: 30px;
 }
 
 .pale-logo_dark {
-    fill-opacity: 0.75;
+    fill: $ds75;
 }

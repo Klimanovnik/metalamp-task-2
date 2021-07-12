@@ -1,9 +1,11 @@
 @import "./../../../assets/scss-color-variables.scss";
+@import "./../../../assets/scss-text-templates.scss";
 
 .wrap {
     height: 100%;
     background: url("./img/bg.jpg") no-repeat;
     background-size: cover;
+    background-position: center;
     min-height: 600px;
 }
 
@@ -13,7 +15,7 @@
 }
 
 .link-list {
-    display: inline-block;
+    max-width: 300px;
     background: #fff;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -22,10 +24,9 @@
 }
 
 .link-list__title {
-    font-family: "Montserrat", sans-serif;
-    font-size: 40px;
+    @extend %h1;
+    font-size: 36px;
     color: $purple;
-    font-weight: 700;
 }
 
 .link-list__item {
@@ -34,10 +35,9 @@
 }
 
 .link-list__link {
-    font-family: "Montserrat", sans-serif;
-    font-size: 36px;
-    font-weight: 300;
-    color: $ds75;
+    @extend %body;
+    font-size: 32px;
+    line-height: 0.8;
 }
 
 .link-list__link:hover {
