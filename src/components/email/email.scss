@@ -1,0 +1,30 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+/* email */
+
+.email {
+    max-width: 320px;
+}
+
+.email__title {
+    @extend %h3;
+    line-height: 2;
+}
+
+.email__field {
+    @extend %body;
+    border: 1px solid $ds25;
+    border-radius: 4px;
+    padding: 9.5px 15px;
+    width: 100%;
+}
+
+.email__field::placeholder {
+    color: $ds25;
+}
+
+.email__field:hover,
+.email__field:focus {
+    border: 1px solid $ds50;
+}

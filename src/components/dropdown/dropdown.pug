@@ -1,25 +1,28 @@
-mixin dropdown(dropdownWrapClassList, dropdownClassList, title, firstLine, secondLine, thirdLine)
-    -if (dropdownWrapClassList === undefined) {dropdownWrapClassList = "";}
-    div(class="dropdown-wrap " + dropdownWrapClassList)
-        h3(class="dropdown-wrap__title")= title
-        -if (dropdownClassList === undefined) {dropdownClassList = "";}
-        div(class="dropdown " + dropdownClassList)
-            button(class="dropdown__button" type="button") Сколько гостей
+mixin dropdown(parameters)
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    - if (parameters.isSmall === true) {parameters.classList = parameters.classList + " dropdown-wrap_small";}
+    div(class="dropdown-wrap " + parameters.classList)
+        h3(class="dropdown-title")= parameters.title
+        - let dropdownActive = "";
+        - if (parameters.active === true) {dropdownActive = "dropdown_active";}
+        div(class="dropdown " + dropdownActive)
+            button(class="dropdown__button" type="button")= parameters.buttonText
             div(class="dropdown__list")
-                mixin dropdown__line(title)
+                mixin dropdown__line(line)
                     div(class="dropdown__line")
-                        - if(title === undefined) {title = "Default Title";}
-                        span(class="dropdown__line-title")= title
+                        - if (line.text === undefined) {line.text = "Текст";}
+                        - if (line.number === undefined) {line.number = "0";}
+                        span(class="dropdown__line-text")= line.text
                         div(class="dropdown__counter")
-                            button(class="dropdown__decrement dropdown__decrement_disabled") -
-                            span(class="dropdown__number") 0
-                            button(class="dropdown__increment") +
-                +dropdown__line(firstLine)
-                +dropdown__line(secondLine)
-                +dropdown__line(thirdLine)
-                mixin dropdown__apply-clear(classList)
-                    -if (classList === undefined) {classList = "";}
-                    div(class="dropdown__apply-clear " + classList)
-                        button(class="dropdown__clear dropdown__clear_invisible") Очистить
-                        button(class="dropdown__apply") Применить
-                +dropdown__apply-clear()
+                            button(class="dropdown__decrement" type="button") -
+                            span(class="dropdown__number")= line.number
+                            button(class="dropdown__increment" type="button") +
+                - if (parameters.lines === undefined || parameters.lines.length === 0) {parameters.lines = [{}];}
+                - for (let line of parameters.lines)
+                    +dropdown__line(line)
+                mixin dropdown__apply-clear()
+                    div(class="dropdown__apply-clear")
+                        button(class="dropdown__clear dropdown__clear_visible" type="button") Очистить
+                        button(class="dropdown__apply" type="button") Применить
+                - if (parameters.applyClear === true)
+                    +dropdown__apply-clear()

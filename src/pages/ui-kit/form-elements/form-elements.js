@@ -7,8 +7,10 @@ import "./form-elements.scss";
 import "./../../../components/header-with-pale-logo/header-with-pale-logo.js";
 import "./../../../components/_container-1440/container-1440.js";
 import "./../../../components/_container-1160/container-1160.js";
-import "./../../../components/email-block/email-block.js";
+import "./../../../components/email/email.js";
 import "./../../../components/dropdown/dropdown.js";
+
+
 import "./../../../components/date-field/date-field.js";
 import "./../../../components/date-dropdown/date-dropdown.js";
 import "./../../../components/filter-date-dropdown/filter-date-dropdown.js";

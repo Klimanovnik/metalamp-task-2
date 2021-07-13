@@ -7,16 +7,43 @@ block content
     +header-with-pale-logo({
         classList: "container-1440"
     })
-    // main-content
-    div(class="main-content")
+    // content
+    div(class="content")
         div(class="container-1160")
             form(class="form" action="#")
-                div(class="form__flex-element")
-                    include ./../../../components/email-block/email-block.pug
-                    +email-block("Text Field", "form__block")
-                    +email-block("Text Field", "form__block")
+                section(class="form__flex-element")
+                    include ./../../../components/email/email.pug
+                    +email({
+                        classList: "margin-bottom_15",
+                        title: "Text Field"
+                    })
+                    +email({
+                        classList: "margin-bottom_15",
+                        title: "Text Field"
+                    })
                     include ./../../../components/dropdown/dropdown.pug
-                    +dropdown("form__block", "", "Dropdown", "Взрослые", "Дети", "Младенцы")
+                    +dropdown({
+                        classList: "margin-bottom_15",
+                        isSmall: false,
+                        title: "Dropdown",
+                        active: true,
+                        buttonText: "Апартаменты",
+                        applyClear: true,
+                        lines: [
+                            {
+                                text: "Спальни",
+                                number: "2"
+                            },
+                            {
+                                text: "Кровати",
+                                number: "2"
+                            },
+                            {
+                                text: "Ванные Комнаты",
+                                number: "0"
+                            }
+                        ]
+                    })
                     include ./../../../components/date-field/date-field.pug
                     +date-field("Masked text field", "form__block")
                     include ./../../../components/date-dropdown/date-dropdown.pug
@@ -26,7 +53,7 @@ block content
                     +filter-date-dropdown("Filter Date Dropdown", "form__block")
                     include ./../../../components/subscription-text-field/subscription-text-field.pug
                     +subscription-text-field("Subscription text field", "form__block")
-                div(class="form__flex-element")
+                section(class="form__flex-element")
                     include ./../../../components/checkbox-buttons/checkbox-buttons.pug
                     +checkbox-buttons("Checkbox Buttons", "form__block")
                     include ./../../../components/radio-buttons/radio-buttons.pug
@@ -46,24 +73,22 @@ block content
                     })
                     include ./../../../components/rate-button/rate-button.pug
                     +rate-button("form__block", "Rate Button")
-                div(class="form__flex-element")
+                section(class="form__flex-element")
                     include ./../../../components/range-slider/range-slider.pug
                     +range-slider("form__block", "Range Slider")
                     include ./../../../components/buttons/buttons.pug
                     +buttons("form__block", "Buttons")
                     include ./../../../components/pagination/pagination.pug
                     +pagination("form__block", "Pagination")
-                div(class="form__flex-element")
+                section(class="form__flex-element")
                     include ./../../../components/small-dropdown/small-dropdown.pug
                     +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
                     +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
                     include ./../../../components/expandable-checkbox-list/expandable-checkbox-list.pug
                     +expandable-checkbox-list("form__block", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
                     +expandable-checkbox-list("form__block expandable-checkbox-list_active", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
-                div(class="form__flex-element")
-                    +dropdown("form__block", "dropdown_active", "Dropdown", "Взрослые", "Дети", "Младенцы")
-                div(class="form__flex-element")
-                    +dropdown("form__block", "dropdown_active", "Dropdown", "Взрослые", "Дети", "Младенцы")
+                section(class="form__flex-element")
+                section(class="form__flex-element")
                     include ./../../../components/bullet-list/bullet-list.pug
                     +bullet-list({
                         bulletListClassList: "form__block",
@@ -74,7 +99,7 @@ block content
                             "Время прибытия — после 13:00, а выезд до 12:00"
                         ]
                     })
-                div(class="form__flex-element")
+                section(class="form__flex-element")
                     include ./../../../components/icon-text-list/icon-text-list.pug
                     +icon-text-list({
                         iconTextListClassList: "form__block",
@@ -91,7 +116,7 @@ block content
                             }
                         ]
                     })
-                div(class="form__flex-element form__flex-element_wide")
+                section(class="form__flex-element form__flex-element_wide")
                     include ./../../../components/reviews/reviews.pug
                     +reviews({
                         classList: "form__block",
