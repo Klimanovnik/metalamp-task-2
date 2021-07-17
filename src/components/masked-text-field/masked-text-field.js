@@ -1,8 +1,10 @@
-import "./date-field.scss";
+import "./masked-text-field.scss";
 
 $(function () {
 
-    $(".date-field__field").on("input", function () {
+    $(".masked-text-field__field").on("input", function () {
+        let currentParent = $(this).closest(".masked-text-field");
+
         if (this.value.length > 10) {
             this.value = this.value.slice(0, 10);
         }
@@ -11,16 +13,14 @@ $(function () {
 
         for (let letter of this.value) {
             if (isNaN(letter) && letter != ".") {
-                $(this).addClass("date-field__field_error");
-                $(this).closest(".date-field").find(".date-field__error-message").removeClass("date-field__error-message_disabled");
+                currentParent.addClass("masked-text-field_error");
                 isOnlyNumberLetters = false;
                 break;
             }
         }
 
         if (this.value.length === 0 || isOnlyNumberLetters) {
-            $(this).removeClass("date-field__field_error");
-            $(this).closest(".date-field").find(".date-field__error-message").addClass("date-field__error-message_disabled");
+            currentParent.removeClass("masked-text-field_error");
         }
 
         if (this.value.length === 3) {

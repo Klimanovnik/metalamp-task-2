@@ -44,8 +44,11 @@ block content
                             }
                         ]
                     })
-                    include ./../../../components/date-field/date-field.pug
-                    +date-field("Masked text field", "form__block")
+                    include ./../../../components/masked-text-field/masked-text-field.pug
+                    +masked-text-field({
+                        classList: "margin-bottom_15",
+                        title: "Masked text field"
+                    })
                     include ./../../../components/date-dropdown/date-dropdown.pug
                     +date-dropdown("Date Dropdown", "form__inline-block")
                     +date-dropdown("Date Dropdown", "form__inline-block")

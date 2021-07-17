@@ -1,0 +1,68 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+/* masked-text-field */
+
+.masked-text-field {
+    max-width: 320px;
+    min-width: 266px;
+}
+
+.masked-text-field__title {
+    @extend %h3;
+    line-height: 2.5;
+}
+
+.masked-text-field__field {
+    @extend %body;
+    border: 1px solid $ds25;
+    border-radius: 4px;
+    padding: 9.5px 15px;
+    width: 100%;
+}
+
+.masked-text-field__field::placeholder {
+    color: $ds25;
+}
+
+.masked-text-field__field:hover,
+.masked-text-field__field:focus {
+    border: 1px solid $ds50;
+}
+
+.masked-text-field__error-message {
+    @extend %body;
+    line-height: 1.25;
+    font-weight: 400;
+    display: none;
+    background-color: #ffefef;
+    border: 1px solid #f86868;
+    padding: 10px;
+    position: relative;
+    top: 14px;
+    left: 0px;
+    z-index: 1;
+}
+
+.masked-text-field__error-message::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #ffefef;
+    border: 1px solid #f86868;
+    border-left: none;
+    border-bottom: none;
+    position: absolute;
+    top: -10.8px;
+    left: 30px;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.masked-text-field_error .masked-text-field__field {
+    border-color: #f86868;
+}
+
+.masked-text-field_error .masked-text-field__error-message {
+    display: block;
+}

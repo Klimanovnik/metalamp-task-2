@@ -1,6 +1,0 @@
-mixin date-field(title, classList1)
-    -if (classList1 === undefined) {classList1 = "";}
-    div(class="date-field " + classList1)
-        h3(class="date-field__title")= title
-        input(class="date-field__field" type="text" placeholder="ДД.ММ.ГГГГ")
-        div(class="date-field__error-message date-field__error-message_disabled") Внимание, поле с датой не должно содержать нечисловых символов !
