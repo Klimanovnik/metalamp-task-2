@@ -24,6 +24,10 @@
     width: 100%;
 }
 
+.dropdown__invisible-button-text {
+    display: none;
+}
+
 .dropdown__button {
     @extend %body;
     border: 1px solid $ds25;

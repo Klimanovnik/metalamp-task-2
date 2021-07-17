@@ -6,6 +6,7 @@ mixin dropdown(parameters)
         - let dropdownActive = "";
         - if (parameters.active === true) {dropdownActive = "dropdown_active";}
         div(class="dropdown " + dropdownActive)
+            div(class="dropdown__invisible-button-text")= parameters.buttonText
             button(class="dropdown__button" type="button")= parameters.buttonText
             div(class="dropdown__list")
                 mixin dropdown__line(line)

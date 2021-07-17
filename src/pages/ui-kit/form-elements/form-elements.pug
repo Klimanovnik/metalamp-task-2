@@ -26,20 +26,20 @@ block content
                         classList: "margin-bottom_15",
                         isSmall: false,
                         title: "Dropdown",
-                        active: true,
-                        buttonText: "Апартаменты",
+                        active: false,
+                        buttonText: "Сколько гостей",
                         applyClear: true,
                         lines: [
                             {
-                                text: "Спальни",
-                                number: "2"
+                                text: "Взрослые",
+                                number: "0"
                             },
                             {
-                                text: "Кровати",
-                                number: "2"
+                                text: "Дети",
+                                number: "0"
                             },
                             {
-                                text: "Ванные Комнаты",
+                                text: "Младенцы",
                                 number: "0"
                             }
                         ]
@@ -81,9 +81,6 @@ block content
                     include ./../../../components/pagination/pagination.pug
                     +pagination("form__block", "Pagination")
                 section(class="form__flex-element")
-                    include ./../../../components/small-dropdown/small-dropdown.pug
-                    +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
-                    +small-dropdown("form__block", "Dropdown", "спальни", "кровати", "ванные комнаты")
                     include ./../../../components/expandable-checkbox-list/expandable-checkbox-list.pug
                     +expandable-checkbox-list("form__block", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
                     +expandable-checkbox-list("form__block expandable-checkbox-list_active", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
