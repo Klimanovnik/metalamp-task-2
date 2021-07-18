@@ -12,21 +12,8 @@
 }
 
 .form__flex-element {
-    width: 33%;
-    @media (max-width: 1416px) {
-        width: 50%;
-    }
-    @media (max-width: 960px) {
-        width: 100%;
-    }
+    width: 320px;
     margin-bottom: 100px;
-}
-
-.form__flex-element_wide {
-    width: 66%;
-    @media (max-width: 1416px) {
-        width: 100%;
-    }
 }
 
 .margin-bottom_15 {
@@ -37,6 +24,18 @@
     margin-bottom: 35px;
 }
 
-.margin-right_20 {
-    margin-right: 20px;
+.margin-bottom_100 {
+    margin-bottom: 100px;
+}
+
+.margin-right_15 {
+    margin-right: 15px;
+}
+
+.margin-left_54 {
+    margin-left: 54px;
+}
+
+.margin-left_50 {
+    margin-left: 50px;
 }

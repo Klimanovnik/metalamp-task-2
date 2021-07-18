@@ -1,8 +1,7 @@
-mixin expandable-checkbox-list(expandableCheckboxClassList, title, ...names)
-    - if (expandableCheckboxClassList === undefined) {expandableCheckboxClassList = "";}
-    div(class="expandable-checkbox-list " + expandableCheckboxClassList)
-        h3(class="expandable-checkbox-list__title")= title
+mixin expandable-checkbox-list(parameters)
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    div(class="expandable-checkbox-list " + parameters.classList)
+        h3(class="expandable-checkbox-list__title")= parameters.title
         div(class="expandable-checkbox-list__list")
             include ./../checkbox/checkbox.pug
-            each name in names
-                +checkbox(name)
+            +checkbox(parameters.checkbox)

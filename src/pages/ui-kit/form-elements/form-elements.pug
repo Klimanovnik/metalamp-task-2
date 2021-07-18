@@ -51,7 +51,7 @@ block content
                     })
                     include ./../../../components/date-dropdown/date-dropdown.pug
                     +date-dropdown({
-                        classList: "margin-bottom_35 margin-right_20",
+                        classList: "margin-bottom_35 margin-right_15",
                         title: "Date Dropdown"
                     })
                     +date-dropdown({
@@ -67,9 +67,27 @@ block content
                     +subscription-text-field({
                         title: "Subscription text field"
                     })
-                section(class="form__flex-element")
-                    include ./../../../components/checkbox-buttons/checkbox-buttons.pug
-                    +checkbox-buttons("Checkbox Buttons", "form__block")
+                section(class="form__flex-element margin-left_54")
+                    include ./../../../components/checkbox/checkbox.pug
+                    +checkbox({
+                        classList: "margin-bottom_35",
+                        title: "Checkbox Buttons",
+                        isSmall: true,
+                        items: [
+                            {
+                                text: "Можно курить",
+                                active: false
+                            },
+                            {
+                                text: "Можно с питомцами",
+                                active: true
+                            },
+                            {
+                                text: "Можно пригласить гостей (до 10 человек)",
+                                active: true
+                            }
+                        ]
+                    })
                     include ./../../../components/radio-buttons/radio-buttons.pug
                     +radio-buttons("Radio Buttons", "Ваш пол", "Мужчина", "Женщина", "form__block")
                     include ./../../../components/toggle/toggle.pug
@@ -95,11 +113,147 @@ block content
                     include ./../../../components/pagination/pagination.pug
                     +pagination("form__block", "Pagination")
                 section(class="form__flex-element")
+                    +dropdown({
+                        classList: "margin-bottom_15",
+                        isSmall: true,
+                        title: "Dropdown",
+                        active: false,
+                        buttonText: "Апартаменты",
+                        applyClear: false,
+                        lines: [
+                            {
+                                text: "Спальни",
+                                number: "2"
+                            },
+                            {
+                                text: "Кровати",
+                                number: "2"
+                            },
+                            {
+                                text: "Ванные Комнаты",
+                                number: "0"
+                            }
+                        ]
+                    })
+                    +dropdown({
+                        classList: "margin-bottom_15",
+                        isSmall: true,
+                        title: "Dropdown",
+                        active: true,
+                        buttonText: "Апартаменты",
+                        applyClear: false,
+                        lines: [
+                            {
+                                text: "Спальни",
+                                number: "2"
+                            },
+                            {
+                                text: "Кровати",
+                                number: "2"
+                            },
+                            {
+                                text: "Ванные Комнаты",
+                                number: "0"
+                            }
+                        ]
+                    })
                     include ./../../../components/expandable-checkbox-list/expandable-checkbox-list.pug
-                    +expandable-checkbox-list("form__block", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
-                    +expandable-checkbox-list("form__block expandable-checkbox-list_active", "Expandable Checkbox List", "Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь")
+                    +expandable-checkbox-list({
+                        classList: "margin-bottom_100",
+                        title: "Expandable Checkbox List",
+                        checkbox: {
+                            items: [
+                                {
+                                    text: "Завтрак",
+                                    active: false
+                                },
+                                {
+                                    text: "Письменный стол",
+                                    active: true
+                                },
+                                {
+                                    text: "Стул для кормления",
+                                    active: true
+                                },
+                                {
+                                    text: "Кроватка",
+                                    active: true
+                                },
+                                {
+                                    text: "Телевизор",
+                                    active: false
+                                },
+                                {
+                                    text: "Шампунь",
+                                    active: false
+                                }
+                            ]
+                        }
+                    })
+                section(class="form__flex-element margin-left_50")
+                    +dropdown({
+                        classList: "margin-bottom_100",
+                        isSmall: false,
+                        title: "Dropdown",
+                        active: true,
+                        buttonText: "Сколько гостей",
+                        applyClear: true,
+                        lines: [
+                            {
+                                text: "Взрослые",
+                                number: "0"
+                            },
+                            {
+                                text: "Дети",
+                                number: "0"
+                            },
+                            {
+                                text: "Младенцы",
+                                number: "0"
+                            }
+                        ]
+                    })
+                    +checkbox({
+                        classList: "margin-bottom_35",
+                        title: "Rich Checkbox Buttons",
+                        isSmall: false,
+                        isSmallText: true,
+                        items: [
+                            {
+                                title: "Широкий коридор",
+                                text: "Ширина коридоров в номере не менее 91 см",
+                                active: false
+                            },
+                            {
+                                title: "Помощник для инвалидов",
+                                text: "На 1 этаже вас встретит специалист  и проводит до номера",
+                                active: false
+                            }
+                        ]
+                    })
                 section(class="form__flex-element")
-                section(class="form__flex-element")
+                    +dropdown({
+                        classList: "margin-bottom_100",
+                        isSmall: false,
+                        title: "Dropdown",
+                        active: true,
+                        buttonText: "Сколько гостей",
+                        applyClear: true,
+                        lines: [
+                            {
+                                text: "Взрослые",
+                                number: "2"
+                            },
+                            {
+                                text: "Дети",
+                                number: "1"
+                            },
+                            {
+                                text: "Младенцы",
+                                number: "0"
+                            }
+                        ]
+                    })
                     include ./../../../components/bullet-list/bullet-list.pug
                     +bullet-list({
                         bulletListClassList: "form__block",
@@ -127,7 +281,7 @@ block content
                             }
                         ]
                     })
-                section(class="form__flex-element form__flex-element_wide")
+                section(class="form__flex-element")
                     include ./../../../components/reviews/reviews.pug
                     +reviews({
                         classList: "form__block",

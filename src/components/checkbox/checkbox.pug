@@ -1,4 +1,18 @@
-mixin checkbox(text)
-    label(class="checkbox")
-        input(class="checkbox__button" type="checkbox" name=text value="Yes")
-        span(class="checkbox__text")= text
+mixin checkbox(parameters)
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    - if (parameters.isSmall === true) {parameters.classList = parameters.classList + " checkbox_small";}
+    - parameters.textClassList = "";
+    - if (parameters.isSmallText === true) {parameters.textClassList = "checkbox__item-text_small";}
+    div(class="checkbox " + parameters.classList)
+        h3(class="checkbox__title")= parameters.title
+        mixin checkbox__item(item)
+            label(class="checkbox__item")
+                - if (item.active != true) {item.active = false;}
+                - if (item.text === undefined) {item.text = "Default Text";}
+                h4(class="checkbox__item-title")= item.title
+                input(class="checkbox__item-button" type="checkbox" name=item.text value="Yes" checked=item.active)
+                div(class="checkbox__item-check")
+                span(class="checkbox__item-text " + parameters.textClassList)= item.text
+        - if (parameters.items === undefined) {parameters.items = [{}];}
+        - for (let item of parameters.items)
+            +checkbox__item(item)
