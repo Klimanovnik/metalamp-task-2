@@ -33,18 +33,10 @@
     margin-bottom: 15px;
 }
 
-.form__inline-block {
-    display: inline-block;
-    margin-bottom: 15px;
-    margin-right: 20px;
-    @media (max-width: 365px) {
-        margin-right: 10px;
-    }
-    @media (max-width: 350px) {
-        margin-right: 0px;
-    }
+.margin-bottom_35 {
+    margin-bottom: 35px;
 }
 
-.form__inline-block:last-child {
-    margin-right: 0px;
+.margin-right_20 {
+    margin-right: 20px;
 }

@@ -1,6 +1,5 @@
-mixin date-dropdown(title, dateDropdownWrapClassList)
-    -if (dateDropdownWrapClassList === undefined) {dateDropdownWrapClassList = "";}
-    div(class="date-dropdown-wrap " + dateDropdownWrapClassList)
-        h3(class="date-dropdown-wrap__title")= title
-        div(class="date-dropdown")
-            button(class="date-dropdown__button") ДД.ММ.ГГГГ
+mixin date-dropdown(parameters)
+    -if (parameters.classList === undefined) {parameters.classList = "";}
+    div(class="date-dropdown " + parameters.classList)
+        h3(class="date-dropdown__title")= parameters.title
+        button(class="date-dropdown__button" type="button") ДД.ММ.ГГГГ
