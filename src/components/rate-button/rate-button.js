@@ -1,12 +1,12 @@
 import "./rate-button.scss";
 
 $(function () {
-    
+
     $(".rate-button__stars").on("click", function (event) {
         event.preventDefault();
         let isStarActive = $(this).hasClass("rate-button__stars_active");
 
-        if(isStarActive) {
+        if (isStarActive) {
             $(this).nextAll().removeClass("rate-button__stars_active");
             $(this).removeClass("rate-button__stars_active");
         } else {

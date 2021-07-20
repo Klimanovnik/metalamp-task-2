@@ -70,7 +70,7 @@ block content
                 section(class="form__flex-element margin-left_54")
                     include ./../../../components/checkbox/checkbox.pug
                     +checkbox({
-                        classList: "margin-bottom_35",
+                        classList: "margin-bottom_20",
                         title: "Checkbox Buttons",
                         isSmall: true,
                         items: [
@@ -89,22 +89,56 @@ block content
                         ]
                     })
                     include ./../../../components/radio-buttons/radio-buttons.pug
-                    +radio-buttons("Radio Buttons", "Ваш пол", "Мужчина", "Женщина", "form__block")
+                    +radio-buttons({
+                        classList: "margin-bottom_40",
+                        title: "Radio Buttons",
+                        nameOfGroup: "Ваш пол",
+                        items: [
+                            {
+                                text: "Мужчина",
+                                active: true
+                            },
+                            {
+                                text: "Женщина",
+                                active: false
+                            }
+                        ]
+                    })
                     include ./../../../components/toggle/toggle.pug
-                    +toggle("form__block", "Toggle", "Получать спецпредложения", "Получать спецпредложения")
+                    +toggle({
+                        classList: "margin-bottom_20",
+                        title: "Toggle",
+                        items: [
+                            {
+                                text: "Получать спецпредложения",
+                                active: true
+                            },
+                            {
+                                text: "Получать спецпредложения",
+                                active: false
+                            }
+                        ]
+                    })
                     include ./../../../components/like-button/like-button.pug
                     +like-button({
-                        classList: "form__block",
-                        number: "2",
-                        active: false
-                    })
-                    +like-button({
-                        classList: "form__block",
-                        number: "12",
-                        active: true
+                        classList: "margin-bottom_25",
+                        title: "Like Button",
+                        items: [
+                            {
+                                number: "2",
+                                active: false
+                            },
+                            {
+                                number: "12",
+                                active: true
+                            }
+                        ]
                     })
                     include ./../../../components/rate-button/rate-button.pug
-                    +rate-button("form__block", "Rate Button")
+                    +rate-button({
+                        title: "Rate Button",
+                        items: [4, 5]
+                    })
                 section(class="form__flex-element")
                     include ./../../../components/range-slider/range-slider.pug
                     +range-slider("form__block", "Range Slider")
@@ -216,7 +250,6 @@ block content
                     +checkbox({
                         classList: "margin-bottom_35",
                         title: "Rich Checkbox Buttons",
-                        isSmall: false,
                         isSmallText: true,
                         items: [
                             {

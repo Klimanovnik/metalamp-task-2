@@ -1,8 +1,14 @@
-mixin toggle(toggleClassList, title, ...names)
-    -if(toggleClassList === undefined) {toggleClassList = "";}
-    div(class="toggle " + toggleClassList)
-        h3(class="toggle__title")= title
-        each name in names
+mixin toggle(parameters)
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    div(class="toggle " + parameters.classList)
+        h3(class="toggle__title")= parameters.title
+        mixin toggle__label(item)
             label(class="toggle__label")
-                input(class="toggle__checkbox" type="checkbox" name=name value="Yes")
-                span(class="toggle__text")= name
+                - if (item.active != true) {item.active = false;}
+                - if (item.text === undefined) {item.text = "Default Text";}
+                input(class="toggle__checkbox" type="checkbox" name=item.text value="Yes" checked=item.active)
+                div(class="toggle__check")
+                span(class="toggle__text")= item.text
+        - if (parameters.items === undefined) {parameters.items = [{}];}
+        - for (let item of parameters.items)
+            +toggle__label(item)

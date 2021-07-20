@@ -1,10 +1,15 @@
-mixin radio-buttons(title, name, radio1, radio2, radioButtonsClassList)
-    -if(radioButtonsClassList === undefined) {radioButtonsClassList = "";}
-    div(class="radio-buttons " + radioButtonsClassList)
-        h3(class="radio-buttons__title")= title
-        label(class="radio-buttons__label")
-            input(class="radio-buttons__radio" type="radio" name=name value=radio1 checked)
-            span(class="radio-buttons__text")= radio1
-        label(class="radio-buttons__label")
-            input(class="radio-buttons__radio" type="radio" name=name value=radio2)
-            span(class="radio-buttons__text")= radio2
+mixin radio-buttons(parameters)
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    div(class="radio-buttons " + parameters.classList)
+        h3(class="radio-buttons__title")= parameters.title
+        - if (parameters.nameOfGroup === undefined) {parameters.nameOfGroup = "Default Group Name";}
+        mixin radio-buttons__label(item)
+            label(class="radio-buttons__label")
+                - if (item.text === undefined) {item.text = "Default Text";}
+                - if (item.active != true) {item.active = false;}
+                input(class="radio-buttons__radio" type="radio" name=parameters.nameOfGroup value=item.text checked=item.active)
+                div(class="radio-buttons__check")
+                span(class="radio-buttons__text")= item.text
+        - if (parameters.items === undefined) {parameters.items = [{}];}
+        - for (let item of parameters.items)
+            +radio-buttons__label(item)

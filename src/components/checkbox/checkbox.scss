@@ -5,12 +5,10 @@
 
 .checkbox {
     max-width: 264px;
-    min-width: 264px;
 }
 
 .checkbox_small {
     max-width: 222px;
-    min-width: 222px;
 }
 
 .checkbox__title {
@@ -34,6 +32,7 @@
 .checkbox__item-title,
 .checkbox__item-text {
     @extend %body;
+    color: $ds50;
     line-height: 1.25;
 }
 

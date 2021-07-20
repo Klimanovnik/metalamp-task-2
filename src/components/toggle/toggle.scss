@@ -1,74 +1,72 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+/* toggle */
+
+.toggle {
+    max-width: 260px;
+}
+
 .toggle__title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #1f2041;
-    margin-bottom: 16px;
+    @extend %h3;
+    line-height: 2.2;
 }
 
 .toggle__label {
     display: block;
-    margin-bottom: 10px;
+    padding: 9px 0px;
     position: relative;
+    top: 0px;
+    left: 0px;
     cursor: pointer;
 }
 
-.toggle__label:last-child {
-    margin-bottom: 0px;
-}
-
 .toggle__checkbox {
-    display: inline-block;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 10px;
-    cursor: pointer;
+    z-index: 1;
 }
 
-.toggle__checkbox::before {
-    content: "";
-    display: block;
+.toggle__check {
     position: absolute;
-    top: -50%;
-    transform: translateY(14%);
-    left: -10px;
     width: 40px;
     height: 20px;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
     background: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: 1px solid $ds25;
     border-radius: 10px;
+    z-index: 2;
 }
 
-.toggle__checkbox:checked::before {
-    border: 1px solid #bc9cff;
-}
-
-.toggle__checkbox::after {
+.toggle__check::before {
     content: "";
-    display: block;
     position: absolute;
     width: 12px;
     height: 12px;
-    left: -6px;
-    top: 0px;
-    background: rgba(31, 32, 65, 0.25);
-    border-radius: 10px;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $ds25;
+    border-radius: 50%;
+    z-index: 3;
 }
 
-.toggle__checkbox:checked::after {
-    left: 14px;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+.toggle__checkbox:checked + .toggle__check {
+    border-color: $purple;
+}
+
+.toggle__checkbox:checked + .toggle__check::before {
+    left: 23px;
+    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
 }
 
 .toggle__text {
+    @extend %body;
     display: inline-block;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
+    line-height: 1.2;
     padding-left: 50px;
-    line-height: 1;
-    color: rgba(31, 32, 65, 0.75);
 }

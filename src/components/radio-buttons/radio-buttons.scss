@@ -1,16 +1,20 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+/* radio-buttons */
+
+.radio-buttons {
+    max-width: 266px;
+}
+
 .radio-buttons__title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #1f2041;
-    margin-bottom: 16px;
+    @extend %h3;
+    line-height: 3;
 }
 
 .radio-buttons__label {
     display: inline-block;
-    margin-right: 20px;
+    padding-right: 20px;
     position: relative;
     top: 0px;
     left: 0px;
@@ -21,39 +25,46 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 0px;
+    left: 3px;
     cursor: pointer;
+    z-index: 1;
 }
 
-.radio-buttons__radio::before {
-    content: "";
-    display: block;
+.radio-buttons__check {
     position: absolute;
     width: 20px;
     height: 20px;
-    transform: translate3d(0, -20%, 0);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
     background: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: 1px solid $ds25;
     border-radius: 10px;
-}
-
-.radio-buttons__radio:checked::before {
-    border: 1px solid #bc9cff;
-    background: rgba(255, 255, 255, 1) url("./img/check.svg");
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.radio-buttons__radio:checked + .radio-buttons__text {
-    color: rgba(31, 32, 65, 0.75);
+    z-index: 2;
 }
 
 .radio-buttons__text {
-    display: inline-block;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1;
-    color: rgba(31, 32, 65, 0.5);
+    @extend %body;
     padding-left: 30px;
+    color: $ds50;
+}
+
+.radio-buttons__radio:checked + .radio-buttons__check {
+    border-color: $purple;
+}
+
+.radio-buttons__radio:checked + .radio-buttons__check::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+    border-radius: 10px;
+}
+
+.radio-buttons__radio:checked ~ .radio-buttons__text {
+    color: $ds75;
 }

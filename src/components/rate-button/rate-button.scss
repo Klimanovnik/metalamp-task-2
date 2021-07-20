@@ -1,21 +1,23 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+/* rate-button */
+
+.rate-button {
+    max-width: 280px;
+    font-size: 0px;
+}
+
 .rate-button__title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #1f2041;
-    margin-bottom: 16px;
+    @extend %h3;
+    line-height: 4;
 }
 
 .rate-button__rate {
     display: inline-block;
-    margin-right: 20px;
     margin-bottom: 10px;
-}
-
-.rate-button__rate:last-child {
-    margin-right: 0px;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 .rate-button__stars{
@@ -23,7 +25,9 @@
     width: 24px;
     height: 24px;
     position: relative;
-    cursor: pointer;
+    top: 0px;
+    left: 0px;
+    background-color: #fff;
 }
 
 .rate-button__star, .rate-button__star-empty {

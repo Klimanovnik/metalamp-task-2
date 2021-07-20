@@ -1,3 +1,4 @@
+import "./../like-button/like-button.js";
 import "./reviews.scss";
 
 function importAll(r) {
