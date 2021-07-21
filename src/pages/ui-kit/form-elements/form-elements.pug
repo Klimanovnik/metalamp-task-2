@@ -141,7 +141,15 @@ block content
                     })
                 section(class="form__flex-element")
                     include ./../../../components/range-slider/range-slider.pug
-                    +range-slider("form__block", "Range Slider")
+                    +range-slider({
+                        classList: "margin-bottom_40",
+                        title: "Range Slider",
+                        minNumber: "1287",
+                        maxNumber: "14456",
+                        units: "₽",
+                        offsetFirstToLeft: "75",
+                        offsetSecondToRight: "90"
+                    })
                     include ./../../../components/buttons/buttons.pug
                     +buttons("form__block", "Buttons")
                     include ./../../../components/pagination/pagination.pug

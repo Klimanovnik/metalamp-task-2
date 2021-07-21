@@ -18,9 +18,9 @@ import "./../../../components/radio-buttons/radio-buttons.js";
 import "./../../../components/toggle/toggle.js";
 import "./../../../components/like-button/like-button.js";
 import "./../../../components/rate-button/rate-button.js";
-
-
 import "./../../../components/range-slider/range-slider.js";
+
+
 import "./../../../components/buttons/buttons.js";
 import "./../../../components/pagination/pagination.js";
 import "./../../../components/expandable-checkbox-list/expandable-checkbox-list.js";

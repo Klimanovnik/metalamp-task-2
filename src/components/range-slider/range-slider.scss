@@ -1,59 +1,69 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+/* range-slider */
+
 .range-slider-wrap {
-    width: 266px;
+    max-width: 266px;
+    min-width: 266px;
 }
 
-.range-slider-wrap__text {
+.range-slider-text {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 18px;
 }
 
-.range-slider-wrap__title {
-    display: inline-block;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #1f2041;
-}
-
-.range-slider-wrap__numbers {
+.range-slider-text__title {
+    @extend %h3;
+    line-height: 2;
     display: inline-block;
 }
 
-.range-slider-wrap__min-number,
-.range-slider-wrap__hyphen,
-.range-slider-wrap__max-number {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: rgba(31, 32, 65, 0.5);
+.range-slider-text__numbers {
+    display: inline-block;
 }
 
-.range-slider-wrap__hyphen {
+.range-slider-text__min-number,
+.range-slider-text__hyphen,
+.range-slider-text__max-number,
+.range-slider-text__units {
+    @extend %body;
+    font-size: 12px;
+    line-height: 2;
+    color: $ds50;
+}
+
+.range-slider-text__hyphen {
     margin: 0px 5px;
+}
+
+.range-slider-text__offset,
+.range-slider-text__max-number-hidden,
+.range-slider-text__min-number-hidden {
+    width: 0px;
+    height: 0px;
+    display: none;
 }
 
 .range-slider {
     width: 100%;
     height: 6px;
-    background: #ffffff;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    background: #fff;
+    border: 1px solid $ds25;
     border-radius: 3px;
-    margin-top: 23px;
     position: relative;
 }
 
 .range-slider__circle {
-    box-sizing: border-box;
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(180deg, $green 0%, #66d2ea 100%);
     border-radius: 50%;
-    border: 2px solid #ffffff;
+    border: 2px solid #fff;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -62,21 +72,21 @@
 }
 
 .range-slider__circle_first {
-    left: 75px;
+    left: 0px;
 }
 
 .range-slider__circle_second {
-    left: 160px;
+    right: 0px;
 }
 
 .range-slider__gradient {
+    left: 0px;
+    right: 0px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     height: 145%;
-    left: 75px;
-    right: 93px;
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    background: linear-gradient(180deg, $green 0%, #66d2ea 100%);
     border-radius: 3px;
     z-index: 2;
 }

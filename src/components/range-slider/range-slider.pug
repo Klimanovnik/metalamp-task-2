@@ -1,12 +1,24 @@
-mixin range-slider(rangeSliderWrapClassList, title)
-    - if (rangeSliderWrapClassList === undefined) {rangeSliderWrapClassList = "";}
-    div(class="range-slider-wrap " + rangeSliderWrapClassList)
-        div(class="range-slider-wrap__text")
-            h3(class="range-slider-wrap__title")= title
-            div(class="range-slider-wrap__numbers")
-                span(class="range-slider-wrap__min-number") 5 000&#8381;
-                span(class="range-slider-wrap__hyphen") -
-                span(class="range-slider-wrap__max-number") 10 000&#8381;
+mixin range-slider(parameters)
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    div(class="range-slider-wrap " + parameters.classList)
+        div(class="range-slider-text")
+            h3(class="range-slider-text__title")= parameters.title
+            div(class="range-slider-text__numbers")
+                - if (parameters.minNumber === undefined) {parameters.minNumber = "0";}
+                - if (parameters.maxNumber === undefined) {parameters.maxNumber = "50000";}
+                - if (parameters.units === undefined) {parameters.units = "₽";}
+                span(class="range-slider-text__min-number")
+                span(class="range-slider-text__min-number-hidden")= parameters.minNumber
+                span(class="range-slider-text__units")= parameters.units
+                span(class="range-slider-text__hyphen") -
+                span(class="range-slider-text__max-number")
+                span(class="range-slider-text__max-number-hidden")= parameters.maxNumber
+                span(class="range-slider-text__units")= parameters.units
+                div(class="range-slider-text__offset")
+                    - if (parameters.offsetFirstToLeft === undefined) {parameters.offsetFirstToLeft = "0";}
+                    - if (parameters.offsetSecondToRight === undefined) {parameters.offsetSecondToRight = "0";}
+                    span(class="range-slider-text__offset-first-to-left")= parameters.offsetFirstToLeft
+                    span(class="range-slider-text__offset-second-to-right")= parameters.offsetSecondToRight
         div(class="range-slider")
             div(class="range-slider__circle range-slider__circle_first")
             div(class="range-slider__gradient")
