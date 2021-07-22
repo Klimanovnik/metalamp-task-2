@@ -1,5 +1,7 @@
 mixin expandable-checkbox-list(parameters)
+    - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
+    - if (parameters.isActive === true) {parameters.classList = parameters.classList + " expandable-checkbox-list_active";}
     div(class="expandable-checkbox-list " + parameters.classList)
         h3(class="expandable-checkbox-list__title")= parameters.title
         div(class="expandable-checkbox-list__list")

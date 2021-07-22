@@ -1,0 +1,83 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+/* button */
+
+.button {
+    @extend %h3;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.button_default, .button_border, .button_wide {
+    height: 44px;
+    border-radius: 22px;
+}
+
+.button_default, .button_border {
+    width: 99px;
+}
+
+.button_default, .button_wide {
+    color: #fff;
+    background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+}
+
+.button_default:hover, .button_wide:hover {
+    opacity: 0.5;
+}
+
+.button_border {
+    color: $purple;
+    background: url("./img/border.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.button_border:hover {
+    background: url("./img/border-hover.svg");
+}
+
+.button_link {
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    color: $purple;
+}
+
+.button_link:hover {
+    color: $ds50;
+}
+
+.button_wide {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    min-width: 266px;
+    position: relative;
+}
+
+.button_wide::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate3d(-50%, -50%, 0px);
+    width: 13px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.button_wide::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translate3d(-50%, -50%, 0px) rotate(-45deg);
+    width: 11px;
+    height: 11px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+}

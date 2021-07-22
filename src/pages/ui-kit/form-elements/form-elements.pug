@@ -67,7 +67,7 @@ block content
                     +subscription-text-field({
                         title: "Subscription text field"
                     })
-                section(class="form__flex-element margin-left_54")
+                section(class="form__flex-element form__flex-element_margin-left_54")
                     include ./../../../components/checkbox/checkbox.pug
                     +checkbox({
                         classList: "margin-bottom_20",
@@ -150,10 +150,50 @@ block content
                         offsetFirstToLeft: "75",
                         offsetSecondToRight: "90"
                     })
-                    include ./../../../components/buttons/buttons.pug
-                    +buttons("form__block", "Buttons")
+                    div(class="form__buttons")
+                        h3(class="form__title margin-bottom_10") Buttons
+                        include ./../../../components/button/button.pug
+                        +button({
+                            classList: "margin-bottom_30 margin-right_20",
+                            text: "Click Me",
+                            buttonType: "default"
+                        })
+                        +button({
+                            classList: "margin-bottom_30 margin-right_20",
+                            text: "Click Me",
+                            buttonType: "default"
+                        })
+                        +button({
+                            classList: "margin-bottom_30 margin-right_20",
+                            text: "Click Me",
+                            buttonType: "border"
+                        })
+                        +button({
+                            classList: "margin-bottom_30 margin-right_20",
+                            text: "Click Me",
+                            buttonType: "border"
+                        })
+                        +button({
+                            classList: "margin-bottom_30 margin-right_20",
+                            text: "Click Me",
+                            buttonType: "link"
+                        })
+                        +button({
+                            classList: "margin-bottom_30 margin-right_20",
+                            text: "Click Me",
+                            buttonType: "link"
+                        })
+                        +button({
+                            classList: "margin-bottom_30",
+                            text: "Перейти к оплате",
+                            buttonType: "wide"
+                        })
                     include ./../../../components/pagination/pagination.pug
-                    +pagination("form__block", "Pagination")
+                    +pagination({
+                        classList: "",
+                        title: "Pagination",
+                        numberOfPages: "15"
+                    })
                 section(class="form__flex-element")
                     +dropdown({
                         classList: "margin-bottom_15",
@@ -178,7 +218,7 @@ block content
                         ]
                     })
                     +dropdown({
-                        classList: "margin-bottom_15",
+                        classList: "margin-bottom_40",
                         isSmall: true,
                         title: "Dropdown",
                         active: true,
@@ -201,8 +241,9 @@ block content
                     })
                     include ./../../../components/expandable-checkbox-list/expandable-checkbox-list.pug
                     +expandable-checkbox-list({
-                        classList: "margin-bottom_100",
+                        classList: "margin-bottom_20",
                         title: "Expandable Checkbox List",
+                        isActive: false,
                         checkbox: {
                             items: [
                                 {
@@ -232,9 +273,42 @@ block content
                             ]
                         }
                     })
-                section(class="form__flex-element margin-left_50")
+                    +expandable-checkbox-list({
+                        classList: "",
+                        title: "Expandable Checkbox List",
+                        isActive: true,
+                        checkbox: {
+                            items: [
+                                {
+                                    text: "Завтрак",
+                                    active: false
+                                },
+                                {
+                                    text: "Письменный стол",
+                                    active: true
+                                },
+                                {
+                                    text: "Стул для кормления",
+                                    active: true
+                                },
+                                {
+                                    text: "Кроватка",
+                                    active: true
+                                },
+                                {
+                                    text: "Телевизор",
+                                    active: false
+                                },
+                                {
+                                    text: "Шампунь",
+                                    active: false
+                                }
+                            ]
+                        }
+                    })
+                section(class="form__flex-element form__flex-element_margin-left_50")
                     +dropdown({
-                        classList: "margin-bottom_100",
+                        classList: "margin-bottom_95",
                         isSmall: false,
                         title: "Dropdown",
                         active: true,
@@ -256,7 +330,7 @@ block content
                         ]
                     })
                     +checkbox({
-                        classList: "margin-bottom_35",
+                        classList: "",
                         title: "Rich Checkbox Buttons",
                         isSmallText: true,
                         items: [
@@ -274,7 +348,7 @@ block content
                     })
                 section(class="form__flex-element")
                     +dropdown({
-                        classList: "margin-bottom_100",
+                        classList: "margin-bottom_95",
                         isSmall: false,
                         title: "Dropdown",
                         active: true,
@@ -297,7 +371,7 @@ block content
                     })
                     include ./../../../components/bullet-list/bullet-list.pug
                     +bullet-list({
-                        bulletListClassList: "form__block",
+                        classList: "",
                         title: "Bullet List",
                         items: [
                             "Нельзя с питомцами",
@@ -308,7 +382,7 @@ block content
                 section(class="form__flex-element")
                     include ./../../../components/icon-text-list/icon-text-list.pug
                     +icon-text-list({
-                        iconTextListClassList: "form__block",
+                        classList: "margin-top_-30",
                         items: [
                             {
                                 title: "Комфорт",
@@ -322,10 +396,10 @@ block content
                             }
                         ]
                     })
-                section(class="form__flex-element")
+                section(class="form__flex-element form__flex-element_wide")
                     include ./../../../components/reviews/reviews.pug
                     +reviews({
-                        classList: "form__block",
+                        classList: "",
                         items: [
                             {
                                 imgName: "Мурад Сарафанов.jpg",
@@ -333,8 +407,12 @@ block content
                                 dateString: "5 дней назад",
                                 text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
                                 likeOptions: {
-                                    number: "12",
-                                    active: true
+                                    items: [
+                                        {
+                                            number: "12",
+                                            active: true
+                                        }
+                                    ]
                                 }
                             }
                         ]

@@ -1,22 +1,19 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+/* bullet-list */
+
 .bullet-list {
     max-width: 260px;
 }
 
 .bullet-list__title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #1f2041;
-    margin-bottom: 11px;
+    @extend %h3;
+    line-height: 2;
 }
 
 .bullet-list__item {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 1.7;
-    color: rgba(31, 32, 65, 0.75);
+    @extend %body;
     position: relative;
     display: block;
     padding: 5px 0px;
@@ -25,10 +22,9 @@
 
 .bullet-list__item::before {
     content: "";
-    display: block;
     width: 10px;
     height: 10px;
-    background: rgba(31, 32, 65, 0.25);
+    background: $ds25;
     border-radius: 50%;
     position: absolute;
     top: 12px;

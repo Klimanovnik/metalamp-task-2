@@ -1,4 +1,5 @@
 mixin checkbox(parameters)
+    - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     - if (parameters.isSmall === true) {parameters.classList = parameters.classList + " checkbox_small";}
     - parameters.textClassList = "";

@@ -1,3 +1,8 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+/* reviews */
+
 .reviews {
     max-width: 705px;
 }
@@ -8,8 +13,6 @@
     position: relative;
     top: 0px;
     left: 0px;
-    background-position: 0 0;
-    background-repeat: no-repeat;
 }
 
 .reviews__item:last-child {
@@ -28,7 +31,7 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    border: 2px solid #ffffff;
+    border: 2px solid #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
     border-radius: 50%;
 }
@@ -36,19 +39,11 @@
 .reviews__item-user,
 .reviews__item-date,
 .reviews__item-text {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    line-height: 1.7;
-    color: rgba(31, 32, 65, 0.75);
+    @extend %body;
 }
 
 .reviews__item-user {
     font-weight: 700;
-}
-
-.reviews__item-date,
-.reviews__item-text {
-    font-weight: 300;
 }
 
 .reviews__item-text {

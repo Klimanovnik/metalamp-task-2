@@ -1,0 +1,8 @@
+mixin button(parameters)
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    - if (parameters.buttonType != "default" && parameters.buttonType != "border" && parameters.buttonType != "link" && parameters.buttonType != "wide") {parameters.buttonType = "default";}
+    - if (parameters.buttonType === "default") {parameters.classList = parameters.classList + " button_default";} 
+    - else if (parameters.buttonType === "border") {parameters.classList = parameters.classList + " button_border";}
+    - else if (parameters.buttonType === "link") {parameters.classList = parameters.classList + " button_link";}
+    - else if (parameters.buttonType === "wide") {parameters.classList = parameters.classList + " button_wide";}
+    button(class="button " + parameters.classList type="button")= parameters.text

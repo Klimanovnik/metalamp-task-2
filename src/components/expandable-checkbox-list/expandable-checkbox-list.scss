@@ -1,43 +1,48 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+/* expandable-checkbox-list */
+
 .expandable-checkbox-list {
     width: 266px;
 }
 
 .expandable-checkbox-list__title {
+    @extend %h3;
     height: 44px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #1f2041;
     display: flex;
     align-items: center;
     cursor: pointer;
     position: relative;
+    padding-right: 44px;
 }
 
 .expandable-checkbox-list__title::after {
     content: "";
-    width: 10px;
-    height: 10px;
-    border: 2px solid rgba(31, 32, 65, 0.5);
+    width: 8px;
+    height: 8px;
+    border: 2px solid $ds50;
     border-right: none;
     border-bottom: none;
     position: absolute;
     top: 50%;
-    right: 18px;
+    right: 17px;
     transform: translateY(-70%) rotate(-135deg);
+    z-index: 1;
 }
 
 .expandable-checkbox-list__list {
-    overflow: hidden;
-    height: 0px;
-    transition: height 0.3s;
+    display: none;
 }
 
 .expandable-checkbox-list_active .expandable-checkbox-list__list {
-    height: 200px;
+    display: block;
 }
 
 .expandable-checkbox-list_active .expandable-checkbox-list__title::after {
     transform: translateY(-20%) rotate(45deg);
+}
+
+.expandable-checkbox-list__checkbox-title {
+    display: none;
 }
