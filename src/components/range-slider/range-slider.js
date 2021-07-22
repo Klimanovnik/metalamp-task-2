@@ -63,46 +63,66 @@ for (let rangeSliderCircle of rangeSliderCircleArray) {
         return false;
     };
 
-    rangeSliderCircle.onmousedown = function (event) {
-        event.preventDefault();
+    rangeSliderCircle.onmousedown = function () {
 
         let currentCircle = this;
+        let isFirstCircle = currentCircle.classList.contains("range-slider__circle_first");
         let currentSlider = currentCircle.closest(".range-slider");
-        let currentSliderWidth = parseFloat(getComputedStyle(currentSlider).width);
         let currentGradient = currentSlider.querySelector(".range-slider__gradient");
-        let currentMin = currentCircle.closest(".range-slider-wrap").querySelector(".range-slider-wrap__min-number");
-        let currentMax = currentCircle.closest(".range-slider-wrap").querySelector(".range-slider-wrap__max-number");
+        let currentMin = currentCircle.closest(".range-slider-wrap").querySelector(".range-slider-text__min-number");
+        let currentMax = currentCircle.closest(".range-slider-wrap").querySelector(".range-slider-text__max-number");
+        let minValue = +currentCircle.closest(".range-slider-wrap").querySelector(".range-slider-text__min-number-hidden").textContent;
+        let maxValue = +currentCircle.closest(".range-slider-wrap").querySelector(".range-slider-text__max-number-hidden").textContent;
 
-        let siblingCircle = Array.from(currentSlider.children).find(item => {
-            if (item != currentCircle && !item.classList.contains("range-slider__gradient")) {
-                return true;
-            } else {
-                return false;
-            }
-        });
+        let siblingCircle = "";
+
+        if (isFirstCircle) {
+            siblingCircle = currentSlider.querySelector(".range-slider__circle_second");
+        } else {
+            siblingCircle = currentSlider.querySelector(".range-slider__circle_first");
+        }
 
         let onMouseMove = function (event) {
-            currentCircle.style.left = event.clientX - currentSlider.getBoundingClientRect().left - currentCircle.offsetWidth / 2 + "px";
-            if (parseFloat(getComputedStyle(currentCircle).left) < 0) {
-                currentCircle.style.left = 0 + "px";
-            }
-            if (parseFloat(getComputedStyle(currentCircle).right) < 0) {
-                currentCircle.style.left = currentSliderWidth - currentCircle.offsetWidth - 2 + "px";
+            let offset = "";
+            let siblingOffset = "";
+
+            if (isFirstCircle) {
+                offset = "left";
+                siblingOffset = "right";
+
+                currentCircle.style[offset] = event.clientX - currentSlider.getBoundingClientRect().left - currentCircle.offsetWidth / 2 + "px";
+
+                if (parseFloat(getComputedStyle(currentCircle)[offset]) < 0) {
+                    currentCircle.style[offset] = 0 + "px";
+                }
+
+                if (parseFloat(getComputedStyle(currentCircle)[offset]) + parseFloat(getComputedStyle(siblingCircle)[siblingOffset]) > currentSlider.offsetWidth - currentCircle.offsetWidth - siblingCircle.offsetWidth - 2) {
+                    currentCircle.style[offset] = currentSlider.offsetWidth - currentCircle.offsetWidth - siblingCircle.offsetWidth - parseFloat(getComputedStyle(siblingCircle)[siblingOffset]) - 2 + "px";
+                }
+
+                currentGradient.style[offset] = currentCircle.style[offset];
+
+                currentMin.textContent = Math.round(minValue + parseFloat(getComputedStyle(currentCircle)[offset]) * (maxValue - minValue) / currentSlider.offsetWidth);
+
+            } else {
+                offset = "right";
+                siblingOffset = "left";
+
+                currentCircle.style[offset] = currentSlider.offsetWidth - (event.clientX - currentSlider.getBoundingClientRect().left) - currentCircle.offsetWidth / 2 - 2 + "px";
+
+                if (parseFloat(getComputedStyle(currentCircle)[offset]) < 0) {
+                    currentCircle.style[offset] = 0 + "px";
+                }
+
+                if (parseFloat(getComputedStyle(currentCircle)[offset]) + parseFloat(getComputedStyle(siblingCircle)[siblingOffset]) > currentSlider.offsetWidth - currentCircle.offsetWidth - siblingCircle.offsetWidth - 2) {
+                    currentCircle.style[offset] = currentSlider.offsetWidth - currentCircle.offsetWidth - siblingCircle.offsetWidth - parseFloat(getComputedStyle(siblingCircle)[siblingOffset]) - 2 + "px";
+                }
+
+                currentGradient.style[offset] = currentCircle.style[offset];
+
+                currentMax.textContent = Math.round(maxValue - parseFloat(getComputedStyle(currentCircle)[offset]) * (maxValue - minValue) / currentSlider.offsetWidth);
             }
 
-            if (currentCircle.classList.contains("range-slider__circle_first")) {
-                if (parseFloat(getComputedStyle(currentCircle).left) > (parseFloat(getComputedStyle(siblingCircle).left) - currentCircle.offsetWidth)) {
-                    currentCircle.style.left = parseFloat(getComputedStyle(siblingCircle).left) - currentCircle.offsetWidth + "px";
-                }
-                currentGradient.style.left = getComputedStyle(currentCircle).left;
-                currentMin.innerHTML = (Math.round(parseFloat(getComputedStyle(currentCircle).left)) + 1) * 65 + "&#8381;";
-            } else if (currentCircle.classList.contains("range-slider__circle_second")) {
-                if (parseFloat(getComputedStyle(currentCircle).left) < (parseFloat(getComputedStyle(siblingCircle).left) + currentCircle.offsetWidth)) {
-                    currentCircle.style.left = parseFloat(getComputedStyle(siblingCircle).left) + currentCircle.offsetWidth + "px";
-                }
-                currentGradient.style.right = getComputedStyle(currentCircle).right;
-                currentMax.innerHTML = (Math.round(parseFloat(getComputedStyle(currentCircle).left)) + 1) * 65 + "&#8381;";
-            }
         };
 
         document.addEventListener("mousemove", onMouseMove);
