@@ -63,7 +63,9 @@ for (let rangeSliderCircle of rangeSliderCircleArray) {
         return false;
     };
 
-    rangeSliderCircle.onmousedown = function () {
+    rangeSliderCircle.onpointerdown = function (event) {
+
+        rangeSliderCircle.setPointerCapture(event.pointerId);
 
         let currentCircle = this;
         let isFirstCircle = currentCircle.classList.contains("range-slider__circle_first");
@@ -82,7 +84,7 @@ for (let rangeSliderCircle of rangeSliderCircleArray) {
             siblingCircle = currentSlider.querySelector(".range-slider__circle_first");
         }
 
-        let onMouseMove = function (event) {
+        let onPointerMove = function (event) {
             let offset = "";
             let siblingOffset = "";
 
@@ -125,12 +127,13 @@ for (let rangeSliderCircle of rangeSliderCircleArray) {
 
         };
 
-        document.addEventListener("mousemove", onMouseMove);
+        rangeSliderCircle.addEventListener("pointermove", onPointerMove);
 
-        document.onmouseup = function () {
-            document.removeEventListener("mousemove", onMouseMove);
-            document.onmouseup = null;
+        rangeSliderCircle.onpointerup = function () {
+            rangeSliderCircle.removeEventListener("pointermove", onPointerMove);
+            rangeSliderCircle.onpointerup = null;
         };
+
     };
 
 }

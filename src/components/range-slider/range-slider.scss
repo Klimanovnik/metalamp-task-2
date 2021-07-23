@@ -69,6 +69,7 @@
     transform: translateY(-50%);
     z-index: 3;
     cursor: pointer;
+    touch-action: none;
 }
 
 .range-slider__circle_first {

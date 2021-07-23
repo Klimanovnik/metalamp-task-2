@@ -6,6 +6,7 @@
 .masked-text-field {
     max-width: 320px;
     min-width: 266px;
+    position: relative;
 }
 
 .masked-text-field__title {
@@ -38,8 +39,8 @@
     background-color: #ffefef;
     border: 1px solid #f86868;
     padding: 10px;
-    position: relative;
-    top: 14px;
+    position: absolute;
+    bottom: -71px;
     left: 0px;
     z-index: 1;
 }
