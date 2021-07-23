@@ -1,5 +1,6 @@
 mixin masked-text-field(parameters)
-    -if (parameters.classList === undefined) {parameters.classList = "";}
+    - if (parameters === undefined) {parameters = {};}
+    - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class="masked-text-field " + parameters.classList)
         h3(class="masked-text-field__title")= parameters.title
         input(class="masked-text-field__field" type="text" placeholder="ДД.ММ.ГГГГ")

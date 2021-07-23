@@ -1,4 +1,5 @@
 mixin button(parameters)
+    - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     - if (parameters.buttonType != "default" && parameters.buttonType != "border" && parameters.buttonType != "link" && parameters.buttonType != "wide") {parameters.buttonType = "default";}
     - if (parameters.buttonType === "default") {parameters.classList = parameters.classList + " button_default";} 

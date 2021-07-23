@@ -1,0 +1,8 @@
+mixin text-field(parameters)
+    - if (parameters === undefined) {parameters = {};} 
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    div(class="text-field " + parameters.classList)
+        h3(class="text-field__title")= parameters.title
+        - if (parameters.type === undefined) {parameters.type = "text";}
+        - if (parameters.placeholder === undefined) {parameters.placeholder = "";}
+        input(class="text-field__field" type=parameters.type placeholder=parameters.placeholder)

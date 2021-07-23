@@ -1,4 +1,5 @@
 mixin dropdown(parameters)
+    - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     - if (parameters.isSmall === true) {parameters.classList = parameters.classList + " dropdown-wrap_small";}
     div(class="dropdown-wrap " + parameters.classList)

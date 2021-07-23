@@ -12,14 +12,18 @@ block content
         div(class="container-1160")
             form(class="form" action="#")
                 section(class="form__flex-element")
-                    include ./../../../components/email/email.pug
-                    +email({
+                    include ./../../../components/text-field/text-field.pug
+                    +text-field({
                         classList: "margin-bottom_15",
-                        title: "Text Field"
+                        title: "Text Field",
+                        type: "email",
+                        placeholder: "Email"
                     })
-                    +email({
+                    +text-field({
                         classList: "margin-bottom_15",
-                        title: "Text Field"
+                        title: "Text Field",
+                        type: "email",
+                        placeholder: "Email"
                     })
                     include ./../../../components/dropdown/dropdown.pug
                     +dropdown({
@@ -49,15 +53,16 @@ block content
                         classList: "margin-bottom_35",
                         title: "Masked text field"
                     })
-                    include ./../../../components/date-dropdown/date-dropdown.pug
-                    +date-dropdown({
-                        classList: "margin-bottom_35 margin-right_15",
-                        title: "Date Dropdown"
-                    })
-                    +date-dropdown({
-                        classList: "margin-bottom_35",
-                        title: "Date Dropdown"
-                    })
+                    div(class="form__date-dropdowns")
+                        include ./../../../components/date-dropdown/date-dropdown.pug
+                        +date-dropdown({
+                            classList: "",
+                            title: "Date Dropdown"
+                        })
+                        +date-dropdown({
+                            classList: "",
+                            title: "Date Dropdown"
+                        })
                     include ./../../../components/filter-date-dropdown/filter-date-dropdown.pug
                     +filter-date-dropdown({
                         classList: "margin-bottom_35",

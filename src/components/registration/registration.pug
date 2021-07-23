@@ -1,0 +1,30 @@
+mixin registration(parameters)
+    - if (parameters === undefined) {parameters = {};}
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    form(class="registration" action="#")
+        h3(class="registration__title")= parameters.title
+        include ./../text-field/text-field.pug
+        div(class="registration__text-field")
+            +text-field(parameters.firstTextField)
+        div(class="registration__text-field")
+            +text-field(parameters.secondTextField)
+        div(class="registration__radio-buttons")
+            include ./../radio-buttons/radio-buttons.pug
+            +radio-buttons(parameters.radioButtons)
+        div(class="registration__masked-text-field")
+            include ./../masked-text-field/masked-text-field.pug
+            +masked-text-field(parameters.maskedTextField)
+        div(class="registration__text-field")
+            +text-field(parameters.firstLoginField)
+        div(class="registration__text-field")
+            +text-field(parameters.secondLoginField)
+        div(class="registration__toggle")
+            include ./../toggle/toggle.pug
+            +toggle(parameters.toggle)
+        div(class="registration__first-button")
+            include ./../button/button.pug
+            +button(parameters.firstButton)
+        div(class="registration__bottom")
+            span(class="registration__bottom-text")= parameters.bottomText
+            div(class="registration__second-button")
+                +button(parameters.secondButton)

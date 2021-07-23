@@ -1,0 +1,67 @@
+@import "./../../assets/scss-text-templates.scss";
+
+/* registration */
+
+.registration {
+    display: block;
+    max-width: 382px;
+    min-width: 302px;
+    padding: 30px;
+    padding-top: 40px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    @media (max-width: 370px) {
+        padding: 15px;
+        padding-top: 30px;
+    }
+}
+
+.registration__title {
+    @extend %h1;
+    max-width: 300px;
+    margin-bottom: 20px;
+    letter-spacing: 1.2px;
+    @media (max-width: 370px) {
+        margin-bottom: 10px;
+        max-width: none;
+        text-align: center;
+    }
+}
+
+.registration__text-field {
+    margin-bottom: 8px;
+}
+
+.registration__radio-buttons {
+    margin-bottom: 15px;
+}
+
+.registration__masked-text-field {
+    margin-bottom: 15px;
+}
+
+.registration__toggle {
+    margin-bottom: 10px;
+}
+
+.registration__first-button {
+    margin-bottom: 30px;
+}
+
+.registration__bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.registration__bottom-text {
+    @extend %body;
+    display: inline-block;
+    color: #000;
+    max-width: 186px;
+    text-align: center;
+}

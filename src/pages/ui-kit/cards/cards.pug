@@ -1,0 +1,104 @@
+extends ./../../../assets/page-template.pug
+block title
+    title Cards
+block content
+    div(class="wrap")
+        // header
+        include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
+        +header-with-pale-logo({
+            classList: "container-1440"
+        })
+        // content
+        div(class="content")
+            div(class="content__inner container-1160")
+                div(class="content__flex-element")
+                    include ./../../../components/pick-up-room/pick-up-room.pug
+                    +pick-up-room({
+                        classList: "margin-bottom_40",
+                        title: "Найдём номера под ваши пожелания",
+                        dateDropdownFirst: {
+                            title: "Прибытие"
+                        },
+                        dateDropdownSecond: {
+                            title: "Выезд"
+                        },
+                        dropdown: {
+                            isSmall: false,
+                            title: "Гости",
+                            active: false,
+                            buttonText: "Сколько гостей",
+                            applyClear: true,
+                            lines: [
+                                {
+                                    text: "Взрослые",
+                                    number: "0"
+                                },
+                                {
+                                    text: "Дети",
+                                    number: "0"
+                                },
+                                {
+                                    text: "Младенцы",
+                                    number: "0"
+                                }
+                            ]
+                        },
+                        button: {
+                            text: "Подобрать номер",
+                            buttonType: "wide"
+                        }
+                    })
+                    include ./../../../components/registration/registration.pug
+                    +registration({
+                        title: "Регистрация аккаунта",
+                        firstTextField: {
+                            type: "text",
+                            placeholder: "Имя"
+                        },
+                        secondTextField: {
+                            type: "text",
+                            placeholder: "Фамилия"
+                        },
+                        radioButtons: {
+                            nameOfGroup: "Ваш пол",
+                            items: [
+                                {
+                                    text: "Мужчина",
+                                    active: true
+                                },
+                                {
+                                    text: "Женщина",
+                                    active: false
+                                }
+                            ]
+                        },
+                        maskedTextField: {
+                            title: "Дата Рождения"
+                        },
+                        firstLoginField: {
+                            title: "Данные для входа в сервис",
+                            type: "email",
+                            placeholder: "Email"
+                        },
+                        secondLoginField: {
+                            type: "password",
+                            placeholder: "Пароль"
+                        },
+                        toggle: {
+                            items: [
+                                {
+                                    text: "Получать спецпредложения",
+                                    active: false
+                                }
+                            ]
+                        },
+                        firstButton: {
+                            text: "Перейти к оплате",
+                            buttonType: "wide"
+                        },
+                        bottomText: "Уже есть аккаунт на Toxin",
+                        secondButton: {
+                            text: "Войти",
+                            buttonType: "border"
+                        },
+                    })

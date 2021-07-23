@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 
@@ -19,13 +19,14 @@ const minifyFunction = function () {
 const optimizationFunction = function () {
     const optimizationConfigObject = {
         splitChunks: {
-            chunks: "all"
+            chunks: "all",
+            filename: "js/common/[contenthash].js",
         }
     };
 
     if (isProd) {
         optimizationConfigObject.minimize = true;
-        optimizationConfigObject.minimizer = [new CssMinimizerWebpackPlugin(), new TerserWebpackPlugin()];
+        optimizationConfigObject.minimizer = [new CssMinimizerWebpackPlugin(), new TerserWebpackPlugin({ extractComments: false })];
     }
 
     return optimizationConfigObject;
@@ -37,7 +38,8 @@ module.exports = {
     entry: {
         "index": ["./pages/website-pages/index/index.js"],
         "colors-and-type": ["./pages/ui-kit/colors-and-type/colors-and-type.js"],
-        "form-elements": ["./pages/ui-kit/form-elements/form-elements.js"]
+        "form-elements": ["./pages/ui-kit/form-elements/form-elements.js"],
+        "cards": ["./pages/ui-kit/cards/cards.js"]
     },
     output: {
         path: path.resolve(__dirname, "app"),
@@ -50,9 +52,9 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css"
-        }),
+        /* new MiniCssExtractPlugin({
+            filename: "[name].css",
+        }), */
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
@@ -73,6 +75,12 @@ module.exports = {
             template: "./pages/ui-kit/form-elements/form-elements.pug",
             filename: "pages/form-elements.html",
             chunks: ["form-elements"],
+            minify: minifyFunction()
+        }),
+        new HTMLWebpackPlugin({
+            template: "./pages/ui-kit/cards/cards.pug",
+            filename: "pages/cards.html",
+            chunks: ["cards"],
             minify: minifyFunction()
         })
     ],
@@ -98,7 +106,7 @@ module.exports = {
                 test: /\.(s[ac]ss)$/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader
+                        loader: "style-loader"
                     },
                     {
                         loader: "css-loader"

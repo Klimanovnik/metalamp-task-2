@@ -1,5 +1,6 @@
 mixin date-dropdown(parameters)
-    -if (parameters.classList === undefined) {parameters.classList = "";}
+    - if (parameters === undefined) {parameters = {};}
+    - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class="date-dropdown " + parameters.classList)
         h3(class="date-dropdown__title")= parameters.title
         button(class="date-dropdown__button" type="button") ДД.ММ.ГГГГ

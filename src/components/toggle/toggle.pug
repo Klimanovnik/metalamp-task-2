@@ -1,4 +1,5 @@
 mixin toggle(parameters)
+    - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class="toggle " + parameters.classList)
         h3(class="toggle__title")= parameters.title

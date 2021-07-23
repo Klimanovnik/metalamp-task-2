@@ -1,5 +1,0 @@
-mixin email(parameters)
-    -if (parameters.classList === undefined) {parameters.classList = "";}
-    div(class="email " + parameters.classList)
-        h3(class="email__title")= parameters.title
-        input(class="email__field" type="email" placeholder="Email")
