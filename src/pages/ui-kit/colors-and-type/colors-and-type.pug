@@ -8,9 +8,9 @@ block content
         classList: "container-1440"
     })
     // content
-    main(class="content")
-        div(class="content__inner container-1440")
-            section(class="content__square-section")
+    main(class="colors-and-type__content")
+        div(class="colors-and-type__content-inner container-1440")
+            section(class="colors-and-type__square-section")
                 mixin square-with-text(parameters)
                     div(class="square-with-text")
                         - if (parameters.squareClassList === undefined) {parameters.squareClassList = "";}
@@ -52,7 +52,7 @@ block content
                     code: "#6FCF97",
                     squareClassList: "square-with-text__square_bg_green"
                 })
-            section(class="content__title-and-subtitle-section")
+            section(class="colors-and-type__title-and-subtitle-section")
                 mixin title-and-subtitle(parameters)
                     -if (parameters.classList === undefined) {parameters.classList = "";}
                     div(class="title-and-subtitle " + parameters.classList)

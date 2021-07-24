@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 
@@ -20,7 +20,15 @@ const optimizationFunction = function () {
     const optimizationConfigObject = {
         splitChunks: {
             chunks: "all",
-            filename: "js/common/[contenthash].js",
+            cacheGroups: {
+                default: false,
+                vendors: false,
+                styles: {
+                    name: "styles",
+                    test: /\.s?css$/,
+                    minChunks: 1
+                }
+            }
         }
     };
 
@@ -43,7 +51,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "app"),
-        filename: "js/[name].[contenthash].js"
+        filename: isDev ? "js/[name].js" : "js/[name].[contenthash].js"
     },
     optimization: optimizationFunction(),
     devServer: {
@@ -52,9 +60,10 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        /* new MiniCssExtractPlugin({
-            filename: "[name].css",
-        }), */
+        new MiniCssExtractPlugin({
+            filename: isDev ? "[name].css" : "[name].[contenthash].css",
+            ignoreOrder: true
+        }),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
@@ -106,7 +115,7 @@ module.exports = {
                 test: /\.(s[ac]ss)$/,
                 use: [
                     {
-                        loader: "style-loader"
+                        loader: MiniCssExtractPlugin.loader
                     },
                     {
                         loader: "css-loader"

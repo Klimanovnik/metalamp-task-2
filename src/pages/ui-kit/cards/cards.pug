@@ -2,19 +2,19 @@ extends ./../../../assets/page-template.pug
 block title
     title Cards
 block content
-    div(class="wrap")
+    div(class="cards__wrap")
         // header
         include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
         +header-with-pale-logo({
             classList: "container-1440"
         })
         // content
-        div(class="content")
-            div(class="content__inner container-1160")
-                div(class="content__flex-element")
+        div(class="cards__content")
+            div(class="cards__content-inner container-1160")
+                div(class="cards__flex-element")
                     include ./../../../components/pick-up-room/pick-up-room.pug
                     +pick-up-room({
-                        classList: "margin-bottom_40",
+                        classList: "m-b_40",
                         title: "Найдём номера под ваши пожелания",
                         dateDropdownFirst: {
                             title: "Прибытие"

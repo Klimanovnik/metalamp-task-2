@@ -1,7 +1,7 @@
 @import "./../../../assets/scss-color-variables.scss";
 @import "./../../../assets/scss-text-templates.scss";
 
-.wrap {
+.index__wrap {
     height: 100%;
     background: url("./img/bg.jpg") no-repeat;
     background-size: cover;
@@ -9,12 +9,12 @@
     min-height: 600px;
 }
 
-.content {
+.index__content {
     display: flex;
     justify-content: center;
 }
 
-.link-list {
+.index__list {
     max-width: 300px;
     background: #fff;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -23,27 +23,27 @@
     min-height: 400px;
 }
 
-.link-list__title {
+.index__list-title {
     @extend %h1;
     font-size: 36px;
     color: $purple;
 }
 
-.link-list__item {
+.index__list-item {
     padding: 10px 0px;
     text-align: center;
 }
 
-.link-list__link {
+.index__list-link {
     @extend %body;
     font-size: 32px;
     line-height: 0.8;
 }
 
-.link-list__link:hover {
+.index__list-link:hover {
     color: $ds100;
 }
 
-.link-list__link:active {
+.index__list-link:active {
     color: $green;
 }

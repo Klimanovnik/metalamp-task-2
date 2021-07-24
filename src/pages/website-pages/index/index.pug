@@ -1,8 +1,8 @@
 extends ./../../../assets/page-template.pug
 block title
-    title Main Page
+    title Index Page
 block content
-    div(class="wrap")
+    div(class="index__wrap")
         // header
         include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
         +header-with-pale-logo({
@@ -10,13 +10,13 @@ block content
             logoClassList: "pale-logo_dark"
         })
         // content
-        div(class="content")
-            ul(class="link-list")
-                li(class="link-list__item")
-                    h3(class="link-list__title") Страницы
-                li(class="link-list__item")
-                    a(class="link-list__link" href="./pages/colors-and-type.html") Colors&amp;Type
-                li(class="link-list__item")
-                    a(class="link-list__link" href="./pages/form-elements.html") Form Elements
-                li(class="link-list__item")
-                    a(class="link-list__link" href="./pages/cards.html") Cards
+        div(class="index__content")
+            ul(class="index__list")
+                li(class="index__list-item")
+                    h3(class="index__list-title") Страницы
+                li(class="index__list-item")
+                    a(class="index__list-link" href="./pages/colors-and-type.html") Colors&amp;Type
+                li(class="index__list-item")
+                    a(class="index__list-link" href="./pages/form-elements.html") Form Elements
+                li(class="index__list-item")
+                    a(class="index__list-link" href="./pages/cards.html") Cards

@@ -1,9 +1,9 @@
 @import "./../../../assets/scss-color-variables.scss";
 @import "./../../../assets/scss-text-templates.scss";
 
-/* .content */
+/* colors-and-type__content */
 
-.content__inner {
+.colors-and-type__content-inner {
     padding-top: 37px;
     display: flex;
     flex-direction: row;
@@ -16,7 +16,7 @@
     }
 }
 
-.content__square-section {
+.colors-and-type__square-section {
     margin-left: 150px;
     max-width: 282px;
     @media (max-width: 1080px) {
@@ -25,7 +25,7 @@
     }
 }
 
-.content__title-and-subtitle-section {
+.colors-and-type__title-and-subtitle-section {
     margin: 0px 158px 0px 50px;
     max-width: 439px;
     @media (max-width: 1080px) {
