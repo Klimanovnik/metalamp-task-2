@@ -102,3 +102,51 @@ block content
                             buttonType: "border"
                         },
                     })
+                div(class="cards__flex-element")
+                    include ./../../../components/book/book.pug
+                    +book({
+                        classList: "m-b_40",
+                        roomNumber: "888",
+                        roomType: "Люкс",
+                        pricePerDay: "9990",
+                        currency: "₽",
+                        dateDropdownFirst: {
+                            title: "Прибытие"
+                        },
+                        dateDropdownSecond: {
+                            title: "Выезд"
+                        },
+                        dropdown: {
+                            isSmall: false,
+                            title: "Гости",
+                            active: false,
+                            buttonText: "Сколько гостей",
+                            applyClear: true,
+                            lines: [
+                                {
+                                    text: "Взрослые",
+                                    number: "2"
+                                },
+                                {
+                                    text: "Дети",
+                                    number: "1"
+                                },
+                                {
+                                    text: "Младенцы",
+                                    number: "0"
+                                }
+                            ]
+                        },
+                        discount: "2179",
+                        extraServices: "300",
+                        button: {
+                            text: "Забронировать",
+                            buttonType: "wide"
+                        }
+                    })
+                div(class="cards__flex-element")
+                    include ./../../../components/button/button.pug
+                    +button({
+                        text: "Press",
+                        buttonType: "wide"
+                    })

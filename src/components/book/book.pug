@@ -1,0 +1,63 @@
+mixin book(parameters)
+    - if (parameters === undefined) {parameters = {};}
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    form(class="book " + parameters.classList action="#")
+        div(class="book__top-text")
+            div(class="book__room")
+                span(class="book__room-N") №
+                - if (parameters.roomNumber === undefined) {parameters.roomNumber = "888";}
+                span(class="book__room-number")= parameters.roomNumber
+                - if (parameters.roomType === undefined) {parameters.roomType = "Люкс";}
+                span(class="book__room-type")= parameters.roomType
+            div(class="book__price-per-day")
+                - if (parameters.pricePerDay === undefined) {parameters.pricePerDay = "9990";}
+                span(class="book__price-per-day-number")= parameters.pricePerDay
+                - if (parameters.currency === undefined) {parameters.currency = "₽";}
+                span(class="book__price-per-day-currency")= parameters.currency
+                span(class="book__price-per-day-text") в сутки
+        div(class="book__date-dropdowns")
+            include ./../date-dropdown/date-dropdown.pug
+            +date-dropdown(parameters.dateDropdownFirst)
+            +date-dropdown(parameters.dateDropdownSecond)
+        div(class="book__dropdown")
+            include ./../dropdown/dropdown.pug
+            +dropdown(parameters.dropdown)
+        div(class="book__counting")
+            div(class="book__counting-item")
+                div(class="book__counting-text")
+                    span(class="book__counting-per-day")
+                        span(class="book__counting-per-day-value")= parameters.pricePerDay
+                        span(class="book__counting-currency")= parameters.currency 
+                    span(class="book__counting-x") х
+                    span(class="book__counting-days") 1 суток
+                div(class="book__counting-result")
+                    span(class="book__counting-result-value-common")
+                    span(class="book__counting-currency")= parameters.currency
+            div(class="book__counting-item")
+                div(class="book__counting-text")
+                    span(class="book__counting-services") Сбор за услуги: скидка 
+                    span(class="book__counting-services-discount")
+                        - if (parameters.discount === undefined) {parameters.discount = "0";}
+                        span(class="book__counting-services-discount-value")= parameters.discount
+                        span(class="book__counting-currency")= parameters.currency
+                    span(class="book__counting-ellipse") i
+                div(class="book__counting-result")
+                    span(class="book__counting-result-value-services") 0
+                    span(class="book__counting-currency")= parameters.currency
+            div(class="book__counting-item")
+                div(class="book__counting-text")
+                    span(class="book__counting-extra-services") Сбор за дополнительные услуги
+                    span(class="book__counting-ellipse") i
+                div(class="book__counting-result")
+                    - if (parameters.extraServices === undefined) {parameters.extraServices = "0";}
+                    span(class="book__counting-result-value-extra-services")= parameters.extraServices
+                    span(class="book__counting-currency")= parameters.currency
+            div(class="book__counting-item book__counting-item_sum")
+                div(class="book__counting-text") Итого
+                div(class="book__counting-dots") ..........................................................................................................
+                div(class="book__counting-result")
+                    span(class="book__counting-result-value-summary")
+                    span(class="book__counting-currency")= parameters.currency
+        div(class="book__button")
+            include ./../button/button.pug
+            +button(parameters.button)

@@ -7,3 +7,21 @@
 .cards__content {
     padding-top: 42px;
 }
+
+.cards__content-inner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards__flex-element {
+    width: 380px;
+    @media (max-width: 420px) {
+        width: 100%;
+    }
+}
+
+.cards__flex-element:last-child {
+    width: 320px;
+}
