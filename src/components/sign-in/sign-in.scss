@@ -1,0 +1,54 @@
+@import "./../../assets/scss-text-templates";
+
+.sign-in {
+    display: block;
+    max-width: 382px;
+    min-width: 302px;
+    padding: 30px;
+    padding-top: 40px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    @media (max-width: 370px) {
+        padding: 15px;
+        padding-top: 30px;
+    }
+}
+
+.sign-in__title {
+    @extend %h1;
+    margin-bottom: 20px;
+    letter-spacing: 1.2px;
+    @media (max-width: 370px) {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
+
+.sign-in__text-field {
+    margin-bottom: 10px;
+}
+
+.sign-in__first-button {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.sign-in__bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sign-in__bottom-text {
+    @extend %body;
+    display: inline-block;
+    color: #000;
+    max-width: 186px;
+    text-align: center;
+}

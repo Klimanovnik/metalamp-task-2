@@ -1,0 +1,17 @@
+mixin sign-in(parameters)
+    - if (parameters === undefined) {parameters = {};}
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    div(class="sign-in " + parameters.classList)
+        h3(class="sign-in__title")= parameters.title
+        div(class="sign-in__text-field")
+            include ./../text-field/text-field.pug
+            +text-field(parameters.firstLoginField)
+        div(class="sign-in__text-field")
+            +text-field(parameters.secondLoginField)
+        div(class="sign-in__first-button")
+            include ./../button/button.pug
+            +button(parameters.firstButton)
+        div(class="sign-in__bottom")
+            span(class="sign-in__bottom-text")= parameters.bottomText
+            div(class="sign-in__second-button")
+                +button(parameters.secondButton)

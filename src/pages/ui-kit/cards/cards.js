@@ -10,6 +10,7 @@ import "./../../../components/header-with-pale-logo/header-with-pale-logo.js";
 import "./../../../components/pick-up-room/pick-up-room.js";
 import "./../../../components/registration/registration.js";
 import "./../../../components/book/book.js";
+import "./../../../components/sign-in/sign-in.js";
 
 // Page
 import "./cards.scss";

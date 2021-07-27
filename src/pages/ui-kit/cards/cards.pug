@@ -100,7 +100,7 @@ block content
                         secondButton: {
                             text: "Войти",
                             buttonType: "border"
-                        },
+                        }
                     })
                 div(class="cards__flex-element")
                     include ./../../../components/book/book.pug
@@ -142,6 +142,27 @@ block content
                         button: {
                             text: "Забронировать",
                             buttonType: "wide"
+                        }
+                    })
+                    include ./../../../components/sign-in/sign-in.pug
+                    +sign-in({
+                        title: "Войти",
+                        firstLoginField: {
+                            type: "email",
+                            placeholder: "Email"
+                        },
+                        secondLoginField: {
+                            type: "password",
+                            placeholder: "Пароль"
+                        },
+                        firstButton: {
+                            text: "Войти",
+                            buttonType: "wide"
+                        },
+                        bottomText: "Нет аккаунта на Toxin?",
+                        secondButton: {
+                            text: "Создать",
+                            buttonType: "border"
                         }
                     })
                 div(class="cards__flex-element")
