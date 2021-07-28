@@ -1,0 +1,5 @@
+mixin calendar(parameters)
+    - if (parameters === undefined) {parameters = {};}
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    input(type = "text" id = "input123")
+    div(class = "calendar " + parameters.classList)

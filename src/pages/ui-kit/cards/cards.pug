@@ -166,6 +166,10 @@ block content
                         }
                     })
                 div(class="cards__flex-element")
+                    include ./../../../components/calendar/calendar.pug
+                    +calendar({
+                        classList: "m-b_40",
+                    })
                     include ./../../../components/button/button.pug
                     +button({
                         text: "Press",
