@@ -11,9 +11,9 @@
     width: 100%;
     max-width: 320px;
     min-width: 302px;
-    min-height: 370px;
     padding: 20px;
     padding-top: 15px;
+    padding-bottom: 55px;
 }
 
 .datepicker--nav {
@@ -77,6 +77,19 @@
     z-index: 2;
 }
 
+.datepicker--cell.-disabled- {
+    cursor: not-allowed;
+}
+
+.datepicker--cell.-disabled-.-focus-,
+.datepicker--cell.-disabled-.-focus-.-other-month-,
+.datepicker--cell.-disabled-.-focus-.-other-decade-,
+.datepicker--cell.-disabled-.-range-from-,
+.datepicker--cell.-disabled-.-range-to- {
+    color: #fff;
+    background: #a9aebe;
+}
+
 .datepicker--cell-day {
     min-height: 40px;
 }
@@ -130,10 +143,10 @@
 .datepicker--cell-year.-selected-.-focus-.-other-decade-,
 .datepicker--cell-year.-range-to-.-in-range-.-other-decade-,
 .datepicker--cell-year.-range-to-.-in-range-.-other-decade-.-focus-,
+.datepicker--cell-year.-range-to-.-in-range-.-selected-,
 .datepicker--cell-year.-range-from-.-in-range-.-other-decade-,
 .datepicker--cell-year.-range-from-.-in-range-.-other-decade-.-focus-,
-.datepicker--cell-year.-range-from-.-in-range-.-selected-,
-.datepicker--cell-year.-range-to-.-in-range-.-selected- {
+.datepicker--cell-year.-range-from-.-in-range-.-selected- {
     color: #fff;
     background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
     border-radius: 50%;
@@ -188,14 +201,16 @@
 .datepicker--cell.-in-range-.calendar__first-day,
 .datepicker--cell.-in-range-.calendar__first-day.-focus-,
 .datepicker--cell.-in-range-.calendar__first-month,
-.datepicker--cell.-in-range-.calendar__first-year {
+.datepicker--cell.-in-range-.calendar__first-year,
+.datepicker--cell.-in-range-.calendar__first-year.-focus- {
     border-radius: 50% 0px 0px 50%;
 }
 
 .datepicker--cell.-in-range-.calendar__last-day,
 .datepicker--cell.-in-range-.calendar__last-day.-focus-,
 .datepicker--cell.-in-range-.calendar__last-month,
-.datepicker--cell.-in-range-.calendar__last-year {
+.datepicker--cell.-in-range-.calendar__last-year,
+.datepicker--cell.-in-range-.calendar__last-year.-focus- {
     border-radius: 0px 50% 50% 0px;
 }
 
@@ -204,10 +219,55 @@
 .datepicker--cell.-in-range-.-range-to-.calendar__last-month,
 .datepicker--cell.-in-range- + .datepicker--cell.-range-to-.calendar__first-month::before,
 .datepicker--cell.-range-from- + .datepicker--cell.-in-range-.-range-to-::before,
-.datepicker--cell.-range-from- + .datepicker--cell.-range-to-::before {
+.datepicker--cell.-range-from- + .datepicker--cell.-range-to-::before,
+.datepicker--cell.-in-range-.calendar__first-year.-focus-.-selected-,
+.datepicker--cell.-in-range-.calendar__last-year.-focus-.-selected-,
+.datepicker--cell.-in-range- + .datepicker--cell.-range-to-.calendar__first-year::before {
     border-radius: 50%;
 }
 
 .datepicker--buttons {
     border-top: 0px;
+    display: none;
+}
+
+.calendar {
+    position: relative;
+}
+
+.calendar__apply-clear {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.calendar__clear,
+.calendar__apply {
+    @extend %h3;
+    color: $purple;
+    background-color: #fff;
+    white-space: nowrap;
+    max-width: 45%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.calendar__clear:hover,
+.calendar__apply:hover {
+    color: $brighter-purple;
+}
+
+.calendar__input {
+    position: absolute;
+    border: 1px solid #000;
+    bottom: 5px;
+    left: 5px;
+    font-size: 7px;
+    max-height: 10px;
+    display: none;
 }

@@ -1,5 +1,9 @@
 mixin filter-date-dropdown(parameters)
-    -if (parameters.classList === undefined) {parameters.classList = "";}
+    - if (parameters === undefined) {parameters = {};}
+    - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class="filter-date-dropdown " + parameters.classList)
         h3(class="filter-date-dropdown__title")= parameters.title
         button(class="filter-date-dropdown__button" type="button") ДД.ММ - ДД.ММ
+        div(class="filter-date-dropdown__calendar")
+            include ./../calendar/calendar.pug
+            +calendar()

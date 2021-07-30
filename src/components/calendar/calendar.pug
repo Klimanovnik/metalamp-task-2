@@ -2,4 +2,7 @@ mixin calendar(parameters)
     - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class = "calendar " + parameters.classList)
-    div(class = "calendar " + parameters.classList)
+        div(class = "calendar__apply-clear")
+            button(class="calendar__clear" type="button") Очистить
+            button(class="calendar__apply" type="button") Применить
+        input(class="calendar__input" type="text")
