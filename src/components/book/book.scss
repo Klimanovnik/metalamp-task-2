@@ -154,14 +154,16 @@
 }
 
 .book__counting-dots {
-    overflow: hidden;
-    color: $ds25;
-    line-height: 2;
+    border-top: 2px dotted $ds25;
+    width: 100%;
+    position: relative;
+    top: -4px;
 }
 
 .book__counting-item_sum {
     padding-top: 20px;
-    padding-bottom: 14px;
+    padding-bottom: 20px;
+    align-items: flex-end;
 }
 
 .book__counting-item_sum .book__counting-text,

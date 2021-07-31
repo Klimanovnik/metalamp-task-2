@@ -10,7 +10,7 @@
     box-sizing: border-box;
     width: 100%;
     max-width: 320px;
-    min-width: 302px;
+    min-width: 270px;
     padding: 20px;
     padding-top: 15px;
     padding-bottom: 55px;
@@ -233,6 +233,7 @@
 
 .calendar {
     position: relative;
+    box-shadow: 0px 10px 20px $ds5;
 }
 
 .calendar__apply-clear {

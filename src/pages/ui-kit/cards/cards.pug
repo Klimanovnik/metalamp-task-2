@@ -166,8 +166,24 @@ block content
                     +calendar({
                         classList: "m-b_40",
                     })
-                    include ./../../../components/button/button.pug
-                    +button({
-                        text: "Press",
-                        buttonType: "wide"
+                    include ./../../../components/room-card/room-card.pug
+                    +room-card({
+                        classList: "m-b_40",
+                        images: ["1.jpg", "1.jpg", "1.jpg", "1.jpg"],
+                        roomNumber: "888",
+                        roomType: "Люкс",
+                        roomPrice: "9990",
+                        currency: "₽",
+                        rate: 5,
+                        rateNumber: "145"
+                    })
+                    +room-card({
+                        classList: "",
+                        images: ["2.jpg", "2.jpg", "2.jpg", "2.jpg"],
+                        roomNumber: "840",
+                        roomType: "",
+                        roomPrice: "9900",
+                        currency: "₽",
+                        rate: 4,
+                        rateNumber: "65"
                     })

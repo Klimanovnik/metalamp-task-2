@@ -12,6 +12,7 @@ import "./../../../components/registration/registration.js";
 import "./../../../components/book/book.js";
 import "./../../../components/sign-in/sign-in.js";
 import "./../../../components/calendar/calendar.js";
+import "./../../../components/room-card/room-card.js";
 
 // Page
 import "./cards.scss";

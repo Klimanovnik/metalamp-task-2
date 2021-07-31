@@ -1,0 +1,32 @@
+mixin room-card(parameters)
+    - if (parameters === undefined) {parameters = {};}
+    - if (parameters.classList === undefined) {parameters.classList = "";}
+    div(class="room-card " + parameters.classList)
+        div(class="room-card__carousel-shadow")
+        div(class="room-card__carousel")
+            - if (parameters.images === undefined || parameters.images.length === 0) {parameters.images = ["1.jpg"];}
+            - for (let image of parameters.images)
+                img(class="room-card__img" src="#" alt=image width="270" height="150")
+        div(class="room-card__info")
+            div(class="room-card__info-room-and-price")
+                div(class="room-card__info-room")
+                    span(class="room-card__info-room-N") №
+                    - if (parameters.roomNumber === undefined) {parameters.roomNumber = "888";}
+                    span(class="room-card__info-room-number")= parameters.roomNumber
+                    span(class="room-card__info-room-type")= parameters.roomType
+                div(class="room-card__info-price")
+                    - if (parameters.roomPrice === undefined) {parameters.roomPrice = "9990";}
+                    span(class="room-card__info-price-number")= parameters.roomPrice
+                    - if (parameters.currency === undefined) {parameters.currency = "₽";}
+                    span(class="room-card__info-price-currency")= parameters.currency
+                    span(class="room-card__info-price-text") в сутки
+            div(class="room-card__info-rate")
+                include ./../rate-button/rate-button.pug
+                - if (parameters.rate === undefined) {parameters.rate = 5;}
+                +rate-button({
+                    items: [parameters.rate]
+                })
+                div(class="room-card__info-rate-text-wrap")
+                    - if (parameters.rateNumber === undefined) {parameters.rateNumber = "0";}
+                    span(class="room-card__info-rate-number")= parameters.rateNumber
+                    span(class="room-card__info-rate-text") Отзывов
