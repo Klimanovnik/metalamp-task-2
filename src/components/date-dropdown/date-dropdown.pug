@@ -2,8 +2,13 @@ mixin date-dropdown(parameters)
     - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class="date-dropdown " + parameters.classList)
-        h3(class="date-dropdown__title")= parameters.title
-        button(class="date-dropdown__button" type="button") ДД.ММ.ГГГГ
+        div(class="date-dropdown__fields")
+            div(class="date-dropdown__field")
+                h3(class="date-dropdown__title")= parameters.firstTitle
+                button(class="date-dropdown__button date-dropdown__button_first" type="button") ДД.ММ.ГГГГ
+            div(class="date-dropdown__field")
+                h3(class="date-dropdown__title")= parameters.secondTitle
+                button(class="date-dropdown__button date-dropdown__button_second" type="button") ДД.ММ.ГГГГ
         div(class="date-dropdown__calendar")
             include ./../calendar/calendar.pug
             +calendar()

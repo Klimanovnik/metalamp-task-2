@@ -4,13 +4,28 @@
 /* date-dropdown */
 
 .date-dropdown {
-    width: 150px;
-    min-width: 135px;
+    max-width: 320px;
+    min-width: 302px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.date-dropdown__fields {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-size: 0px;
+}
+
+.date-dropdown__field {
+    max-width: 50%;
 }
 
 .date-dropdown__title {
     @extend %h3;
     line-height: 2;
+    width: 100%;
 }
 
 .date-dropdown__button {
@@ -18,14 +33,14 @@
     border: 1px solid $ds25;
     border-radius: 4px;
     padding: 9.5px 15px;
+    min-width: 150px;
     width: 100%;
     background: #fff;
     text-align: left;
     position: relative;
-    cursor: pointer;
 }
 
-.date-dropdown__button:hover {
+.date-dropdown:hover .date-dropdown__button {
     border-color: $ds50;
 }
 
@@ -44,4 +59,14 @@
 
 .date-dropdown__calendar {
     display: none;
+    padding-top: 5px;
+}
+
+.date-dropdown_active .date-dropdown__calendar {
+    display: block;
+}
+
+.date-dropdown_active .datepicker,
+.date-dropdown_active .date-dropdown__button {
+    border-color: $ds50;
 }

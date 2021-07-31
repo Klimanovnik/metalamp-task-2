@@ -52,16 +52,12 @@ block content
                     classList: "m-b_35",
                     title: "Masked text field"
                 })
-                div(class="form-elements__date-dropdowns")
-                    include ./../../../components/date-dropdown/date-dropdown.pug
-                    +date-dropdown({
-                        classList: "",
-                        title: "Date Dropdown"
-                    })
-                    +date-dropdown({
-                        classList: "",
-                        title: "Date Dropdown"
-                    })
+                include ./../../../components/date-dropdown/date-dropdown.pug
+                +date-dropdown({
+                    classList: "m-b_40",
+                    firstTitle: "Date Dropdown",
+                    secondTitle: "Date Dropdown"
+                })
                 include ./../../../components/filter-date-dropdown/filter-date-dropdown.pug
                 +filter-date-dropdown({
                     classList: "m-b_35",

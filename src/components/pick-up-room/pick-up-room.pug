@@ -3,10 +3,9 @@ mixin pick-up-room(parameters)
     - if (parameters.classList === undefined) {parameters.classList = "";}
     form(class="pick-up-room " + parameters.classList action="#")
         h3(class="pick-up-room__title")= parameters.title
-        div(class="pick-up-room__date-dropdowns")
+        div(class="pick-up-room__date-dropdown")
             include ./../date-dropdown/date-dropdown.pug
-            +date-dropdown(parameters.dateDropdownFirst)
-            +date-dropdown(parameters.dateDropdownSecond)
+            +date-dropdown(parameters.dateDropdown)
         div(class="pick-up-room__dropdown")
             include ./../dropdown/dropdown.pug
             +dropdown(parameters.dropdown)

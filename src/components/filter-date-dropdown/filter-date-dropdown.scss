@@ -4,7 +4,7 @@
 /* filter-date-dropdown */
 
 .filter-date-dropdown {
-    max-width: 266px;
+    max-width: 320px;
     min-width: 266px;
     position: relative;
 }
@@ -13,10 +13,14 @@
     @extend %h3;
     line-height: 2;
     max-width: 266px;
+    @media (max-width: 1071px) {
+        margin: 0px auto;
+    }
 }
 
 .filter-date-dropdown__button {
     @extend %body;
+    display: block;
     border: 1px solid $ds25;
     border-radius: 4px;
     padding: 9.5px 15px;
@@ -27,6 +31,9 @@
     text-align: left;
     position: relative;
     cursor: pointer;
+    @media (max-width: 1071px) {
+        margin: 0px auto;
+    }
 }
 
 .filter-date-dropdown__button:hover {
@@ -48,10 +55,7 @@
 
 .filter-date-dropdown__calendar {
     display: none;
-    position: absolute;
-    top: 72px;
-    left: 0px;
-    z-index: 10;
+    padding-top: 5px;
 }
 
 .filter-date-dropdown_active .filter-date-dropdown__calendar {
