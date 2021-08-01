@@ -47,7 +47,8 @@ module.exports = {
         "index": ["./pages/website-pages/index/index.js"],
         "colors-and-type": ["./pages/ui-kit/colors-and-type/colors-and-type.js"],
         "form-elements": ["./pages/ui-kit/form-elements/form-elements.js"],
-        "cards": ["./pages/ui-kit/cards/cards.js"]
+        "cards": ["./pages/ui-kit/cards/cards.js"],
+        "headers-and-footers": ["./pages/ui-kit/headers-and-footers/headers-and-footers.js"]
     },
     output: {
         path: path.resolve(__dirname, "app"),
@@ -90,6 +91,12 @@ module.exports = {
             template: "./pages/ui-kit/cards/cards.pug",
             filename: "pages/cards.html",
             chunks: ["cards"],
+            minify: minifyFunction()
+        }),
+        new HTMLWebpackPlugin({
+            template: "./pages/ui-kit/headers-and-footers/headers-and-footers.pug",
+            filename: "pages/headers-and-footers.html",
+            chunks: ["headers-and-footers"],
             minify: minifyFunction()
         })
     ],

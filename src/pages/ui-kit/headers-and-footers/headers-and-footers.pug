@@ -1,0 +1,19 @@
+extends ./../../../assets/page-template.pug
+block title
+    title Headers&amp;Footers
+block content
+    div(class="headers-and-footers__wrap")
+        // header
+        include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
+        +header-with-pale-logo({
+            classList: "container-1440"
+        })
+        // content
+        div(class="headers-and-footers__content")
+            include ./../../../components/header/header.pug
+            +header({
+                classList: "m-b_40"
+            })
+            +header({
+                isEntry: true
+            })

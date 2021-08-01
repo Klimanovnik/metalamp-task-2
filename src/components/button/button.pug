@@ -6,4 +6,5 @@ mixin button(parameters)
     - else if (parameters.buttonType === "border") {parameters.classList = parameters.classList + " button_border";}
     - else if (parameters.buttonType === "link") {parameters.classList = parameters.classList + " button_link";}
     - else if (parameters.buttonType === "wide") {parameters.classList = parameters.classList + " button_wide";}
-    button(class="button " + parameters.classList type="button")= parameters.text
+    button(class="button " + parameters.classList type="button")
+        span(class="button__text")= parameters.text
