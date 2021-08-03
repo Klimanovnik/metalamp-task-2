@@ -22,6 +22,7 @@
 
 .dropdown {
     width: 100%;
+    position: relative;
 }
 
 .dropdown__invisible-button-text {
@@ -84,16 +85,21 @@
     padding-left: 15px;
     padding-bottom: 0px;
     background-color: #fff;
+    position: absolute;
+    top: 44px;
+    left: 0px;
+    z-index: 15;
 }
 
 .dropdown_active {
-    box-shadow: 0px 10px 20px $ds5;
     .dropdown__button {
         border: 1px solid $ds50;
         border-radius: 4px 4px 0px 0px;
+        box-shadow: 0px 10px 20px $ds5;
     }
     .dropdown__list {
         display: block;
+        box-shadow: 0px 10px 20px $ds5;
     }
 }
 

@@ -1,0 +1,66 @@
+@import "./../../../assets/scss-text-templates.scss";
+
+.landing-page__header_fixed {
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+}
+
+.landing-page__content {
+    padding-top: 70px;
+    position: relative;
+}
+
+.landing-page__auto-slider-img {
+    display: block;
+    min-height: 900px;
+    @media (max-width: 960px) {
+        min-height: 600px;
+    }
+    @media (max-width: 600px) {
+        min-height: 500px;
+    }
+    @media (max-width: 500px) {
+        min-height: 440px;
+    }
+}
+
+.landing-page__pick-up-room {
+    width: 95vw;
+    position: absolute;
+    top: 140px;
+    left: 180px;
+    @media (max-width: 960px) {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @media (max-width: 600px) {
+        top: 100px;
+    }
+    z-index: 4;
+}
+
+.landing-page__img-text {
+    @extend %body;
+    max-width: 297px;
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    bottom: 20px;
+    right: 174px;
+    @media (max-width: 1300px) {
+        right: 100px;
+    }
+    @media (max-width: 960px) {
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+    @media (max-width: 500px) {
+        opacity: 0;
+    }
+    z-index: 3;
+}
