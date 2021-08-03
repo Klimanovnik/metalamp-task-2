@@ -1,12 +1,12 @@
 .cards__wrap {
     background: #e5e5e5;
     height: 100%;
-    min-height: 1350px;
+    min-height: 1850px;
     @media (max-width: 1170px) {
-        min-height: 2350px;
+        min-height: 2950px;
     }
     @media (max-width: 840px) {
-        min-height: 3350px;
+        min-height: 4450px;
     }
 }
 
@@ -40,6 +40,7 @@
 
 .cards__flex-element:last-child {
     width: 320px;
+    margin-bottom: 0px;
     @media (max-width: 1170px){
         width: 50%;
         display: flex;
