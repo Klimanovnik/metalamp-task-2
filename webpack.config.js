@@ -40,16 +40,38 @@ const optimizationFunction = function () {
     return optimizationConfigObject;
 };
 
+const entryFunction = function (pageAndTypeObj) {
+
+    for (page in pageAndTypeObj) {
+        pageAndTypeObj[page] = [`./pages/${pageAndTypeObj[page]}/${page}/${page}.js`];
+    }
+
+    return pageAndTypeObj;
+
+};
+
+const htmlRender = function (page, pageType) {
+
+    return new HTMLWebpackPlugin({
+        template: `./pages/${pageType}/${page}/${page}.pug`,
+        filename: (page === "index") ? `${page}.html` : `pages/${page}.html`,
+        chunks: [`${page}`],
+        minify: minifyFunction()
+    });
+
+};
+
 module.exports = {
     context: path.resolve(__dirname, "src"),
     mode: "development",
-    entry: {
-        "index": ["./pages/website-pages/index/index.js"],
-        "colors-and-type": ["./pages/ui-kit/colors-and-type/colors-and-type.js"],
-        "form-elements": ["./pages/ui-kit/form-elements/form-elements.js"],
-        "cards": ["./pages/ui-kit/cards/cards.js"],
-        "headers-and-footers": ["./pages/ui-kit/headers-and-footers/headers-and-footers.js"]
-    },
+    entry: entryFunction({
+        "index": "website-pages",
+        "colors-and-type": "ui-kit",
+        "form-elements": "ui-kit",
+        "cards": "ui-kit",
+        "headers-and-footers": "ui-kit",
+        "landing-page": "website-pages"
+    }),
     output: {
         path: path.resolve(__dirname, "app"),
         filename: isDev ? "js/[name].js" : "js/[name].[contenthash].js"
@@ -69,36 +91,12 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
         }),
-        new HTMLWebpackPlugin({
-            template: "./pages/website-pages/index/index.pug",
-            filename: "index.html",
-            chunks: ["index"],
-            minify: minifyFunction()
-        }),
-        new HTMLWebpackPlugin({
-            template: "./pages/ui-kit/colors-and-type/colors-and-type.pug",
-            filename: "pages/colors-and-type.html",
-            chunks: ["colors-and-type"],
-            minify: minifyFunction()
-        }),
-        new HTMLWebpackPlugin({
-            template: "./pages/ui-kit/form-elements/form-elements.pug",
-            filename: "pages/form-elements.html",
-            chunks: ["form-elements"],
-            minify: minifyFunction()
-        }),
-        new HTMLWebpackPlugin({
-            template: "./pages/ui-kit/cards/cards.pug",
-            filename: "pages/cards.html",
-            chunks: ["cards"],
-            minify: minifyFunction()
-        }),
-        new HTMLWebpackPlugin({
-            template: "./pages/ui-kit/headers-and-footers/headers-and-footers.pug",
-            filename: "pages/headers-and-footers.html",
-            chunks: ["headers-and-footers"],
-            minify: minifyFunction()
-        })
+        htmlRender("index", "website-pages"),
+        htmlRender("colors-and-type", "ui-kit"),
+        htmlRender("form-elements", "ui-kit"),
+        htmlRender("cards", "ui-kit"),
+        htmlRender("headers-and-footers", "ui-kit"),
+        htmlRender("landing-page", "website-pages")
     ],
     module: {
         rules: [

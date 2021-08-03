@@ -1,0 +1,12 @@
+extends ./../../../assets/page-template.pug
+block title
+    title Landing Page
+block content
+    div(class="landing-page__wrap")
+        // header
+        include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
+        +header-with-pale-logo({
+            classList: "container-1440"
+        })
+        // content
+        div(class="landing-page__content")
