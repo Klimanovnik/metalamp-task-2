@@ -24,7 +24,7 @@ mixin room-card(parameters)
                 include ./../rate-button/rate-button.pug
                 - if (parameters.rate === undefined) {parameters.rate = 5;}
                 +rate-button({
-                    items: [parameters.rate]
+                    rate: parameters.rate
                 })
                 div(class="room-card__info-rate-text-wrap")
                     - if (parameters.rateNumber === undefined) {parameters.rateNumber = "0";}

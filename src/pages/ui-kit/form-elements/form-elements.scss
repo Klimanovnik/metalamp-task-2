@@ -59,6 +59,10 @@
     }
 }
 
+.form-elements__like-buttons {
+    font-size: 0px;
+}
+
 .form-elements__title {
     @extend %h3;
     line-height: 2;

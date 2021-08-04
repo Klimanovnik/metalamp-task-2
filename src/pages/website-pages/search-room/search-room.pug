@@ -1,0 +1,15 @@
+extends ./../../../assets/page-template.pug
+block title
+    title Search Room
+block content
+    div(class="search-room__wrap")
+        // header
+        include ./../../../components/header/header.pug
+        +header({
+            classList: "header_fixed"
+        })
+        // content
+        div(class="search-room__content")
+        // footer
+        include ./../../../components/footer/footer.pug
+        +footer()

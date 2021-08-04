@@ -212,3 +212,12 @@
 .header_active .header__burger {
     display: block;
 }
+
+.header_fixed {
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+}

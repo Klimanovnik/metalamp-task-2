@@ -4,16 +4,6 @@
 /* like-button */
 
 .like-button {
-    max-width: 260px;
-    font-size: 0px;
-}
-
-.like-button__title {
-    @extend %h3;
-    line-height: 4;
-}
-
-.like-button__button {
     display: inline-block;
     width: 40px;
     height: 20px;
@@ -23,7 +13,6 @@
     position: relative;
     top: 0px;
     left: 0px;
-    margin-right: 10px;
 }
 
 .like-button__like, .like-button__unlike {
@@ -57,18 +46,18 @@
     left: 15px;
 }
 
-.like-button__button_active {
+.like-button_active {
     border-color: $purple;
 }
 
-.like-button__button_active .like-button__number {
+.like-button_active .like-button__number {
     color: $purple;
 }
 
-.like-button__button_active .like-button__unlike {
+.like-button_active .like-button__unlike {
     fill-opacity: 0;
 }
 
-.like-button__button_active .like-button__like {
+.like-button_active .like-button__like {
     fill-opacity: 1;
 }

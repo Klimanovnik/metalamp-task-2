@@ -3,7 +3,6 @@ import "./../../../assets/fonts.scss";
 import "./../../../assets/reset.scss";
 
 // Components
-import "./../../../components/_container-1160/container-1160.js";
 import "./../../../components/header/header.js";
 import "./../../../../node_modules/slick-carousel/slick/slick.min.js";
 import "./../../../../node_modules/slick-carousel/slick/slick.css";

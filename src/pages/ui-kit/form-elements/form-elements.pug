@@ -106,7 +106,7 @@ block content
                 })
                 include ./../../../components/toggle/toggle.pug
                 +toggle({
-                    classList: "m-b_20",
+                    classList: "m-b_35",
                     title: "Toggle",
                     items: [
                         {
@@ -119,26 +119,28 @@ block content
                         }
                     ]
                 })
-                include ./../../../components/like-button/like-button.pug
-                +like-button({
-                    classList: "m-b_25",
-                    title: "Like Button",
-                    items: [
-                        {
-                            number: "2",
-                            active: false
-                        },
-                        {
-                            number: "12",
-                            active: true
-                        }
-                    ]
-                })
-                include ./../../../components/rate-button/rate-button.pug
-                +rate-button({
-                    title: "Rate Button",
-                    items: [4, 5]
-                })
+                div(class="form-elements__like-buttons m-b_40")
+                    h3(class="form-elements__title m-b_10") Like Button
+                    include ./../../../components/like-button/like-button.pug
+                    +like-button({
+                        classList: "m-r_10",
+                        number: "2",
+                        active: false
+                    })
+                    +like-button({
+                        number: "12",
+                        active: true
+                    })
+                div(class="form-elements__rate-buttons")
+                    h3(class="form-elements__title m-b_10") Rate Button
+                    include ./../../../components/rate-button/rate-button.pug
+                    +rate-button({
+                        classList: "m-r_15",
+                        rate: 4
+                    })
+                    +rate-button({
+                        rate: 5
+                    })
             section(class="form-elements__flex-element")
                 include ./../../../components/range-slider/range-slider.pug
                 +range-slider({
@@ -218,7 +220,7 @@ block content
                     ]
                 })
                 +dropdown({
-                    classList: "m-b_40",
+                    classList: "m-b_154",
                     isSmall: true,
                     title: "Dropdown",
                     active: true,
@@ -308,7 +310,7 @@ block content
                 })
             section(class="form-elements__flex-element m-l_50 form-elements__flex-element_with-m-l")
                 +dropdown({
-                    classList: "m-b_95",
+                    classList: "m-b_247",
                     isSmall: false,
                     title: "Dropdown",
                     active: true,
@@ -348,7 +350,7 @@ block content
                 })
             section(class="form-elements__flex-element")
                 +dropdown({
-                    classList: "m-b_95",
+                    classList: "m-b_247",
                     isSmall: false,
                     title: "Dropdown",
                     active: true,
@@ -407,12 +409,8 @@ block content
                             dateString: "5 дней назад",
                             text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
                             likeOptions: {
-                                items: [
-                                    {
-                                        number: "12",
-                                        active: true
-                                    }
-                                ]
+                                number: "12",
+                                active: true
                             }
                         }
                     ]
