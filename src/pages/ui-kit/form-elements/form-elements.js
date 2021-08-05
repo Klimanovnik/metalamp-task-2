@@ -2,10 +2,9 @@
 import "./../../../assets/fonts.scss";
 import "./../../../assets/reset.scss";
 import "./../../../assets/atomic.scss";
+import "./../../../assets/container-1920.scss";
 
 // Components
-import "./../../../components/_container-1160/container-1160.js";
-import "./../../../components/_container-1440/container-1440.js";
 import "./../../../components/bullet-list/bullet-list.js";
 import "./../../../components/button/button.js";
 import "./../../../components/checkbox/checkbox.js";

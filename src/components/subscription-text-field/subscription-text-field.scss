@@ -3,9 +3,15 @@
 
 /* subscription-text-field */
 
+.subscription-text-field-wrap {
+    max-width: 320px;
+    min-width: 266px;
+    width: 100%;
+}
+
 .subscription-text-field {
     max-width: 266px;
-    min-width: 260px;
+    min-width: 266px;
     position: relative;
 }
 

@@ -4,11 +4,9 @@
 /* checkbox */
 
 .checkbox {
-    max-width: 264px;
-}
-
-.checkbox_small {
-    max-width: 222px;
+    max-width: 320px;
+    min-width: 266px;
+    width: 100%;
 }
 
 .checkbox__title {

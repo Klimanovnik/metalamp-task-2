@@ -5,11 +5,11 @@ block content
     // header
     include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
     +header-with-pale-logo({
-        classList: "container-1440"
+        classList: "container-1920"
     })
     // content
     div(class="form-elements__content")
-        form(class="form-elements__form container-1160" action="#")
+        form(class="form-elements__form container-1920" action="#")
             section(class="form-elements__flex-element")
                 include ./../../../components/text-field/text-field.pug
                 +text-field({
@@ -67,7 +67,7 @@ block content
                 +subscription-text-field({
                     title: "Subscription text field"
                 })
-            section(class="form-elements__flex-element m-l_54 form-elements__flex-element_with-m-l")
+            section(class="form-elements__flex-element")
                 include ./../../../components/checkbox/checkbox.pug
                 +checkbox({
                     classList: "m-b_20",
@@ -308,7 +308,7 @@ block content
                         ]
                     }
                 })
-            section(class="form-elements__flex-element m-l_50 form-elements__flex-element_with-m-l")
+            section(class="form-elements__flex-element")
                 +dropdown({
                     classList: "m-b_247",
                     isSmall: false,

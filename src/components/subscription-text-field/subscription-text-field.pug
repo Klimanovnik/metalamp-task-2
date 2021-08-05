@@ -1,7 +1,8 @@
 mixin subscription-text-field(parameters)
     - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
-    div(class="subscription-text-field " + parameters.classList)
-        h3(class="subscription-text-field__title")= parameters.title
-        button(class="subscription-text-field__button" type="submit")
-        input(class="subscription-text-field__field" type="email" placeholder="Email")
+    div(class="subscription-text-field-wrap " + parameters.classList)
+        div(class="subscription-text-field")
+            h3(class="subscription-text-field__title")= parameters.title
+            button(class="subscription-text-field__button" type="submit")
+            input(class="subscription-text-field__field" type="email" placeholder="Email")

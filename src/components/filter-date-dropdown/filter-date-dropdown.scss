@@ -6,6 +6,7 @@
 .filter-date-dropdown {
     max-width: 320px;
     min-width: 266px;
+    width: 100%;
     position: relative;
 }
 
@@ -13,9 +14,6 @@
     @extend %h3;
     line-height: 2;
     max-width: 266px;
-    @media (max-width: 1071px) {
-        margin: 0px auto;
-    }
 }
 
 .filter-date-dropdown__button {
@@ -31,9 +29,6 @@
     text-align: left;
     position: relative;
     cursor: pointer;
-    @media (max-width: 1071px) {
-        margin: 0px auto;
-    }
 }
 
 .filter-date-dropdown__button:hover {

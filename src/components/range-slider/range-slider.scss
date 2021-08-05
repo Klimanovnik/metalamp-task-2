@@ -4,11 +4,15 @@
 /* range-slider */
 
 .range-slider-wrap {
-    max-width: 266px;
+    max-width: 320px;
     min-width: 266px;
+    width: 100%;
 }
 
 .range-slider-text {
+    max-width: 266px;
+    min-width: 266px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -50,6 +54,8 @@
 }
 
 .range-slider {
+    max-width: 266px;
+    min-width: 266px;
     width: 100%;
     height: 6px;
     background: #fff;

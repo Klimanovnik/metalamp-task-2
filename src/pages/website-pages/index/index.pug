@@ -6,23 +6,25 @@ block content
         // header
         include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
         +header-with-pale-logo({
-            classList: "container-1440",
+            classList: "container-1920",
             logoClassList: "pale-logo_dark"
         })
         // content
         div(class="index__content")
-            ul(class="index__list")
-                li(class="index__list-item")
-                    h3(class="index__list-title") Страницы
-                li(class="index__list-item")
-                    a(class="index__list-link" href="./pages/colors-and-type.html") Colors&amp;Type
-                li(class="index__list-item")
-                    a(class="index__list-link" href="./pages/form-elements.html") Form Elements
-                li(class="index__list-item")
-                    a(class="index__list-link" href="./pages/cards.html") Cards
-                li(class="index__list-item")
-                    a(class="index__list-link" href="./pages/headers-and-footers.html") Headers&amp;Footers
-                li(class="index__list-item")
-                    a(class="index__list-link" href="./pages/landing-page.html") Landing Page
-                li(class="index__list-item")
-                    a(class="index__list-link" href="./pages/search-room.html") Search Room
+            div(class="container-1920")
+                div(class="index__content-inner")
+                    ul(class="index__list")
+                        li(class="index__list-item")
+                            h3(class="index__list-title") Страницы
+                        li(class="index__list-item")
+                            a(class="index__list-link" href="./pages/colors-and-type.html") Colors&amp;Type
+                        li(class="index__list-item")
+                            a(class="index__list-link" href="./pages/form-elements.html") Form Elements
+                        li(class="index__list-item")
+                            a(class="index__list-link" href="./pages/cards.html") Cards
+                        li(class="index__list-item")
+                            a(class="index__list-link" href="./pages/headers-and-footers.html") Headers&amp;Footers
+                        li(class="index__list-item")
+                            a(class="index__list-link" href="./pages/landing-page.html") Landing Page
+                        li(class="index__list-item")
+                            a(class="index__list-link" href="./pages/search-room.html") Search Room
