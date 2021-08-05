@@ -1,4 +1,5 @@
 mixin pagination(parameters)
+    - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     - if (parameters.numberOfPages === undefined) {parameters.numberOfPages = "15";}
     div(class="pagination " + parameters.classList)

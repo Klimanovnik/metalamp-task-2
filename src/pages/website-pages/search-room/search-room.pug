@@ -10,6 +10,265 @@ block content
         })
         // content
         div(class="search-room__content")
+            div(class="container-1920")
+                div(class="search-room__content-inner")
+                    section(class="search-room__options")
+                        div(class="search-room__filter-date-dropdown")
+                            include ./../../../components/filter-date-dropdown/filter-date-dropdown.pug
+                            +filter-date-dropdown({
+                                title: "Даты пребывания в отеле"
+                            })
+                        div(class="search-room__dropdown")
+                            include ./../../../components/dropdown/dropdown.pug
+                            +dropdown({
+                                title: "Гости",
+                                active: false,
+                                buttonText: "Сколько гостей",
+                                applyClear: true,
+                                lines: [
+                                    {
+                                        text: "Взрослые",
+                                        number: "2"
+                                    },
+                                    {
+                                        text: "Дети",
+                                        number: "1"
+                                    },
+                                    {
+                                        text: "Младенцы",
+                                        number: "1"
+                                    }
+                                ]
+                            })
+                        div(class="search-room__range")
+                            include ./../../../components/range-slider/range-slider.pug
+                            +range-slider({
+                                title: "Диапазон цены",
+                                minNumber: "1287",
+                                maxNumber: "14456",
+                                units: "₽",
+                                offsetFirstToLeft: "75",
+                                offsetSecondToRight: "90"
+                            })
+                        div(class="search-room__checkbox")
+                            include ./../../../components/checkbox/checkbox.pug
+                            +checkbox({
+                                title: "Правила дома",
+                                items: [
+                                    {
+                                        text: "Можно курить",
+                                        active: false
+                                    },
+                                    {
+                                        text: "Можно с питомцами",
+                                        active: true
+                                    },
+                                    {
+                                        text: "Можно пригласить гостей (до 10 человек)",
+                                        active: true
+                                    }
+                                ]
+                            })
+                        div(class="search-room__checkbox")
+                            +checkbox({
+                                title: "Доступность",
+                                isSmallText: true,
+                                items: [
+                                    {
+                                        title: "Широкий коридор",
+                                        text: "Ширина коридоров в номере не менее 91 см",
+                                        active: false
+                                    },
+                                    {
+                                        title: "Помощник для инвалидов",
+                                        text: "На 1 этаже вас встретит специалист  и проводит до номера",
+                                        active: false
+                                    }
+                                ]
+                            })
+                        div(class="search-room__dropdown")
+                            +dropdown({
+                                isSmall: true,
+                                title: "Удобства номера",
+                                active: false,
+                                buttonText: "Апартаменты",
+                                applyClear: false,
+                                lines: [
+                                    {
+                                        text: "Спальни",
+                                        number: "2"
+                                    },
+                                    {
+                                        text: "Кровати",
+                                        number: "2"
+                                    },
+                                    {
+                                        text: "Ванные Комнаты",
+                                        number: "0"
+                                    }
+                                ]
+                            })
+                        div(class="search-room__expandable-checkbox-list")
+                            include ./../../../components/expandable-checkbox-list/expandable-checkbox-list.pug
+                            +expandable-checkbox-list({
+                                title: "Дополнительные удобства",
+                                isActive: false,
+                                checkbox: {
+                                    items: [
+                                        {
+                                            text: "Завтрак",
+                                            active: false
+                                        },
+                                        {
+                                            text: "Письменный стол",
+                                            active: true
+                                        },
+                                        {
+                                            text: "Стул для кормления",
+                                            active: true
+                                        },
+                                        {
+                                            text: "Кроватка",
+                                            active: true
+                                        },
+                                        {
+                                            text: "Телевизор",
+                                            active: false
+                                        },
+                                        {
+                                            text: "Шампунь",
+                                            active: false
+                                        }
+                                    ]
+                                }
+                            })
+                    section(class="search-room__result")
+                        h3(class="search-room__result-title") Номера, которые мы для вас подобрали
+                        div(class="search-room__rooms")
+                            include ./../../../components/room-card/room-card.pug
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["1.jpg", "1.jpg", "1.jpg", "1.jpg"],
+                                    roomNumber: "888",
+                                    roomType: "Люкс",
+                                    roomPrice: "9990",
+                                    currency: "₽",
+                                    rate: 5,
+                                    rateNumber: "145"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["2.jpg", "2.jpg", "2.jpg", "2.jpg"],
+                                    roomNumber: "840",
+                                    roomType: "",
+                                    roomPrice: "9900",
+                                    currency: "₽",
+                                    rate: 4,
+                                    rateNumber: "65"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["3.jpg", "3.jpg", "3.jpg", "3.jpg"],
+                                    roomNumber: "980",
+                                    roomType: "Люкс",
+                                    roomPrice: "8500",
+                                    currency: "₽",
+                                    rate: 3,
+                                    rateNumber: "35"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["4.jpg", "4.jpg", "4.jpg", "4.jpg"],
+                                    roomNumber: "856",
+                                    roomType: "",
+                                    roomPrice: "7300",
+                                    currency: "₽",
+                                    rate: 5,
+                                    rateNumber: "19"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["5.jpg", "5.jpg", "5.jpg", "5.jpg"],
+                                    roomNumber: "740",
+                                    roomType: "",
+                                    roomPrice: "6000",
+                                    currency: "₽",
+                                    rate: 4,
+                                    rateNumber: "44"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["6.jpg", "6.jpg", "6.jpg", "6.jpg"],
+                                    roomNumber: "982",
+                                    roomType: "",
+                                    roomPrice: "5800",
+                                    currency: "₽",
+                                    rate: 3,
+                                    rateNumber: "56"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["7.jpg", "7.jpg", "7.jpg", "7.jpg"],
+                                    roomNumber: "678",
+                                    roomType: "",
+                                    roomPrice: "5500",
+                                    currency: "₽",
+                                    rate: 5,
+                                    rateNumber: "45"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["8.jpg", "8.jpg", "8.jpg", "8.jpg"],
+                                    roomNumber: "450",
+                                    roomType: "",
+                                    roomPrice: "5300",
+                                    currency: "₽",
+                                    rate: 4,
+                                    rateNumber: "39"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["9.jpg", "9.jpg", "9.jpg", "9.jpg"],
+                                    roomNumber: "350",
+                                    roomType: "",
+                                    roomPrice: "5000",
+                                    currency: "₽",
+                                    rate: 3,
+                                    rateNumber: "77"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["10.jpg", "10.jpg", "10.jpg", "10.jpg"],
+                                    roomNumber: "666",
+                                    roomType: "",
+                                    roomPrice: "5000",
+                                    currency: "₽",
+                                    rate: 5,
+                                    rateNumber: "25"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["11.jpg", "11.jpg", "11.jpg", "11.jpg"],
+                                    roomNumber: "444",
+                                    roomType: "",
+                                    roomPrice: "5000",
+                                    currency: "₽",
+                                    rate: 3,
+                                    rateNumber: "15"
+                                })
+                            div(class="search-room__room")
+                                +room-card({
+                                    images: ["12.jpg", "12.jpg", "12.jpg", "12.jpg"],
+                                    roomNumber: "352",
+                                    roomType: "",
+                                    roomPrice: "5000",
+                                    currency: "₽",
+                                    rate: 3,
+                                    rateNumber: "55"
+                                })
+                        div(class="search-room__pagination")
+                            include ./../../../components/pagination/pagination.pug
+                            +pagination()
         // footer
         include ./../../../components/footer/footer.pug
         +footer()

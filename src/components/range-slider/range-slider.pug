@@ -1,4 +1,5 @@
 mixin range-slider(parameters)
+    - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class="range-slider-wrap " + parameters.classList)
         div(class="range-slider-text")
