@@ -5,6 +5,8 @@
 
 .radio-buttons {
     max-width: 266px;
+    min-width: 266px;
+    width: 100%;
 }
 
 .radio-buttons__title {
@@ -19,6 +21,7 @@
     top: 0px;
     left: 0px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .radio-buttons__radio {

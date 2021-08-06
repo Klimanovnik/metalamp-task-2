@@ -3,15 +3,10 @@
 
 /* subscription-text-field */
 
-.subscription-text-field-wrap {
-    max-width: 320px;
-    min-width: 266px;
-    width: 100%;
-}
-
 .subscription-text-field {
     max-width: 266px;
     min-width: 266px;
+    width: 100%;
     position: relative;
 }
 
@@ -41,10 +36,10 @@
 
 .subscription-text-field__button {
     position: absolute;
-    bottom: 2px;
-    right: 2px;
-    width: 44px;
-    height: 40px;
+    bottom: 3px;
+    right: 4px;
+    width: 40px;
+    height: 38px;
     background-color: #fff;
     border-radius: 4px;
 }

@@ -1,3 +1,62 @@
+@import "./../../../assets/scss-text-templates.scss";
+@import "./../../../assets/scss-color-variables.scss";
+
+.search-room__wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 .search-room__content {
+    flex: 1 0 auto;
     padding-top: 70px;
+    border-bottom: 1px solid $ds25;
+}
+
+.search-room__footer {
+    flex: 0 0 auto;
+}
+
+.search-room__content-inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.search-room__options {
+    width: 100%;
+    max-width: 266px;
+    margin-right: 60px;
+}
+
+.search-room__result {
+    width: 100%;
+}
+
+.search-room__result-title {
+    @extend %h1;
+    margin-bottom: 20px;
+}
+
+.search-room__rooms {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px -6px;
+}
+
+.search-room__room {
+    margin: 0px 6px;
+    margin-bottom: 20px;
+}
+
+.search-room__pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 70px;
 }

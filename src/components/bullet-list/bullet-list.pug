@@ -1,4 +1,5 @@
 mixin bullet-list(parameters)
+    - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class="bullet-list " + parameters.classList)
         h3(class="bullet-list__title")= parameters.title

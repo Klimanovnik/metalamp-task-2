@@ -4,7 +4,9 @@
 /* expandable-checkbox-list */
 
 .expandable-checkbox-list {
-    width: 266px;
+    max-width: 266px;
+    min-width: 266px;
+    width: 100%;
 }
 
 .expandable-checkbox-list__title {

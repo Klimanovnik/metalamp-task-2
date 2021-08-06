@@ -1,11 +1,10 @@
 mixin checkbox(parameters)
     - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
-    - if (parameters.isSmall === true) {parameters.classList = parameters.classList + " checkbox_small";}
-    - parameters.textClassList = "";
-    - if (parameters.isSmallText === true) {parameters.textClassList = "checkbox__item-text_small";}
     div(class="checkbox " + parameters.classList)
         h3(class="checkbox__title")= parameters.title
+        - parameters.textClassList = "";
+        - if (parameters.isSmallText === true) {parameters.textClassList = "checkbox__item-text_small";}
         mixin checkbox__item(item)
             label(class="checkbox__item")
                 - if (item.active != true) {item.active = false;}

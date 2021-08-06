@@ -4,7 +4,7 @@
 /* filter-date-dropdown */
 
 .filter-date-dropdown {
-    max-width: 320px;
+    max-width: 266px;
     min-width: 266px;
     width: 100%;
     position: relative;
@@ -51,6 +51,10 @@
 .filter-date-dropdown__calendar {
     display: none;
     padding-top: 5px;
+    position: absolute;
+    left: 0px;
+    top: 66px;
+    z-index: 20;
 }
 
 .filter-date-dropdown_active .filter-date-dropdown__calendar {
@@ -60,4 +64,8 @@
 .filter-date-dropdown_active .datepicker,
 .filter-date-dropdown_active .filter-date-dropdown__button {
     border-color: $ds50;
+}
+
+.filter-date-dropdown_active .filter-date-dropdown__button {
+    box-shadow: 0px 10px 20px $ds5;
 }

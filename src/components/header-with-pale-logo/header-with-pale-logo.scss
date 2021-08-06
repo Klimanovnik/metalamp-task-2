@@ -1,8 +1,11 @@
 @import "./../../assets/scss-color-variables.scss";
 
 .header-with-pale-logo__inner {
-    position: relative;
     min-height: 108px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .pale-logo {
@@ -10,9 +13,6 @@
     height: 48px;
     font-size: 0px;
     fill: $ds25;
-    position: absolute;
-    top: 30px;
-    left: 30px;
 }
 
 .pale-logo_dark {

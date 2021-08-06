@@ -2,7 +2,9 @@
 @import "./../../assets/scss-text-templates.scss";
 
 .pagination {
+    width: 100%;
     max-width: 241px;
+    min-width: 241px;
 }
 
 .pagination__title {

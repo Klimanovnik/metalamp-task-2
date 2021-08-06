@@ -4,81 +4,80 @@ block title
 block content
     // header
     include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
-    +header-with-pale-logo({
-        classList: "container-1920"
-    })
+    +header-with-pale-logo()
     // content
     main(class="colors-and-type__content")
-        div(class="colors-and-type__content-inner container-1920")
-            section(class="colors-and-type__square-section")
-                mixin square-with-text(parameters)
-                    div(class="square-with-text")
-                        - if (parameters.squareClassList === undefined) {parameters.squareClassList = "";}
-                        div(class="square-with-text__square " + parameters.squareClassList)
-                        div(class="square-with-text__text")
-                            h2(class="square-with-text__title")= parameters.title
-                            p(class="square-with-text__code")= parameters.code
-                +square-with-text({
-                    title: "Dark Shade 100%",
-                    code: "#1F2041"
-                })
-                +square-with-text({
-                    title: "Dark Shade 75%",
-                    code: "#1F2041",
-                    squareClassList: "square-with-text__square_bg_ds75"
-                })
-                +square-with-text({
-                    title: "Dark Shade 50%",
-                    code: "#1F2041",
-                    squareClassList: "square-with-text__square_bg_ds50"
-                })
-                +square-with-text({
-                    title: "Dark Shade 25%",
-                    code: "#1F2041",
-                    squareClassList: "square-with-text__square_bg_ds25"
-                })
-                +square-with-text({
-                    title: "Dark Shade 5%",
-                    code: "#1F2041",
-                    squareClassList: "square-with-text__square_bg_ds5"
-                })
-                +square-with-text({
-                    title: "Purple",
-                    code: "#BC9CFF",
-                    squareClassList: "square-with-text__square_bg_purple"
-                })
-                +square-with-text({
-                    title: "Green",
-                    code: "#6FCF97",
-                    squareClassList: "square-with-text__square_bg_green"
-                })
-            section(class="colors-and-type__title-and-subtitle-section")
-                mixin title-and-subtitle(parameters)
-                    -if (parameters.classList === undefined) {parameters.classList = "";}
-                    div(class="title-and-subtitle " + parameters.classList)
-                        h3(class="title-and-subtitle__title")= parameters.title
-                        -if (parameters.subtitleClassList === undefined) {parameters.subtitleClassList = "";}
-                        p(class="title-and-subtitle__subtitle " + parameters.subtitleClassList)= parameters.subtitle
-                +title-and-subtitle({
-                    classList: "title-and-subtitle_h1",
-                    title: "H1",
-                    subtitle: "This one is the sub-section or widget title"
-                })
-                +title-and-subtitle({
-                    classList: "title-and-subtitle_h2",
-                    subtitleClassList: "title-and-subtitle__subtitle_max-width_315",
-                    title: "H2",
-                    subtitle: "Next one is the item title inside widgets"
-                })
-                +title-and-subtitle({
-                    classList: "title-and-subtitle_h3",
-                    subtitleClassList: "title-and-subtitle__subtitle_max-width_315",
-                    title: "H3",
-                    subtitle: "This is a label or CTA text"
-                })
-                +title-and-subtitle({
-                    classList: "title-and-subtitle_body",
-                    subtitleClassList: "title-and-subtitle__subtitle_max-width_315",
-                    title: "Body",
-                    subtitle: "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
-                })
+        div(class="container-1920")
+            div(class="colors-and-type__content-inner")
+                section(class="colors-and-type__square-section")
+                    mixin square-with-text(parameters)
+                        div(class="square-with-text")
+                            - if (parameters.squareClassList === undefined) {parameters.squareClassList = "";}
+                            div(class="square-with-text__square " + parameters.squareClassList)
+                            div(class="square-with-text__text")
+                                h2(class="square-with-text__title")= parameters.title
+                                p(class="square-with-text__code")= parameters.code
+                    +square-with-text({
+                        title: "Dark Shade 100%",
+                        code: "#1F2041"
+                    })
+                    +square-with-text({
+                        title: "Dark Shade 75%",
+                        code: "#1F2041",
+                        squareClassList: "square-with-text__square_bg_ds75"
+                    })
+                    +square-with-text({
+                        title: "Dark Shade 50%",
+                        code: "#1F2041",
+                        squareClassList: "square-with-text__square_bg_ds50"
+                    })
+                    +square-with-text({
+                        title: "Dark Shade 25%",
+                        code: "#1F2041",
+                        squareClassList: "square-with-text__square_bg_ds25"
+                    })
+                    +square-with-text({
+                        title: "Dark Shade 5%",
+                        code: "#1F2041",
+                        squareClassList: "square-with-text__square_bg_ds5"
+                    })
+                    +square-with-text({
+                        title: "Purple",
+                        code: "#BC9CFF",
+                        squareClassList: "square-with-text__square_bg_purple"
+                    })
+                    +square-with-text({
+                        title: "Green",
+                        code: "#6FCF97",
+                        squareClassList: "square-with-text__square_bg_green"
+                    })
+                section(class="colors-and-type__title-and-subtitle-section")
+                    mixin title-and-subtitle(parameters)
+                        -if (parameters.classList === undefined) {parameters.classList = "";}
+                        div(class="title-and-subtitle " + parameters.classList)
+                            h3(class="title-and-subtitle__title")= parameters.title
+                            -if (parameters.subtitleClassList === undefined) {parameters.subtitleClassList = "";}
+                            p(class="title-and-subtitle__subtitle " + parameters.subtitleClassList)= parameters.subtitle
+                    +title-and-subtitle({
+                        classList: "title-and-subtitle_h1",
+                        title: "H1",
+                        subtitle: "This one is the sub-section or widget title"
+                    })
+                    +title-and-subtitle({
+                        classList: "title-and-subtitle_h2",
+                        subtitleClassList: "title-and-subtitle__subtitle_max-width_315",
+                        title: "H2",
+                        subtitle: "Next one is the item title inside widgets"
+                    })
+                    +title-and-subtitle({
+                        classList: "title-and-subtitle_h3",
+                        subtitleClassList: "title-and-subtitle__subtitle_max-width_315",
+                        title: "H3",
+                        subtitle: "This is a label or CTA text"
+                    })
+                    +title-and-subtitle({
+                        classList: "title-and-subtitle_body",
+                        subtitleClassList: "title-and-subtitle__subtitle_max-width_315",
+                        title: "Body",
+                        subtitle: "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
+                    })

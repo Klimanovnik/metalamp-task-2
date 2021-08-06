@@ -5,7 +5,7 @@
 
 .date-dropdown {
     max-width: 320px;
-    min-width: 270px;
+    min-width: 266px;
     width: 100%;
     cursor: pointer;
     position: relative;
@@ -31,7 +31,7 @@
 
 .date-dropdown__field:last-child .date-dropdown__title {
     max-width: 150px;
-    min-width: 135px;
+    min-width: 133px;
     width: 100%;
 }
 
@@ -46,7 +46,7 @@
     border: 1px solid $ds25;
     border-radius: 4px;
     padding: 9.5px 15px;
-    min-width: 135px;
+    min-width: 133px;
     max-width: 150px;
     width: 100%;
     background: #fff;
@@ -78,7 +78,7 @@
     position: absolute;
     top: 66px;
     left: 0px;
-    z-index: 16;
+    z-index: 21;
 }
 
 .date-dropdown_active .date-dropdown__calendar {

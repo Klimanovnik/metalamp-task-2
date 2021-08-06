@@ -15,7 +15,8 @@
 }
 
 .index__list {
-    max-width: 300px;
+    max-width: 302px;
+    width: 100%;
     background: #fff;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -25,19 +26,22 @@
 
 .index__list-title {
     @extend %h1;
-    font-size: 36px;
+    font-size: 38px;
     color: $purple;
+    white-space: nowrap;
 }
 
 .index__list-item {
     padding: 10px 0px;
     text-align: center;
+    overflow: hidden;
 }
 
 .index__list-link {
     @extend %body;
-    font-size: 32px;
+    font-size: 30px;
     line-height: 0.8;
+    white-space: nowrap;
 }
 
 .index__list-link:hover {

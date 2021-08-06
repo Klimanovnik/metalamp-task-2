@@ -13,12 +13,12 @@ block content
             div(class="container-1920")
                 div(class="search-room__content-inner")
                     section(class="search-room__options")
-                        div(class="search-room__filter-date-dropdown")
+                        div(class="search-room__options-item m-b_20")
                             include ./../../../components/filter-date-dropdown/filter-date-dropdown.pug
                             +filter-date-dropdown({
                                 title: "Даты пребывания в отеле"
                             })
-                        div(class="search-room__dropdown")
+                        div(class="search-room__options-item m-b_30")
                             include ./../../../components/dropdown/dropdown.pug
                             +dropdown({
                                 title: "Гости",
@@ -40,7 +40,7 @@ block content
                                     }
                                 ]
                             })
-                        div(class="search-room__range")
+                        div(class="search-room__options-item m-b_30")
                             include ./../../../components/range-slider/range-slider.pug
                             +range-slider({
                                 title: "Диапазон цены",
@@ -50,7 +50,7 @@ block content
                                 offsetFirstToLeft: "75",
                                 offsetSecondToRight: "90"
                             })
-                        div(class="search-room__checkbox")
+                        div(class="search-room__options-item m-b_30")
                             include ./../../../components/checkbox/checkbox.pug
                             +checkbox({
                                 title: "Правила дома",
@@ -69,7 +69,7 @@ block content
                                     }
                                 ]
                             })
-                        div(class="search-room__checkbox")
+                        div(class="search-room__options-item m-b_30")
                             +checkbox({
                                 title: "Доступность",
                                 isSmallText: true,
@@ -86,7 +86,7 @@ block content
                                     }
                                 ]
                             })
-                        div(class="search-room__dropdown")
+                        div(class="search-room__options-item m-b_30")
                             +dropdown({
                                 isSmall: true,
                                 title: "Удобства номера",
@@ -108,7 +108,7 @@ block content
                                     }
                                 ]
                             })
-                        div(class="search-room__expandable-checkbox-list")
+                        div(class="search-room__options-item")
                             include ./../../../components/expandable-checkbox-list/expandable-checkbox-list.pug
                             +expandable-checkbox-list({
                                 title: "Дополнительные удобства",
@@ -271,4 +271,6 @@ block content
                             +pagination()
         // footer
         include ./../../../components/footer/footer.pug
-        +footer()
+        +footer({
+            classList: "search-room__footer"
+        })

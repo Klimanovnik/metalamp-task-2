@@ -4,414 +4,412 @@ block title
 block content
     // header
     include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
-    +header-with-pale-logo({
-        classList: "container-1920"
-    })
+    +header-with-pale-logo()
     // content
     div(class="form-elements__content")
-        form(class="form-elements__form container-1920" action="#")
-            section(class="form-elements__flex-element")
-                include ./../../../components/text-field/text-field.pug
-                +text-field({
-                    classList: "m-b_15",
-                    title: "Text Field",
-                    type: "email",
-                    placeholder: "Email"
-                })
-                +text-field({
-                    classList: "m-b_15",
-                    title: "Text Field",
-                    type: "email",
-                    placeholder: "Email"
-                })
-                include ./../../../components/dropdown/dropdown.pug
-                +dropdown({
-                    classList: "m-b_15",
-                    isSmall: false,
-                    title: "Dropdown",
-                    active: false,
-                    buttonText: "Сколько гостей",
-                    applyClear: true,
-                    lines: [
-                        {
-                            text: "Взрослые",
-                            number: "0"
-                        },
-                        {
-                            text: "Дети",
-                            number: "0"
-                        },
-                        {
-                            text: "Младенцы",
-                            number: "0"
-                        }
-                    ]
-                })
-                include ./../../../components/masked-text-field/masked-text-field.pug
-                +masked-text-field({
-                    classList: "m-b_35",
-                    title: "Masked text field"
-                })
-                include ./../../../components/date-dropdown/date-dropdown.pug
-                +date-dropdown({
-                    classList: "m-b_40",
-                    firstTitle: "Date Dropdown",
-                    secondTitle: "Date Dropdown"
-                })
-                include ./../../../components/filter-date-dropdown/filter-date-dropdown.pug
-                +filter-date-dropdown({
-                    classList: "m-b_35",
-                    title: "Filter Date Dropdown"
-                })
-                include ./../../../components/subscription-text-field/subscription-text-field.pug
-                +subscription-text-field({
-                    title: "Subscription text field"
-                })
-            section(class="form-elements__flex-element")
-                include ./../../../components/checkbox/checkbox.pug
-                +checkbox({
-                    classList: "m-b_20",
-                    title: "Checkbox Buttons",
-                    isSmall: true,
-                    items: [
-                        {
-                            text: "Можно курить",
-                            active: false
-                        },
-                        {
-                            text: "Можно с питомцами",
-                            active: true
-                        },
-                        {
-                            text: "Можно пригласить гостей (до 10 человек)",
-                            active: true
-                        }
-                    ]
-                })
-                include ./../../../components/radio-buttons/radio-buttons.pug
-                +radio-buttons({
-                    classList: "m-b_40",
-                    title: "Radio Buttons",
-                    nameOfGroup: "Ваш пол",
-                    items: [
-                        {
-                            text: "Мужчина",
-                            active: true
-                        },
-                        {
-                            text: "Женщина",
-                            active: false
-                        }
-                    ]
-                })
-                include ./../../../components/toggle/toggle.pug
-                +toggle({
-                    classList: "m-b_35",
-                    title: "Toggle",
-                    items: [
-                        {
-                            text: "Получать спецпредложения",
-                            active: true
-                        },
-                        {
-                            text: "Получать спецпредложения",
-                            active: false
-                        }
-                    ]
-                })
-                div(class="form-elements__like-buttons m-b_40")
-                    h3(class="form-elements__title m-b_10") Like Button
-                    include ./../../../components/like-button/like-button.pug
-                    +like-button({
-                        classList: "m-r_10",
-                        number: "2",
-                        active: false
+        div(class="container-1920")
+            form(class="form-elements__form" action="#")
+                section(class="form-elements__flex-element")
+                    include ./../../../components/text-field/text-field.pug
+                    +text-field({
+                        classList: "m-b_15",
+                        title: "Text Field",
+                        type: "email",
+                        placeholder: "Email"
                     })
-                    +like-button({
-                        number: "12",
-                        active: true
+                    +text-field({
+                        classList: "m-b_15",
+                        title: "Text Field",
+                        type: "email",
+                        placeholder: "Email"
                     })
-                div(class="form-elements__rate-buttons")
-                    h3(class="form-elements__title m-b_10") Rate Button
-                    include ./../../../components/rate-button/rate-button.pug
-                    +rate-button({
-                        classList: "m-r_15",
-                        rate: 4
+                    include ./../../../components/dropdown/dropdown.pug
+                    +dropdown({
+                        classList: "m-b_15",
+                        isSmall: false,
+                        title: "Dropdown",
+                        active: false,
+                        buttonText: "Сколько гостей",
+                        applyClear: true,
+                        lines: [
+                            {
+                                text: "Взрослые",
+                                number: "0"
+                            },
+                            {
+                                text: "Дети",
+                                number: "0"
+                            },
+                            {
+                                text: "Младенцы",
+                                number: "0"
+                            }
+                        ]
                     })
-                    +rate-button({
-                        rate: 5
+                    include ./../../../components/masked-text-field/masked-text-field.pug
+                    +masked-text-field({
+                        classList: "m-b_35",
+                        title: "Masked text field"
                     })
-            section(class="form-elements__flex-element")
-                include ./../../../components/range-slider/range-slider.pug
-                +range-slider({
-                    classList: "m-b_40",
-                    title: "Range Slider",
-                    minNumber: "1287",
-                    maxNumber: "14456",
-                    units: "₽",
-                    offsetFirstToLeft: "75",
-                    offsetSecondToRight: "90"
-                })
-                div(class="form-elements__buttons")
-                    h3(class="form-elements__title m-b_10") Buttons
-                    include ./../../../components/button/button.pug
-                    +button({
-                        classList: "m-b_30 m-r_20",
-                        text: "Click Me",
-                        buttonType: "default"
+                    include ./../../../components/date-dropdown/date-dropdown.pug
+                    +date-dropdown({
+                        classList: "m-b_40",
+                        firstTitle: "Date Dropdown",
+                        secondTitle: "Date Dropdown"
                     })
-                    +button({
-                        classList: "m-b_30 m-r_20",
-                        text: "Click Me",
-                        buttonType: "default"
+                    include ./../../../components/filter-date-dropdown/filter-date-dropdown.pug
+                    +filter-date-dropdown({
+                        classList: "m-b_35",
+                        title: "Filter Date Dropdown"
                     })
-                    +button({
-                        classList: "m-b_30 m-r_20",
-                        text: "Click Me",
-                        buttonType: "border"
+                    include ./../../../components/subscription-text-field/subscription-text-field.pug
+                    +subscription-text-field({
+                        title: "Subscription text field"
                     })
-                    +button({
-                        classList: "m-b_30 m-r_25",
-                        text: "Click Me",
-                        buttonType: "border"
-                    })
-                    +button({
-                        classList: "m-b_30 m-r_20",
-                        text: "Click Me",
-                        buttonType: "link"
-                    })
-                    +button({
-                        classList: "m-b_30 m-r_20",
-                        text: "Click Me",
-                        buttonType: "link"
-                    })
-                    +button({
-                        classList: "m-b_30",
-                        text: "Перейти к оплате",
-                        buttonType: "wide"
-                    })
-                include ./../../../components/pagination/pagination.pug
-                +pagination({
-                    classList: "",
-                    title: "Pagination",
-                    numberOfPages: "15"
-                })
-            section(class="form-elements__flex-element")
-                +dropdown({
-                    classList: "m-b_15",
-                    isSmall: true,
-                    title: "Dropdown",
-                    active: false,
-                    buttonText: "Апартаменты",
-                    applyClear: false,
-                    lines: [
-                        {
-                            text: "Спальни",
-                            number: "2"
-                        },
-                        {
-                            text: "Кровати",
-                            number: "2"
-                        },
-                        {
-                            text: "Ванные Комнаты",
-                            number: "0"
-                        }
-                    ]
-                })
-                +dropdown({
-                    classList: "m-b_154",
-                    isSmall: true,
-                    title: "Dropdown",
-                    active: true,
-                    buttonText: "Апартаменты",
-                    applyClear: false,
-                    lines: [
-                        {
-                            text: "Спальни",
-                            number: "2"
-                        },
-                        {
-                            text: "Кровати",
-                            number: "2"
-                        },
-                        {
-                            text: "Ванные Комнаты",
-                            number: "0"
-                        }
-                    ]
-                })
-                include ./../../../components/expandable-checkbox-list/expandable-checkbox-list.pug
-                +expandable-checkbox-list({
-                    classList: "m-b_20",
-                    title: "Expandable Checkbox List",
-                    isActive: false,
-                    checkbox: {
+                section(class="form-elements__flex-element")
+                    include ./../../../components/checkbox/checkbox.pug
+                    +checkbox({
+                        classList: "m-b_20",
+                        title: "Checkbox Buttons",
                         items: [
                             {
-                                text: "Завтрак",
+                                text: "Можно курить",
                                 active: false
                             },
                             {
-                                text: "Письменный стол",
+                                text: "Можно с питомцами",
                                 active: true
                             },
                             {
-                                text: "Стул для кормления",
+                                text: "Можно пригласить гостей (до 10 человек)",
+                                active: true
+                            }
+                        ]
+                    })
+                    include ./../../../components/radio-buttons/radio-buttons.pug
+                    +radio-buttons({
+                        classList: "m-b_40",
+                        title: "Radio Buttons",
+                        nameOfGroup: "Ваш пол",
+                        items: [
+                            {
+                                text: "Мужчина",
                                 active: true
                             },
                             {
-                                text: "Кроватка",
-                                active: true
-                            },
-                            {
-                                text: "Телевизор",
-                                active: false
-                            },
-                            {
-                                text: "Шампунь",
+                                text: "Женщина",
                                 active: false
                             }
                         ]
-                    }
-                })
-                +expandable-checkbox-list({
-                    classList: "",
-                    title: "Expandable Checkbox List",
-                    isActive: true,
-                    checkbox: {
+                    })
+                    include ./../../../components/toggle/toggle.pug
+                    +toggle({
+                        classList: "m-b_35",
+                        title: "Toggle",
                         items: [
                             {
-                                text: "Завтрак",
-                                active: false
-                            },
-                            {
-                                text: "Письменный стол",
+                                text: "Получать спецпредложения",
                                 active: true
                             },
                             {
-                                text: "Стул для кормления",
-                                active: true
-                            },
-                            {
-                                text: "Кроватка",
-                                active: true
-                            },
-                            {
-                                text: "Телевизор",
-                                active: false
-                            },
-                            {
-                                text: "Шампунь",
+                                text: "Получать спецпредложения",
                                 active: false
                             }
                         ]
-                    }
-                })
-            section(class="form-elements__flex-element")
-                +dropdown({
-                    classList: "m-b_247",
-                    isSmall: false,
-                    title: "Dropdown",
-                    active: true,
-                    buttonText: "Сколько гостей",
-                    applyClear: true,
-                    lines: [
-                        {
-                            text: "Взрослые",
-                            number: "0"
-                        },
-                        {
-                            text: "Дети",
-                            number: "0"
-                        },
-                        {
-                            text: "Младенцы",
-                            number: "0"
-                        }
-                    ]
-                })
-                +checkbox({
-                    classList: "",
-                    title: "Rich Checkbox Buttons",
-                    isSmallText: true,
-                    items: [
-                        {
-                            title: "Широкий коридор",
-                            text: "Ширина коридоров в номере не менее 91 см",
+                    })
+                    div(class="form-elements__like-buttons m-b_40")
+                        h3(class="form-elements__title m-b_10") Like Button
+                        include ./../../../components/like-button/like-button.pug
+                        +like-button({
+                            classList: "m-r_10",
+                            number: "2",
                             active: false
-                        },
-                        {
-                            title: "Помощник для инвалидов",
-                            text: "На 1 этаже вас встретит специалист  и проводит до номера",
-                            active: false
-                        }
-                    ]
-                })
-            section(class="form-elements__flex-element")
-                +dropdown({
-                    classList: "m-b_247",
-                    isSmall: false,
-                    title: "Dropdown",
-                    active: true,
-                    buttonText: "Сколько гостей",
-                    applyClear: true,
-                    lines: [
-                        {
-                            text: "Взрослые",
-                            number: "2"
-                        },
-                        {
-                            text: "Дети",
-                            number: "1"
-                        },
-                        {
-                            text: "Младенцы",
-                            number: "0"
-                        }
-                    ]
-                })
-                include ./../../../components/bullet-list/bullet-list.pug
-                +bullet-list({
-                    classList: "",
-                    title: "Bullet List",
-                    items: [
-                        "Нельзя с питомцами",
-                        "Без вечеринок и мероприятий",
-                        "Время прибытия — после 13:00, а выезд до 12:00"
-                    ]
-                })
-            section(class="form-elements__flex-element")
-                include ./../../../components/icon-text-list/icon-text-list.pug
-                +icon-text-list({
-                    classList: "m-t_-30",
-                    items: [
-                        {
-                            title: "Комфорт",
-                            text: "Шумопоглощающие стены",
-                            imgName: "smile.svg"
-                        },
-                        {
-                            title: "Удобство",
-                            text: "Окно в каждой из спален",
-                            imgName: "home.svg"
-                        }
-                    ]
-                })
-            section(class="form-elements__flex-element form-elements__flex-element_wide")
-                include ./../../../components/reviews/reviews.pug
-                +reviews({
-                    classList: "",
-                    items: [
-                        {
-                            imgName: "Мурад Сарафанов.jpg",
-                            user: "Мурад Сарафанов",
-                            dateString: "5 дней назад",
-                            text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
-                            likeOptions: {
-                                number: "12",
-                                active: true
+                        })
+                        +like-button({
+                            number: "12",
+                            active: true
+                        })
+                    div(class="form-elements__rate-buttons")
+                        h3(class="form-elements__title m-b_10") Rate Button
+                        include ./../../../components/rate-button/rate-button.pug
+                        +rate-button({
+                            classList: "m-r_15",
+                            rate: 4
+                        })
+                        +rate-button({
+                            rate: 5
+                        })
+                section(class="form-elements__flex-element")
+                    include ./../../../components/range-slider/range-slider.pug
+                    +range-slider({
+                        classList: "m-b_40",
+                        title: "Range Slider",
+                        minNumber: "1287",
+                        maxNumber: "14456",
+                        units: "₽",
+                        offsetFirstToLeft: "75",
+                        offsetSecondToRight: "90"
+                    })
+                    div(class="form-elements__buttons")
+                        h3(class="form-elements__title m-b_10") Buttons
+                        include ./../../../components/button/button.pug
+                        +button({
+                            classList: "m-b_30 m-r_20",
+                            text: "Click Me",
+                            buttonType: "default"
+                        })
+                        +button({
+                            classList: "m-b_30 m-r_20",
+                            text: "Click Me",
+                            buttonType: "default"
+                        })
+                        +button({
+                            classList: "m-b_30 m-r_20",
+                            text: "Click Me",
+                            buttonType: "border"
+                        })
+                        +button({
+                            classList: "m-b_30 m-r_25",
+                            text: "Click Me",
+                            buttonType: "border"
+                        })
+                        +button({
+                            classList: "m-b_30 m-r_20",
+                            text: "Click Me",
+                            buttonType: "link"
+                        })
+                        +button({
+                            classList: "m-b_30 m-r_20",
+                            text: "Click Me",
+                            buttonType: "link"
+                        })
+                        +button({
+                            classList: "m-b_30",
+                            text: "Перейти к оплате",
+                            buttonType: "wide"
+                        })
+                    include ./../../../components/pagination/pagination.pug
+                    +pagination({
+                        classList: "",
+                        title: "Pagination",
+                        numberOfPages: "15"
+                    })
+                section(class="form-elements__flex-element")
+                    +dropdown({
+                        classList: "m-b_15",
+                        isSmall: true,
+                        title: "Dropdown",
+                        active: false,
+                        buttonText: "Апартаменты",
+                        applyClear: false,
+                        lines: [
+                            {
+                                text: "Спальни",
+                                number: "2"
+                            },
+                            {
+                                text: "Кровати",
+                                number: "2"
+                            },
+                            {
+                                text: "Ванные Комнаты",
+                                number: "0"
                             }
+                        ]
+                    })
+                    +dropdown({
+                        classList: "m-b_154",
+                        isSmall: true,
+                        title: "Dropdown",
+                        active: true,
+                        buttonText: "Апартаменты",
+                        applyClear: false,
+                        lines: [
+                            {
+                                text: "Спальни",
+                                number: "2"
+                            },
+                            {
+                                text: "Кровати",
+                                number: "2"
+                            },
+                            {
+                                text: "Ванные Комнаты",
+                                number: "0"
+                            }
+                        ]
+                    })
+                    include ./../../../components/expandable-checkbox-list/expandable-checkbox-list.pug
+                    +expandable-checkbox-list({
+                        classList: "m-b_20",
+                        title: "Expandable Checkbox List",
+                        isActive: false,
+                        checkbox: {
+                            items: [
+                                {
+                                    text: "Завтрак",
+                                    active: false
+                                },
+                                {
+                                    text: "Письменный стол",
+                                    active: true
+                                },
+                                {
+                                    text: "Стул для кормления",
+                                    active: true
+                                },
+                                {
+                                    text: "Кроватка",
+                                    active: true
+                                },
+                                {
+                                    text: "Телевизор",
+                                    active: false
+                                },
+                                {
+                                    text: "Шампунь",
+                                    active: false
+                                }
+                            ]
                         }
-                    ]
-                })
+                    })
+                    +expandable-checkbox-list({
+                        classList: "",
+                        title: "Expandable Checkbox List",
+                        isActive: true,
+                        checkbox: {
+                            items: [
+                                {
+                                    text: "Завтрак",
+                                    active: false
+                                },
+                                {
+                                    text: "Письменный стол",
+                                    active: true
+                                },
+                                {
+                                    text: "Стул для кормления",
+                                    active: true
+                                },
+                                {
+                                    text: "Кроватка",
+                                    active: true
+                                },
+                                {
+                                    text: "Телевизор",
+                                    active: false
+                                },
+                                {
+                                    text: "Шампунь",
+                                    active: false
+                                }
+                            ]
+                        }
+                    })
+                section(class="form-elements__flex-element")
+                    +dropdown({
+                        classList: "m-b_247",
+                        isSmall: false,
+                        title: "Dropdown",
+                        active: true,
+                        buttonText: "Сколько гостей",
+                        applyClear: true,
+                        lines: [
+                            {
+                                text: "Взрослые",
+                                number: "0"
+                            },
+                            {
+                                text: "Дети",
+                                number: "0"
+                            },
+                            {
+                                text: "Младенцы",
+                                number: "0"
+                            }
+                        ]
+                    })
+                    +checkbox({
+                        classList: "",
+                        title: "Rich Checkbox Buttons",
+                        isSmallText: true,
+                        items: [
+                            {
+                                title: "Широкий коридор",
+                                text: "Ширина коридоров в номере не менее 91 см",
+                                active: false
+                            },
+                            {
+                                title: "Помощник для инвалидов",
+                                text: "На 1 этаже вас встретит специалист  и проводит до номера",
+                                active: false
+                            }
+                        ]
+                    })
+                section(class="form-elements__flex-element")
+                    +dropdown({
+                        classList: "m-b_247",
+                        isSmall: false,
+                        title: "Dropdown",
+                        active: true,
+                        buttonText: "Сколько гостей",
+                        applyClear: true,
+                        lines: [
+                            {
+                                text: "Взрослые",
+                                number: "2"
+                            },
+                            {
+                                text: "Дети",
+                                number: "1"
+                            },
+                            {
+                                text: "Младенцы",
+                                number: "0"
+                            }
+                        ]
+                    })
+                    include ./../../../components/bullet-list/bullet-list.pug
+                    +bullet-list({
+                        classList: "",
+                        title: "Bullet List",
+                        items: [
+                            "Нельзя с питомцами",
+                            "Без вечеринок и мероприятий",
+                            "Время прибытия — после 13:00, а выезд до 12:00"
+                        ]
+                    })
+                section(class="form-elements__flex-element")
+                    include ./../../../components/icon-text-list/icon-text-list.pug
+                    +icon-text-list({
+                        classList: "m-t_-30",
+                        items: [
+                            {
+                                title: "Комфорт",
+                                text: "Шумопоглощающие стены",
+                                imgName: "smile.svg"
+                            },
+                            {
+                                title: "Удобство",
+                                text: "Окно в каждой из спален",
+                                imgName: "home.svg"
+                            }
+                        ]
+                    })
+                section(class="form-elements__flex-element form-elements__flex-element_wide")
+                    include ./../../../components/reviews/reviews.pug
+                    +reviews({
+                        classList: "",
+                        items: [
+                            {
+                                imgName: "Мурад Сарафанов.jpg",
+                                user: "Мурад Сарафанов",
+                                dateString: "5 дней назад",
+                                text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                                likeOptions: {
+                                    number: "12",
+                                    active: true
+                                }
+                            }
+                        ]
+                    })
