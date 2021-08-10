@@ -1,0 +1,26 @@
+extends ./../../../assets/page-template.pug
+block title
+    title Room Details
+block content
+    div(class="room-details__wrap")
+        // header
+        include ./../../../components/header/header.pug
+        +header({
+            classList: "header_fixed"
+        })
+        // content
+        div(class="room-details__content")
+            div(class="container-1920")
+                div(class="room-details__content-inner")
+                    div(class="room-details__images")
+                        div(class="room-details__images-flex-container room-details__images-flex-container_first")
+                            img(class="room-details__img room-details__img_big" src="#" alt="bg-1.jpg")
+                        div(class="room-details__images-flex-container room-details__images-flex-container_second")
+                            img(class="room-details__img room-details__img_small" src="#" alt="bg-small-1.jpg")
+                            img(class="room-details__img room-details__img_small" src="#" alt="bg-small-2.jpg")
+                    div(class="room-details__info")
+        // footer
+        include ./../../../components/footer/footer.pug
+        +footer({
+            classList: "room-details__footer"
+        })

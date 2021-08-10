@@ -1,0 +1,54 @@
+@import "./../../../assets/scss-text-templates.scss";
+@import "./../../../assets/scss-color-variables.scss";
+
+.room-details__wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.room-details__content {
+    flex: 1 0 auto;
+    padding-top: 70px;
+    border-bottom: 1px solid $ds25;
+}
+
+.room-details__footer {
+    flex: 0 0 auto;
+}
+
+.room-details__images {
+    height: 100%;
+    max-height: 484px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.room-details__images-flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.room-details__images-flex-container_first {
+    width: 68%;
+}
+
+.room-details__images-flex-container_second {
+    width: 32%;
+}
+
+.room-details__img_big {
+    max-height: 484px;
+    height: 100%;
+    width: 100%;
+}
+
+.room-details__img_small {
+    max-height: 242px;
+    height: 50%;
+    width: 100%;
+}
