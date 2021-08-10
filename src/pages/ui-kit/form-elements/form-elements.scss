@@ -1,6 +1,6 @@
 @import "./../../../assets/scss-text-templates.scss";
 
-/* form-elements__content */
+/* form-elements */
 
 .form-elements__content {
     padding-top: 32px;
@@ -11,7 +11,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    @media (max-width: 675px) {
+    padding-left: 111px;
+    @media (max-width: 1440px) {
+        padding-right: 111px;
+    }
+    @media (max-width: 1160px) {
+        padding: 0px;
         justify-content: center;
     }
 }
@@ -21,27 +26,25 @@
     margin-bottom: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    @media (max-width: 1071px) {
+    align-items: flex-start;
+    @media (max-width: 1440px) {
         width: 50%;
-        display: flex;
-        flex-direction: column;
         align-items: center;
     }
-    @media (max-width: 675px) {
+    @media (max-width: 1160px) {
         width: 100%;
     }
 }
 
 .form-elements__flex-element_wide {
     width: 66%;
-    @media (max-width: 1071px) {
+    @media (max-width: 1440px) {
         width: 50%;
     }
-    @media (max-width: 675px) {
+    @media (max-width: 1160px) {
         width: 60%;
     }
-    @media (max-width: 380px) {
+    @media (max-width: 520px) {
         width: 80%;
     }
     @media (max-width: 340px) {
@@ -52,7 +55,7 @@
 .form-elements__buttons {
     width: 100%;
     max-width: 320px;
-    @media (max-width: 1071px) {
+    @media (max-width: 1440px) {
         text-align: center;
     }
 }

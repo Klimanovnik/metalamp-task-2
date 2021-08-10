@@ -1,6 +1,7 @@
 // Assets
 import "./../../../assets/fonts.scss";
 import "./../../../assets/reset.scss";
+import "./../../../assets/container-1920.scss";
 
 // Components
 import "./../../../components/header/header.js";

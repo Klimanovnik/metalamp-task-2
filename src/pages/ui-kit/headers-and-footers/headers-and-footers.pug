@@ -5,9 +5,7 @@ block content
     div(class="headers-and-footers__wrap")
         // header
         include ./../../../components/header-with-pale-logo/header-with-pale-logo.pug
-        +header-with-pale-logo({
-            classList: "container-1920"
-        })
+        +header-with-pale-logo()
         // content
         div(class="headers-and-footers__content")
             include ./../../../components/header/header.pug

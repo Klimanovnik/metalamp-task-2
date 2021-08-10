@@ -14,41 +14,44 @@ block content
                 img(class="landing-page__auto-slider-img" src="#" alt="bg-1.jpg")
                 img(class="landing-page__auto-slider-img" src="#" alt="bg-2.jpg")
                 img(class="landing-page__auto-slider-img" src="#" alt="bg-3.jpg")
-            include ./../../../components/pick-up-room/pick-up-room.pug
-            +pick-up-room({
-                classList: "landing-page__pick-up-room",
-                title: "Найдём номера под ваши пожелания",
-                dateDropdown: {
-                    firstTitle: "Прибытие",
-                    secondTitle: "Выезд"
-                },
-                dropdown: {
-                    isSmall: false,
-                    title: "Гости",
-                    active: false,
-                    buttonText: "Сколько гостей",
-                    applyClear: true,
-                    lines: [
-                        {
-                            text: "Взрослые",
-                            number: "0"
-                        },
-                        {
-                            text: "Дети",
-                            number: "0"
-                        },
-                        {
-                            text: "Младенцы",
-                            number: "0"
-                        }
-                    ]
-                },
-                button: {
-                    text: "Подобрать номер",
-                    buttonType: "wide"
-                }
-            })
-            p(class="landing-page__img-text") Лучшие номера для вашей работы, отдыха и просто вдохновения
+            div(class="landing-page__field-and-text")
+                div(class="container-1920")
+                    div(class="landing-page__field-and-text-inner")
+                        include ./../../../components/pick-up-room/pick-up-room.pug
+                        +pick-up-room({
+                            classList: "landing-page__pick-up-room",
+                            title: "Найдём номера под ваши пожелания",
+                            dateDropdown: {
+                                firstTitle: "Прибытие",
+                                secondTitle: "Выезд"
+                            },
+                            dropdown: {
+                                isSmall: false,
+                                title: "Гости",
+                                active: false,
+                                buttonText: "Сколько гостей",
+                                applyClear: true,
+                                lines: [
+                                    {
+                                        text: "Взрослые",
+                                        number: "0"
+                                    },
+                                    {
+                                        text: "Дети",
+                                        number: "0"
+                                    },
+                                    {
+                                        text: "Младенцы",
+                                        number: "0"
+                                    }
+                                ]
+                            },
+                            button: {
+                                text: "Подобрать номер",
+                                buttonType: "wide"
+                            }
+                        })
+                        p(class="landing-page__img-text") Лучшие номера для вашей работы, отдыха и просто вдохновения
         // footer
         include ./../../../components/footer/footer.pug
         +footer()

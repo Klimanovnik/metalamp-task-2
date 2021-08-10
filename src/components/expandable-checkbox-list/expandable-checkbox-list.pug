@@ -6,4 +6,5 @@ mixin expandable-checkbox-list(parameters)
         h3(class="expandable-checkbox-list__title")= parameters.title
         div(class="expandable-checkbox-list__list")
             include ./../checkbox/checkbox.pug
+            - if (parameters.checkbox === undefined) {parameters.checkbox = {};}
             +checkbox(parameters.checkbox)
