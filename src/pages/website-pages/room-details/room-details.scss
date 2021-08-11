@@ -52,3 +52,13 @@
     height: 50%;
     width: 100%;
 }
+
+.room-details__info {
+    padding: 20px 0px;
+}
+
+.room-details__graphic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

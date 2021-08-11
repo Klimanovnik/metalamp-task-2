@@ -19,6 +19,9 @@ block content
                             img(class="room-details__img room-details__img_small" src="#" alt="bg-small-1.jpg")
                             img(class="room-details__img room-details__img_small" src="#" alt="bg-small-2.jpg")
                     div(class="room-details__info")
+                        div(class="room-details__graphic")
+                            include ./../../../components/graphic/graphic.pug
+                            +graphic()
         // footer
         include ./../../../components/footer/footer.pug
         +footer({

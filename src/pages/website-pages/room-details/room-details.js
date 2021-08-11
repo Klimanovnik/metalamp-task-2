@@ -6,6 +6,7 @@ import "./../../../assets/container-1920.scss";
 
 // Components
 import "./../../../components/header/header.js";
+import "./../../../components/graphic/graphic.js";
 import "./../../../components/footer/footer.js";
 
 // Page

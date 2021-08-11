@@ -1,0 +1,33 @@
+@import "./../../assets/scss-color-variables.scss";
+@import "./../../assets/scss-text-templates.scss";
+
+.graphic-wrap {
+    width: 340px;
+    height: 126px;
+    position: relative;
+}
+
+.graphic__sum {
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    transform: translateY(-50%);
+    width: 100px;
+    z-index: -1;
+}
+
+.graphic__sum-number {
+    @extend %h1;
+    color: $purple;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.graphic__sum-text {
+    @extend %h3;
+    color: $purple;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
