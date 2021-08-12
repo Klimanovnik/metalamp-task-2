@@ -3,15 +3,30 @@
 
 .graphic-wrap {
     width: 340px;
-    height: 126px;
+    height: 170px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.graphic__title {
+    @extend %h2;
+    line-height: 1.5;
+    padding-left: 27px;
+}
+
+.graphic {
+    max-height: 126px;
+    min-height: 126px;
+    min-width: 100%;
+    max-width: 100%;
 }
 
 .graphic__sum {
     position: absolute;
-    top: 50%;
+    bottom: 25%;
     left: 35px;
-    transform: translateY(-50%);
     width: 100px;
     z-index: -1;
 }

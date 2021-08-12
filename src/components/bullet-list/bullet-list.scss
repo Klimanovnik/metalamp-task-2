@@ -32,3 +32,12 @@
     top: 12px;
     left: 0px;
 }
+
+.bullet-list_no-dots .bullet-list__item::before {
+    width: 0px;
+    height: 0px;
+}
+
+.bullet-list_no-dots .bullet-list__item {
+    padding-left: 0px;
+}

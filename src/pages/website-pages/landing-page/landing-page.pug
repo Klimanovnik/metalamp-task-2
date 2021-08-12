@@ -10,16 +10,20 @@ block content
         })
         // content
         div(class="landing-page__content")
-            div(class="landing-page__auto-slider")
-                img(class="landing-page__auto-slider-img" src="#" alt="bg-1.jpg")
-                img(class="landing-page__auto-slider-img" src="#" alt="bg-2.jpg")
-                img(class="landing-page__auto-slider-img" src="#" alt="bg-3.jpg")
-            div(class="landing-page__field-and-text")
+            div(class="landing-page__auto-slider-wrap")
+                div(class="landing-page__auto-slider")
+                    img(class="landing-page__auto-slider-img" src="#" alt="bg-1.jpg")
+                    img(class="landing-page__auto-slider-img" src="#" alt="bg-2.jpg")
+                    img(class="landing-page__auto-slider-img" src="#" alt="bg-3.jpg")
+                div(class="landing-page__img-text")
+                    div(class="container-1920")
+                        div(class="landing-page__img-text-inner")
+                            p(class="landing-page__img-text-paragraph") Лучшие номера для вашей работы, отдыха и просто вдохновения
+            div(class="landing-page__pick-up-room")
                 div(class="container-1920")
-                    div(class="landing-page__field-and-text-inner")
+                    div(class="landing-page__pick-up-room-inner")
                         include ./../../../components/pick-up-room/pick-up-room.pug
                         +pick-up-room({
-                            classList: "landing-page__pick-up-room",
                             title: "Найдём номера под ваши пожелания",
                             dateDropdown: {
                                 firstTitle: "Прибытие",
@@ -51,7 +55,8 @@ block content
                                 buttonType: "wide"
                             }
                         })
-                        p(class="landing-page__img-text") Лучшие номера для вашей работы, отдыха и просто вдохновения
         // footer
         include ./../../../components/footer/footer.pug
-        +footer()
+        +footer({
+            classList: "landing-page__footer"
+        })

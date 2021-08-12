@@ -1,20 +1,18 @@
 // Assets
 import "./../../../assets/fonts.scss";
 import "./../../../assets/reset.scss";
-import "./../../../assets/atomic.scss";
 import "./../../../assets/container-1920.scss";
 
 // Components
 import "./../../../components/header/header.js";
-import "./../../../components/icon-text-list/icon-text-list.js";
-import "./../../../components/graphic/graphic.js";
-import "./../../../components/reviews/reviews.js";
-import "./../../../components/bullet-list/bullet-list.js";
-import "./../../../components/book/book.js";
+import "./../../../../node_modules/slick-carousel/slick/slick.min.js";
+import "./../../../../node_modules/slick-carousel/slick/slick.css";
+import "./../../../../node_modules/slick-carousel/slick/slick-theme.css";
+import "./../../../components/sign-in/sign-in.js";
 import "./../../../components/footer/footer.js";
 
 // Page
-import "./room-details.scss";
+import "./sign-in-page.scss";
 
 function importAll(r) {
     let images = {};
@@ -28,7 +26,7 @@ const images = importAll(require.context("./img", false, /\.(ico|gif|png|jpg|jpe
 
 $(function () {
 
-    let imgBlockArray = $(".room-details__img");
+    let imgBlockArray = $(".sign-in-page__auto-slider-img");
     let imgModule = "";
 
     for (let imgBlock of imgBlockArray) {
@@ -40,5 +38,20 @@ $(function () {
 
         imgBlock.setAttribute("src", `${imgModule.default}`);
     }
+
+    $(".sign-in-page__auto-slider").slick({
+        infinite: true,
+        draggable: false,
+        arrows: false,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        fade: true,
+        speed: 5000
+    });
 
 });

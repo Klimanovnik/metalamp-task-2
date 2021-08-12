@@ -9,6 +9,32 @@
     min-width: 266px;
 }
 
+.reviews__top-text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviews__title {
+    @extend %h2;
+    line-height: 3.5;
+    @media (max-width: 500px) {
+        font-size: 14px;
+    }
+}
+
+.reviews__number-of-reviews {
+    @extend %body;
+    color: $ds50;
+    line-height: 3.5;
+}
+
+.reviews__number-of-reviews-text {
+    margin-left: 5px;
+}
+
 .reviews__item {
     padding-left: 58px;
     margin-bottom: 22px;

@@ -24,10 +24,10 @@
     max-width: 300px;
     margin-bottom: 20px;
     letter-spacing: 1.2px;
+    text-align: center;
     @media (max-width: 370px) {
         margin-bottom: 10px;
         max-width: none;
-        text-align: center;
     }
 }
 

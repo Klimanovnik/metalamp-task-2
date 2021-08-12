@@ -1,63 +1,75 @@
 @import "./../../../assets/scss-text-templates.scss";
 
+.landing-page__wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 .landing-page__content {
+    flex: 1 0 auto;
     padding-top: 70px;
     position: relative;
+    min-height: 900px;
+    @media (max-width: 620px) {
+        background-color: #f4f4f6;
+        min-height: 600px;
+    }
+}
+
+.landing-page__footer {
+    flex: 0 0 auto;
+}
+
+.landing-page__auto-slider-wrap {
+    position: relative;
+}
+
+.landing-page__auto-slider {
+    @media (max-width: 620px) {
+        display: none;
+    }
 }
 
 .landing-page__auto-slider-img {
     display: block;
-    min-height: 900px;
-    @media (max-width: 960px) {
-        min-height: 600px;
-    }
-    @media (max-width: 600px) {
-        min-height: 500px;
-    }
-    @media (max-width: 500px) {
-        min-height: 440px;
-    }
-}
-
-.landing-page__field-and-text {
-    position: absolute;
-    top: 70px;
-    left: 0px;
-    right: 0px;
-    height: calc(100% - 70px);
-    z-index: 4;
-}
-
-.landing-page__field-and-text-inner {
-    position: relative;
-    height: 100%;
-    padding-top: 70px;
-    @media (max-width: 600px) {
-        padding-top: 30px;
-    }
-}
-
-.landing-page__pick-up-room {
-    @media (max-width: 1250px) {
-        margin: 0 auto;
-    }
+    min-height: 830px;
 }
 
 .landing-page__img-text {
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    right: 0px;
+    z-index: 5;
+}
+
+.landing-page__img-text-inner {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.landing-page__img-text-paragraph {
     @extend %body;
     max-width: 297px;
     width: 100%;
     text-align: right;
-    position: absolute;
-    bottom: 20px;
-    right: 0px;
     @media (max-width: 1250px) {
-        left: 50%;
-        transform: translateX(-50%);
+        margin: 0px auto;
         text-align: center;
     }
-    @media (max-width: 500px) {
-        opacity: 0;
+}
+
+.landing-page__pick-up-room {
+    position: absolute;
+    top: 140px;
+    left: 0px;
+    z-index: 3;
+    width: 100%;
+}
+
+.landing-page__pick-up-room .pick-up-room {
+    @media (max-width: 1250px) {
+        margin: 0px auto;
     }
-    z-index: 5;
 }

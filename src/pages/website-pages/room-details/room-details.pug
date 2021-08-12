@@ -10,18 +10,128 @@ block content
         })
         // content
         div(class="room-details__content")
-            div(class="container-1920")
-                div(class="room-details__content-inner")
-                    div(class="room-details__images")
-                        div(class="room-details__images-flex-container room-details__images-flex-container_first")
-                            img(class="room-details__img room-details__img_big" src="#" alt="bg-1.jpg")
-                        div(class="room-details__images-flex-container room-details__images-flex-container_second")
-                            img(class="room-details__img room-details__img_small" src="#" alt="bg-small-1.jpg")
-                            img(class="room-details__img room-details__img_small" src="#" alt="bg-small-2.jpg")
-                    div(class="room-details__info")
-                        div(class="room-details__graphic")
-                            include ./../../../components/graphic/graphic.pug
-                            +graphic()
+            div(class="room-details__images")
+                div(class="room-details__images-flex-container room-details__images-flex-container_first")
+                    img(class="room-details__img room-details__img_big" src="#" alt="bg-1.jpg")
+                div(class="room-details__images-flex-container room-details__images-flex-container_second")
+                    img(class="room-details__img room-details__img_small" src="#" alt="bg-small-1.jpg")
+                    img(class="room-details__img room-details__img_small" src="#" alt="bg-small-2.jpg")
+            div(class="room-details__info")
+                div(class="container-1920")
+                    div(class="room-details__info-inner")
+                        div(class="room-details__info-flex-elem")
+                            div(class="room-details__icon-text-list")
+                                include ./../../../components/icon-text-list/icon-text-list.pug
+                                +icon-text-list({
+                                    title: "Сведения о номере",
+                                    items: [
+                                        {
+                                            title: "Комфорт",
+                                            text: "Шумопоглощающие стены",
+                                            imgName: "smile.svg"
+                                        },
+                                        {
+                                            title: "Удобство",
+                                            text: "Окно в каждой из спален",
+                                            imgName: "home.svg"
+                                        },
+                                        {
+                                            title: "Уют",
+                                            text: "Номер оснащён камином",
+                                            imgName: "fire.svg"
+                                        }
+                                    ]
+                                })
+                            div(class="room-details__graphic")
+                                include ./../../../components/graphic/graphic.pug
+                                +graphic({
+                                    title: "Впечатления от номера"
+                                })
+                            div(class="room-details__reviews")
+                                include ./../../../components/reviews/reviews.pug
+                                +reviews({
+                                    title: "Отзывы посетителей номера",
+                                    items: [
+                                        {
+                                            imgName: "Мурад Сарафанов.jpg",
+                                            user: "Мурад Сарафанов",
+                                            dateString: "5 дней назад",
+                                            text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                                            likeOptions: {
+                                                number: "12",
+                                                active: true
+                                            }
+                                        },
+                                        {
+                                            imgName: "Патрисия Стёклышкова.jpg",
+                                            user: "Патрисия Стёклышкова",
+                                            dateString: "Неделю назад",
+                                            text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.",
+                                            likeOptions: {
+                                                number: "2",
+                                                active: false
+                                            }
+                                        }
+                                    ]
+                                })
+                            div(class="room-details__bullet-list")
+                                include ./../../../components/bullet-list/bullet-list.pug
+                                +bullet-list({
+                                    title: "Правила",
+                                    items: [
+                                        "Нельзя с питомцами",
+                                        "Без вечеринок и мероприятий",
+                                        "Время прибытия — после 13:00, а выезд до 12:00"
+                                    ]
+                                })
+                            div(class="room-details__bullet-list room-details__bullet-list_wide")
+                                +bullet-list({
+                                    title: "Отмена",
+                                    items: [
+                                        "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги."
+                                    ],
+                                    noDots: true
+                                })
+                        div(class="room-details__info-flex-elem")
+                            div(class="room-details__book")
+                                include ./../../../components/book/book.pug
+                                +book({
+                                    roomNumber: "888",
+                                    roomType: "Люкс",
+                                    pricePerDay: "9990",
+                                    currency: "₽",
+                                    dateDropdown: {
+                                        firstTitle: "Прибытие",
+                                        secondTitle: "Выезд"
+                                    },
+                                    dropdown: {
+                                        isSmall: false,
+                                        title: "Гости",
+                                        active: false,
+                                        buttonText: "Сколько гостей",
+                                        applyClear: true,
+                                        lines: [
+                                            {
+                                                text: "Взрослые",
+                                                number: "2"
+                                            },
+                                            {
+                                                text: "Дети",
+                                                number: "1"
+                                            },
+                                            {
+                                                text: "Младенцы",
+                                                number: "0"
+                                            }
+                                        ]
+                                    },
+                                    discount: "2179",
+                                    extraServices: "300",
+                                    button: {
+                                        text: "Забронировать",
+                                        buttonType: "wide"
+                                    }
+                                })
         // footer
         include ./../../../components/footer/footer.pug
         +footer({

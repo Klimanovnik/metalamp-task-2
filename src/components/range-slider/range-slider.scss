@@ -97,3 +97,10 @@
     border-radius: 3px;
     z-index: 2;
 }
+
+.range-slider-subtitle {
+    @extend %body;
+    font-size: 12px;
+    color: $ds50;
+    line-height: 3;
+}

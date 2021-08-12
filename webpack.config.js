@@ -72,7 +72,9 @@ module.exports = {
         "headers-and-footers": "ui-kit",
         "landing-page": "website-pages",
         "search-room": "website-pages",
-        "room-details": "website-pages"
+        "room-details": "website-pages",
+        "registration-page": "website-pages",
+        "sign-in-page": "website-pages"
     }),
     output: {
         path: path.resolve(__dirname, "app"),
@@ -100,7 +102,9 @@ module.exports = {
         htmlRender("headers-and-footers", "ui-kit"),
         htmlRender("landing-page", "website-pages"),
         htmlRender("search-room", "website-pages"),
-        htmlRender("room-details", "website-pages")
+        htmlRender("room-details", "website-pages"),
+        htmlRender("registration-page", "website-pages"),
+        htmlRender("sign-in-page", "website-pages")
     ],
     module: {
         rules: [

@@ -1,0 +1,77 @@
+extends ./../../../assets/page-template.pug
+block title
+    title Registration
+block content
+    div(class="registration-page__wrap")
+        // header
+        include ./../../../components/header/header.pug
+        +header({
+            classList: "header_fixed"
+        })
+        // content
+        div(class="registration-page__content")
+            div(class="registration-page__auto-slider")
+                img(class="registration-page__auto-slider-img" src="#" alt="bg-1.jpg")
+                img(class="registration-page__auto-slider-img" src="#" alt="bg-2.jpg")
+            div(class="registration-page__registration")
+                div(class="container-1920")
+                    div(class="registration-page__registration-inner")
+                        include ./../../../components/registration/registration.pug
+                        +registration({
+                            title: "Регистрация аккаунта",
+                            firstTextField: {
+                                type: "text",
+                                placeholder: "Имя"
+                            },
+                            secondTextField: {
+                                type: "text",
+                                placeholder: "Фамилия"
+                            },
+                            radioButtons: {
+                                nameOfGroup: "Ваш пол",
+                                items: [
+                                    {
+                                        text: "Мужчина",
+                                        active: true
+                                    },
+                                    {
+                                        text: "Женщина",
+                                        active: false
+                                    }
+                                ]
+                            },
+                            maskedTextField: {
+                                title: "Дата Рождения"
+                            },
+                            firstLoginField: {
+                                title: "Данные для входа в сервис",
+                                type: "email",
+                                placeholder: "Email"
+                            },
+                            secondLoginField: {
+                                type: "password",
+                                placeholder: "Пароль"
+                            },
+                            toggle: {
+                                items: [
+                                    {
+                                        text: "Получать спецпредложения",
+                                        active: false
+                                    }
+                                ]
+                            },
+                            firstButton: {
+                                text: "Зарегистрироваться",
+                                buttonType: "wide"
+                            },
+                            bottomText: "Уже есть аккаунт на Toxin",
+                            secondButton: {
+                                text: "Войти",
+                                buttonType: "border"
+                            }
+                        })
+        // footer
+        include ./../../../components/footer/footer.pug
+        +footer({
+            classList: "registration-page__footer"
+        })

@@ -1,6 +1,8 @@
 mixin icon-text-list(parameters)
+    - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class="icon-text-list " + parameters.classList)
+        h3(class="icon-text-list__title")= parameters.title
         mixin icon-text-list__item(item)
             div(class="icon-text-list__item")
                 - if (item.title === undefined) {item.title = "Default title";}

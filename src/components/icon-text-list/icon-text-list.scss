@@ -9,6 +9,11 @@
     min-width: 291px;
 }
 
+.icon-text-list__title {
+    @extend %h2;
+    line-height: 1.5;
+}
+
 .icon-text-list__item {
     background-repeat: no-repeat;
     background-position: 1% 50%;

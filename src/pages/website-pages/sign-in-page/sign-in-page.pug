@@ -1,0 +1,44 @@
+extends ./../../../assets/page-template.pug
+block title
+    title Sign In
+block content
+    div(class="sign-in-page__wrap")
+        // header
+        include ./../../../components/header/header.pug
+        +header({
+            classList: "header_fixed"
+        })
+        // content
+        div(class="sign-in-page__content")
+            div(class="sign-in-page__auto-slider")
+                img(class="sign-in-page__auto-slider-img" src="#" alt="bg-1.jpg")
+                img(class="sign-in-page__auto-slider-img" src="#" alt="bg-2.jpg")
+            div(class="sign-in-page__sign-in")
+                div(class="container-1920")
+                    div(class="sign-in-page__sign-in-inner")
+                        include ./../../../components/sign-in/sign-in.pug
+                        +sign-in({
+                            title: "Войти",
+                            firstLoginField: {
+                                type: "email",
+                                placeholder: "Email"
+                            },
+                            secondLoginField: {
+                                type: "password",
+                                placeholder: "Пароль"
+                            },
+                            firstButton: {
+                                text: "Войти",
+                                buttonType: "wide"
+                            },
+                            bottomText: "Нет аккаунта на Toxin?",
+                            secondButton: {
+                                text: "Создать",
+                                buttonType: "border"
+                            }
+                        })
+        // footer
+        include ./../../../components/footer/footer.pug
+        +footer({
+            classList: "sign-in-page__footer"
+        })

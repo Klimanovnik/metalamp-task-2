@@ -13,12 +13,12 @@ block content
             div(class="container-1920")
                 div(class="search-room__content-inner")
                     section(class="search-room__options")
-                        div(class="search-room__options-item m-b_20")
+                        div(class="search-room__options-item m-b_15")
                             include ./../../../components/filter-date-dropdown/filter-date-dropdown.pug
                             +filter-date-dropdown({
                                 title: "Даты пребывания в отеле"
                             })
-                        div(class="search-room__options-item m-b_30")
+                        div(class="search-room__options-item m-b_25")
                             include ./../../../components/dropdown/dropdown.pug
                             +dropdown({
                                 title: "Гости",
@@ -40,7 +40,7 @@ block content
                                     }
                                 ]
                             })
-                        div(class="search-room__options-item m-b_30")
+                        div(class="search-room__options-item m-b_20")
                             include ./../../../components/range-slider/range-slider.pug
                             +range-slider({
                                 title: "Диапазон цены",
@@ -48,9 +48,10 @@ block content
                                 maxNumber: "14456",
                                 units: "₽",
                                 offsetFirstToLeft: "75",
-                                offsetSecondToRight: "90"
+                                offsetSecondToRight: "90",
+                                subtitle: "Стоимость за сутки пребывания в номере"
                             })
-                        div(class="search-room__options-item m-b_30")
+                        div(class="search-room__options-item m-b_25")
                             include ./../../../components/checkbox/checkbox.pug
                             +checkbox({
                                 title: "Правила дома",
@@ -69,7 +70,7 @@ block content
                                     }
                                 ]
                             })
-                        div(class="search-room__options-item m-b_30")
+                        div(class="search-room__options-item m-b_20")
                             +checkbox({
                                 title: "Доступность",
                                 isSmallText: true,
@@ -86,7 +87,7 @@ block content
                                     }
                                 ]
                             })
-                        div(class="search-room__options-item m-b_30")
+                        div(class="search-room__options-item m-b_25")
                             +dropdown({
                                 isSmall: true,
                                 title: "Удобства номера",

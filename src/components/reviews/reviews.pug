@@ -2,6 +2,13 @@ mixin reviews(parameters)
     - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class="reviews " + parameters.classList)
+        - if (parameters.items === undefined) {parameters.items = [{}];}
+        - if (parameters.title != undefined)
+            div(class="reviews__top-text")
+                h3(class="reviews__title")= parameters.title
+                div(class="reviews__number-of-reviews")
+                    span(class="reviews__number-of-reviews-value")= parameters.items.length
+                    span(class="reviews__number-of-reviews-text") отзывов
         mixin reviews__item(item)
             div(class="reviews__item")
                 div(class="reviews__item-img-name")= item.imgName
@@ -17,6 +24,5 @@ mixin reviews(parameters)
                 - if (item.likeOptions.classList === undefined) {item.likeOptions.classList = "";}
                 - item.likeOptions.classList = item.likeOptions.classList + " reviews__item-like-button";
                 +like-button(item.likeOptions)
-        - if (parameters.items === undefined) {parameters.items = [{}];}
         - for (let item of parameters.items)
             +reviews__item(item)

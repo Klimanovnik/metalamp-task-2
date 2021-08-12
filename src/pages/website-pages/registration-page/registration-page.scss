@@ -1,0 +1,42 @@
+.registration-page__wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.registration-page__content {
+    flex: 1 0 auto;
+    padding-top: 70px;
+    position: relative;
+    min-height: 753px;
+    @media (max-width: 620px) {
+        background-color: #f4f4f6;
+    }
+}
+
+.registration-page__footer {
+    flex: 0 0 auto;
+}
+
+.registration-page__auto-slider {
+    @media (max-width: 620px) {
+        display: none;
+    }
+}
+
+.registration-page__auto-slider-img {
+    display: block;
+    min-height: 683px;
+}
+
+.registration-page__registration {
+    position: absolute;
+    top: 89px;
+    left: 0px;
+    z-index: 3;
+    width: 100%;
+}
+
+.registration-page__registration .registration {
+    margin: 0px auto;
+}

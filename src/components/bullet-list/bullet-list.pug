@@ -1,6 +1,7 @@
 mixin bullet-list(parameters)
     - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
+    - if (parameters.noDots === true) {parameters.classList = parameters.classList + " bullet-list_no-dots";}
     div(class="bullet-list " + parameters.classList)
         h3(class="bullet-list__title")= parameters.title
         ul(class="bullet-list__list")

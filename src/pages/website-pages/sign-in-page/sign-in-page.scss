@@ -1,0 +1,42 @@
+.sign-in-page__wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.sign-in-page__content {
+    flex: 1 0 auto;
+    padding-top: 70px;
+    position: relative;
+    min-height: 753px;
+    @media (max-width: 620px) {
+        background-color: #f4f4f6;
+    }
+}
+
+.sign-in-page__footer {
+    flex: 0 0 auto;
+}
+
+.sign-in-page__auto-slider {
+    @media (max-width: 620px) {
+        display: none;
+    }
+}
+
+.sign-in-page__auto-slider-img {
+    display: block;
+    min-height: 683px;
+}
+
+.sign-in-page__sign-in {
+    position: absolute;
+    top: 233px;
+    left: 0px;
+    z-index: 3;
+    width: 100%;
+}
+
+.sign-in-page__sign-in .sign-in {
+    margin: 0px auto;
+}

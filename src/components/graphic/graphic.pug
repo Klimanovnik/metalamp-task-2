@@ -2,6 +2,7 @@ mixin graphic(parameters)
     - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
     div(class="graphic-wrap " + parameters.classList)
+        h3(class="graphic__title")= parameters.title
         canvas(class="graphic")
         div(class="graphic__sum")
             div(class="graphic__sum-number")
