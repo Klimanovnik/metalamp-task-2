@@ -1,7 +1,7 @@
 mixin sign-in(parameters)
     - if (parameters === undefined) {parameters = {};}
     - if (parameters.classList === undefined) {parameters.classList = "";}
-    div(class="sign-in " + parameters.classList)
+    form(class="sign-in " + parameters.classList action="#")
         h3(class="sign-in__title")= parameters.title
         div(class="sign-in__text-field")
             include ./../text-field/text-field.pug
