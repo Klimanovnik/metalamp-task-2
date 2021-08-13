@@ -10,11 +10,11 @@ mixin header(parameters)
                 mixin header__nav(classList)
                     - if (classList != "header__nav") {classList = "header__burger-nav";}
                     nav(class= classList)
-                        a(class="header__link" href="") О нас
-                        a(class="header__link header__link_with-arrow" href="") Услуги
-                        a(class="header__link" href="") Вакансии
-                        a(class="header__link" href="") Новости
-                        a(class="header__link header__link_with-arrow" href="") Соглашения
+                        a(class="header__link" href="./error-404.html") О нас
+                        a(class="header__link header__link_with-arrow" href="./error-404.html") Услуги
+                        a(class="header__link" href="./error-404.html") Вакансии
+                        a(class="header__link" href="./error-404.html") Новости
+                        a(class="header__link header__link_with-arrow" href="./error-404.html") Соглашения
                         include ./../button/button.pug
                         +button({
                             classList: "",

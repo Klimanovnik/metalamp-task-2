@@ -74,7 +74,8 @@ module.exports = {
         "search-room": "website-pages",
         "room-details": "website-pages",
         "registration-page": "website-pages",
-        "sign-in-page": "website-pages"
+        "sign-in-page": "website-pages",
+        "error-404": "website-pages"
     }),
     output: {
         path: path.resolve(__dirname, "app"),
@@ -104,7 +105,8 @@ module.exports = {
         htmlRender("search-room", "website-pages"),
         htmlRender("room-details", "website-pages"),
         htmlRender("registration-page", "website-pages"),
-        htmlRender("sign-in-page", "website-pages")
+        htmlRender("sign-in-page", "website-pages"),
+        htmlRender("error-404", "website-pages")
     ],
     module: {
         rules: [
